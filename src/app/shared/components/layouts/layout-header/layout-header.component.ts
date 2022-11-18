@@ -3,8 +3,11 @@ import { Component }   from '@angular/core';
 import { OnInit }      from '@angular/core';
 import { Router }      from '@angular/router';
 
+import { faCircleUser } from '@fortawesome/free-regular-svg-icons';
+import { faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons';
 // Internal modules
 import { environment } from '@env/environment';
+
 
 @Component({
   selector    : 'app-layout-header',
@@ -16,6 +19,9 @@ export class LayoutHeaderComponent implements OnInit
   public appName         : string  = environment.appName;
   public isMenuCollapsed : boolean = true;
 
+  faSearch = faSearch;
+  faShoppingCart = faShoppingCart;
+  faCircleUser = faCircleUser;
   constructor
   (
     private router : Router,

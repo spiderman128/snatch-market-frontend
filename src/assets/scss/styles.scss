@@ -78,3 +78,35 @@
 // ----------------------------------------------------------------------------------------------
 
 // @import 'modules/_bootstrap.scss';
+body {
+    background-color: black;
+    color: white;
+    word-break: break-all!important;
+    
+}
+// scroll 
+.drag-scroll-content {
+    overflow: hidden!important;
+}
+// font-weight
+.fw-900 {
+    font-weight: 900!important;
+}
+.fw-800 {
+    font-weight: 800!important;
+}
+.fw-700 {
+    font-weight: 700!important;
+}
+.fw-600 {
+    font-weight: 600!important;
+}
+.fw-500 {
+    font-weight: 500!important;
+}
+.text-break {
+    white-space: initial!important;
+    text-align: left;
+}
+
+

@@ -1,11 +1,202 @@
 <app-page-layout>
-  <div class="container my-3">
+  <div class="container-fluid mt-2 mx-0 px-0">
 
     <app-progress-bar *ngIf="isLoading"></app-progress-bar>
 
     <ng-container *ngIf="!isLoading">
-      <div class="text-center">
-        Let's start the project!
+      <!-- top panel -->
+      <div class="top-panel text-center">
+        <div>
+          <img src="assets/img/project/top-panel.png" class="top-panel-backimg" />
+        </div>
+        <div class="fw-900 landing-text lh-sm pt-5">
+          Play
+          <br>
+          & Snatch
+        </div>
+        <div class="d-grid mx-auto mt-3" [style.width]="'9rem'">
+          <image-button [text]="'play now'"></image-button>
+        </div>
+
+      </div>
+
+      <!-- Three ways to win panel  -->
+
+      <div class="three-ways-wrapper px-0 mx-0 mt-0 py-4 text-center">
+        <h1 class=" text-dark fw-800 py-4 ">
+          Three Ways To Win
+        </h1>
+        <div class="d-grid col-7 mx-auto pb-4">
+          <div class="row row-cols-1 row-cols-md-3 g-5">
+            <div class="col">
+              <div class="card h-100 bg-dark text-white rounded-4 shadow">
+                <img src="/assets/img/project/card-background.png" class="card-img rounded-4" alt="...">
+                <div class="card-img-overlay d-flex flex-column p-0 m-0">
+                  <h4 class="card-title fw-900 py-4">Spin The <br> Wheel</h4>
+                  <div
+                    class="card-body-content flex-fill position-relative d-flex justify-content-center align-items-end">
+                    <img src="assets/img/project/spin-wheel.png" class="three-game-image rounded-top rounded-4" />
+                    <div class="mb-3" [style.width]="'9rem'">
+                      <image-button [text]="'play now'"></image-button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 bg-dark text-white rounded-4 shadow">
+                <img src="/assets/img/project/card-background.png" class="card-img rounded-4" alt="...">
+                <div class="card-img-overlay d-flex flex-column p-0 m-0">
+                  <h4 class="card-title fw-900 py-4">Scratch <br>& Snatch</h4>
+                  <div
+                    class="card-body-content flex-fill position-relative d-flex justify-content-center align-items-end">
+                    <img src="assets/img/project/snatch.png" class="three-game-image rounded-top rounded-4" />
+                    <div class="mb-3" [style.width]="'9rem'">
+                      <image-button [text]="'play now'"></image-button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 bg-dark text-white rounded-4 shadow">
+                <img src="/assets/img/project/card-background.png" class="card-img rounded-4" alt="...">
+                <div class="card-img-overlay d-flex flex-column p-0 m-0">
+                  <h4 class="card-title fw-900 py-4">Play A <br> Card</h4>
+                  <div
+                    class="card-body-content flex-fill position-relative d-flex justify-content-center align-items-end">
+                    <img src="assets/img/project/pick-card.png" class="three-game-image rounded-top rounded-4" />
+                    <div class="mb-3" [style.width]="'9rem'">
+                      <image-button [text]="'play now'"></image-button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- New Reward Collection Panel -->
+
+      <div class="new-reward-collection px-0 mx-0 mt-4 py-4 text-center">
+        <h1 class="text-white fw-900 py-4">
+          New Reward Collections
+        </h1>
+        <div class="scroll-wrapper pb-5 mb-5">
+          <drag-scroll #nav [scroll-x-wheel-enabled]="true">
+            <div class="container-fluid px-5">
+              <div drag-scroll-item class="px-2" [style.width]="'19rem'">
+                <reward-collection-card></reward-collection-card>
+              </div>
+              <div drag-scroll-item class="px-2" [style.width]="'19rem'">
+                <reward-collection-card></reward-collection-card>
+              </div>
+              <div drag-scroll-item class="px-2" [style.width]="'19rem'">
+                <reward-collection-card></reward-collection-card>
+              </div>
+              <div drag-scroll-item class="px-2" [style.width]="'19rem'">
+                <reward-collection-card></reward-collection-card>
+              </div>
+              <div drag-scroll-item class="px-2" [style.width]="'19rem'">
+                <reward-collection-card></reward-collection-card>
+              </div>
+              <div drag-scroll-item class="px-2" [style.width]="'19rem'">
+                <reward-collection-card></reward-collection-card>
+              </div>
+              <div drag-scroll-item class="px-2" [style.width]="'19rem'">
+                <reward-collection-card></reward-collection-card>
+              </div>
+              <div drag-scroll-item class="px-2" [style.width]="'19rem'">
+                <reward-collection-card></reward-collection-card>
+              </div>
+              <div drag-scroll-item class="px-2" [style.width]="'19rem'">
+                <reward-collection-card></reward-collection-card>
+              </div>
+              <div drag-scroll-item class="px-2" [style.width]="'19rem'">
+                <reward-collection-card></reward-collection-card>
+              </div>
+            </div>
+          </drag-scroll>
+        </div>
+
+      </div>
+
+      <!-- process panel -->
+      <div class="process-panel text-center">
+        <h3 class="text-dark fw-900 py-4">
+          The Process
+        </h3>
+        <div class="scroll-wrapper pb-5">
+          <drag-scroll #nav [scroll-x-wheel-enabled]="true">
+            <div class="container-fluid px-5 mb-5">
+              <div drag-scroll-item class="mx-5" [style.width]="'19rem'">
+                <process-card [type]="'lock'" [index]="1" [buttonText]="'sign up'"></process-card>
+              </div>
+              <div drag-scroll-item class="mx-5" [style.width]="'19rem'">
+                <process-card [type]="'finger'" [index]="2" [buttonText]="'play now'"></process-card>
+              </div>
+              <div drag-scroll-item class="mx-5" [style.width]="'19rem'">
+                <process-card [noImage]="true" [index]="3" [buttonText]="'Manage Rewards'"></process-card>
+              </div>
+            </div>
+          </drag-scroll>
+        </div>
+      </div>
+
+      <!-- new reward drop panel -->
+      <div class="new-reward-drop-panel text-dark px-0 mx-0 py-4 text-center">
+        <h1 class="fw-900 py-4">
+          New Reward Drops
+        </h1>
+        <div class="scroll-wrapper pb-5">
+          <drag-scroll #nav [scroll-x-wheel-enabled]="true">
+            <div class="container-fluid px-5">
+              <div drag-scroll-item class="mx-2" [style.width]="'19rem'" *ngFor="let perRewardDrop of rewardDropsData;">
+                <reward-drop-card [data]="perRewardDrop"></reward-drop-card>
+              </div>
+              <div drag-scroll-item class="mx-2" [style.width]="'19rem'" *ngFor="let perRewardDrop of rewardDropsData;">
+                <reward-drop-card [data]="perRewardDrop"></reward-drop-card>
+              </div>
+            </div>
+          </drag-scroll>
+        </div>
+
+        <div class="mx-auto my-3" [style.width]="'12rem'">
+          <image-button [text]="'view rewards'"></image-button>
+        </div>
+      </div>
+
+      <!-- Play to earn more -->
+      <div class="play-to-earn px-0 mx-0 pb-5">
+        <div class="play-board rounded-4 position-relative text-center d-flex flex-column justify-content-around align-items-center">
+          <img src="assets/img/project/play_to_earn/1.png" class="playboard-coin-1" />
+          <img src="assets/img/project/play_to_earn/2.png" class="playboard-coin-2" />
+          <img src="assets/img/project/play_to_earn/3.png" class="playboard-coin-3" />
+
+          <div class="fs-1 fw-900 lh-sm" [style.z-index]="10">
+            Play More <br> To Earn More <br> Snatcheroos
+          </div>
+          <div class="mx-auto my-3" [style.width]="'12rem'">
+            <image-button [text]="'learn more'"></image-button>
+          </div>
+        </div>
+      </div>
+
+      <!-- release your business panel -->
+      <div class="release-business-panel px-0 mx-0 pb-5">
+        <div class="release-business-board rounded-4 position-relative text-center d-flex flex-column justify-content-center align-items-center">
+          <img src="assets/img/project/release_business/1.png" class="playboard-coin-1" />
+          <img src="assets/img/project/release_business/2.png" class="playboard-coin-3" />
+
+          <div class="fs-1 fw-900 lh-sm text-dark">
+            Release your business <br> Rewards on Snatch
+          </div>
+          <div class="mx-auto my-3" [style.width]="'12rem'">
+            <image-button [text]="'join us now'"></image-button>
+          </div>
+        </div>
       </div>
     </ng-container>
 

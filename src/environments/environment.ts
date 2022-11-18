@@ -15,7 +15,7 @@ const baseUrl = scheme + host + port + path;
 export const environment = {
   production      : false,
   version         : EnvName.VERSION,
-  appName         : 'EasyAngular',
+  appName         : 'Snatch',
   envName         : EnvName.LOCAL,
   defaultLanguage : 'en',
   apiBaseUrl      : baseUrl,

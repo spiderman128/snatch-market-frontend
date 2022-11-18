@@ -1,0 +1,25 @@
+<div class="card reward-drop-card-wrapper text-center rounded-4 border-0">
+    <div class="p-3">
+        <img [src]="data.image" class="card-img-top image-fluid mx-auto rounded-4" alt="card image">
+    </div>
+    <div class="card-body text-dark p-3">
+        <div class="row text-break">
+            <div class="col-1"></div>
+            <div class="col-7">
+                <p class="text-break fw-bold mb-0" [style.font-size]="'12px'">
+                    {{data.title}}
+                </p>
+                <p class="text-break fw-bold mb-0" [style.font-size]="'12px'">
+                    {{data.tag}}
+                </p>
+            </div>
+            <div class="col-4 text-center">
+                <div class="fw-800" [style.font-size]="'12px'">Draw Fee</div>
+                <div class="d-grid gap-2 px-3">
+                    <div class="btn btn-outline-warning btn-sm">{{data.fee}}$</div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 .navbar-brand {
   img {
-    width: 38px;
+    width: 100px;
     display: inline-block;
     vertical-align: middle;
   }
@@ -16,5 +16,10 @@
         font-size: 71%;
       }
     }
+  }
+}
+.right-navbar {
+  .nav-link {
+    font-size: 1.5rem;
   }
 }

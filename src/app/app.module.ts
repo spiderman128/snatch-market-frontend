@@ -28,6 +28,8 @@ import { AppComponent }         from './app.component';
 
 // Factories
 import { appInitFactory }       from '@factories/app-init.factory';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 @NgModule({
   imports: [
@@ -50,7 +52,8 @@ import { appInitFactory }       from '@factories/app-init.factory';
     // Internal modules
     SharedModule,
     StaticModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule,
   ],
   declarations: [
     AppComponent

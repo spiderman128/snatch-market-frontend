@@ -1,0 +1,20 @@
+<div class="card process-card-wrapper text-center rounded-4 border-0">
+    <div class="row g-0 py-2 d-flex justify-content-center align-items-center">
+        <div class="col-md-2">
+            <div class="fs-1 text-dark">{{index}}</div>
+        </div>
+        <div class="text-center" [ngClass]="[noImage ? 'col-md-10' : 'col-md-7']">
+            <div class="card-body text-dark">
+                <h5 class="card-title fw-900" *ngIf="!noImage && type=='lock'">Join Us <br> To Start</h5>
+                <h5 class="card-title fw-900" *ngIf="!noImage && type=='finger'">Select The <br> Company</h5>
+                <h5 class="card-title fw-900" *ngIf="noImage">Go To Profile<br> & See Rewards</h5>
+                <div class="mx-auto" [style.width]="'9rem'">
+                    <image-button [text]="buttonText" [size]="'sm'"></image-button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3" *ngIf="!noImage">
+            <img [src]="imgUrl" class="img-fluid" alt="process image">
+        </div>
+    </div>
+</div>

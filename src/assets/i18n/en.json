@@ -20,5 +20,7 @@
   "ALERT_DELETE_ENTRY" : "Are you sure you want to delete this entry?",
   "RESET_PASSWORD"     : "Reset password",
   "FIELD_REQUIRED"     : "This field is required",
-  "FIELD_EMAIL"        : "This field must be an email"
+  "FIELD_EMAIL"        : "This field must be an email",
+  "EXPLORER_REWARD"    : "explorer rewards",
+  "BLIND_BID_ON_MEGA_REWARD" : "blind bid on mega reward"
 }

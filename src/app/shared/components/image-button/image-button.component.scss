@@ -1,0 +1,26 @@
+.image-button {
+    --height: 3.5rem;
+    position: relative;
+    height: var(--height);
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        object-fit: contain;
+        cursor: pointer;
+    }
+    .img-button-text {
+        position: absolute;
+        left: 50%;
+        top: 45%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        width: 100%;
+        text-shadow: 1px 1px 2px black;
+        -webkit-text-stroke: 1.2px black;
+        letter-spacing: 1px;
+    }
+}
