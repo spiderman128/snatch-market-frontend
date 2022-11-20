@@ -11,35 +11,6 @@ import { DragScrollComponent } from "ngx-drag-scroll";
 })
 export class HomeComponent implements OnInit {
 
-  @ViewChild('carousel') carousel: any;
-  slides: Array<Object> = [
-    {
-      src: 'assets/img/project/top-panel-carousel/1.png'
-    },
-    {
-      src: 'assets/img/project/top-panel-carousel/2.png'
-    },
-    {
-      src: 'assets/img/project/top-panel-carousel/3.png'
-    },
-    {
-      src: 'assets/img/project/top-panel-carousel/4.png'
-    },
-  ];
-  options: Object = {
-    clicking: true,
-    sourceProp: 'src',
-    visible: 7,
-    perspective: 1,
-    startSlide: 0,
-    border: 3,
-    dir: 'ltr',
-    width: 360,
-    height: 270,
-    space: 220,
-    autoRotationSpeed: 5000,
-    loop: true
-  }
   public isLoading: boolean = true;
 
   @ViewChild('nav', { read: DragScrollComponent }) ds!: DragScrollComponent;
