@@ -132,13 +132,16 @@
     margin: auto;
     margin-top: 15px;
 }
-#slider label img {
+#slider .slider-image-wrapper img {
     width: 85%;
     // height: 85%;
     position: absolute;
     left: 50%;
     top: 25%;
     transform: translate(-50%, -50%);
+}
+.slider-card-footer img {
+    border: 1px solid orange;
 }
 #s1:checked~#slide4,
 #s2:checked~#slide5,
@@ -183,4 +186,8 @@
 #s5:checked~#slide2 {
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .37);
     transform : translate3d(40vw, 0, -200px);
+}
+
+.slider-card-footer {
+    height: 75px;
 }
