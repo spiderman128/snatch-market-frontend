@@ -19,7 +19,7 @@ import { NgxCarousel3dModule }  from 'ngx-carousel-3d';
     HomeRoutingModule,
     SharedModule,
     DragScrollModule,
-    NgxCarousel3dModule
+    NgxCarousel3dModule,
   ],
   declarations :
   [

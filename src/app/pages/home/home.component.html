@@ -17,7 +17,13 @@
         <div class="d-grid mx-auto mt-3" [style.width]="'9rem'">
           <image-button [text]="'play now'"></image-button>
         </div>
-
+        <div class="carousel-wrapper">
+          <ngx-carousel-3d [slides]="slides" [options]="options" class="col-12" #carousel>
+            <ngx-carousel-3d-slide *ngFor="let slide of slides; let i = index" (click)="slideClicked(i)">
+              <img class="slide-img" src="{{slide.src}}" alt="" />
+            </ngx-carousel-3d-slide>
+          </ngx-carousel-3d>
+        </div>
       </div>
 
       <!-- Three ways to win panel  -->
@@ -170,7 +176,8 @@
 
       <!-- Play to earn more -->
       <div class="play-to-earn px-0 mx-0 pb-5">
-        <div class="play-board rounded-4 position-relative text-center d-flex flex-column justify-content-around align-items-center">
+        <div
+          class="play-board rounded-4 position-relative text-center d-flex flex-column justify-content-around align-items-center">
           <img src="assets/img/project/play_to_earn/1.png" class="playboard-coin-1" />
           <img src="assets/img/project/play_to_earn/2.png" class="playboard-coin-2" />
           <img src="assets/img/project/play_to_earn/3.png" class="playboard-coin-3" />
@@ -186,7 +193,8 @@
 
       <!-- release your business panel -->
       <div class="release-business-panel px-0 mx-0 pb-5">
-        <div class="release-business-board rounded-4 position-relative text-center d-flex flex-column justify-content-center align-items-center">
+        <div
+          class="release-business-board rounded-4 position-relative text-center d-flex flex-column justify-content-center align-items-center">
           <img src="assets/img/project/release_business/1.png" class="playboard-coin-1" />
           <img src="assets/img/project/release_business/2.png" class="playboard-coin-3" />
 
