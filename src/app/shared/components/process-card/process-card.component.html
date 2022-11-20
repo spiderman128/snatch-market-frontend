@@ -1,9 +1,9 @@
 <div class="card process-card-wrapper text-center rounded-4 border-0">
     <div class="row g-0 py-2 d-flex justify-content-center align-items-center">
-        <div class="col-md-2">
+        <div class="col-md-2 col-sm-2">
             <div class="fs-1 text-dark">{{index}}</div>
         </div>
-        <div class="text-center" [ngClass]="[noImage ? 'col-md-10' : 'col-md-7']">
+        <div class="text-center" [ngClass]="[noImage ? 'col-md-10 col-sm-10' : 'col-md-7 col-sm-7']">
             <div class="card-body text-dark">
                 <h5 class="card-title fw-900" *ngIf="!noImage && type=='lock'">Join Us <br> To Start</h5>
                 <h5 class="card-title fw-900" *ngIf="!noImage && type=='finger'">Select The <br> Company</h5>
@@ -13,7 +13,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3" *ngIf="!noImage">
+        <div class="col-md-3 col-sm-3" *ngIf="!noImage">
             <img [src]="imgUrl" class="img-fluid" alt="process image">
         </div>
     </div>
