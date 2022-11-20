@@ -10,8 +10,6 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent }     from './home.component';
 // drag scroll 
 import { DragScrollModule } from 'ngx-drag-scroll';
-import { NgxCarousel3dModule }  from 'ngx-carousel-3d';
-
 @NgModule({
   imports :
   [
@@ -19,7 +17,6 @@ import { NgxCarousel3dModule }  from 'ngx-carousel-3d';
     HomeRoutingModule,
     SharedModule,
     DragScrollModule,
-    NgxCarousel3dModule,
   ],
   declarations :
   [

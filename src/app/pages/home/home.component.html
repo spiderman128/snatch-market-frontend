@@ -18,11 +18,6 @@
           <image-button [text]="'play now'"></image-button>
         </div>
         <div class="carousel-wrapper">
-          <ngx-carousel-3d [slides]="slides" [options]="options" class="col-12" #carousel>
-            <ngx-carousel-3d-slide *ngFor="let slide of slides; let i = index" (click)="slideClicked(i)">
-              <img class="slide-img" src="{{slide.src}}" alt="" />
-            </ngx-carousel-3d-slide>
-          </ngx-carousel-3d>
         </div>
       </div>
 
