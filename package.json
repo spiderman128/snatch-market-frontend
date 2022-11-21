@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "heroku-postbuild": "ng build — prod",
     "add-page": "ng g m pages/page-name --routing && ng g component pages/page-name --skip-tests"
   },
   "private": true,
@@ -31,9 +32,11 @@
     "@popperjs/core": "^2.11.2",
     "angular-svg-icon": "^14.0.0",
     "bootstrap": "^5.2.2",
+    "express": "^4.18.2",
     "gretchen": "^1.5.0",
     "jquery": "^3.6.1",
     "ngx-drag-scroll": "^14.0.1",
+    "path": "^0.12.7",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -51,5 +54,6 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.7.3"
-  }
+  },
+  "engines": { "node": "16.13.0", "npm": "8.1.0" }
 }
