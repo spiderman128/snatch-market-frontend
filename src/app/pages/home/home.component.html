@@ -259,13 +259,13 @@
         <div class="scroll-wrapper pb-5">
           <drag-scroll #nav [scroll-x-wheel-enabled]="true">
             <div class="container-fluid px-5 mb-5">
-              <div drag-scroll-item class="mx-5" [style.width]="'19rem'">
+              <div drag-scroll-item class="mx-5" [style.width]="'22rem'">
                 <process-card [type]="'lock'" [index]="1" [buttonText]="'sign up'"></process-card>
               </div>
-              <div drag-scroll-item class="mx-5" [style.width]="'19rem'">
+              <div drag-scroll-item class="mx-5" [style.width]="'22rem'">
                 <process-card [type]="'finger'" [index]="2" [buttonText]="'play now'"></process-card>
               </div>
-              <div drag-scroll-item class="mx-5" [style.width]="'19rem'">
+              <div drag-scroll-item class="mx-5" [style.width]="'22rem'">
                 <process-card [noImage]="true" [index]="3" [buttonText]="'Manage Rewards'"></process-card>
               </div>
             </div>
@@ -304,7 +304,7 @@
           <img src="assets/img/project/play_to_earn/2.png" class="playboard-coin-2" />
           <img src="assets/img/project/play_to_earn/3.png" class="playboard-coin-3" />
 
-          <div class="fs-1 fw-900 lh-sm" [style.z-index]="10">
+          <div class="fw-900 lh-sm" [style.z-index]="10" [style.font-size]="'3.5rem'">
             Play More <br> To Earn More <br> Snatcheroos
           </div>
           <div class="mx-auto my-3" [style.width]="'12rem'">
@@ -315,12 +315,11 @@
 
       <!-- release your business panel -->
       <div class="release-business-panel px-0 mx-0 pb-5">
-        <div
-          class="release-business-board rounded-4 position-relative text-center d-flex flex-column justify-content-center align-items-center">
-          <img src="assets/img/project/release_business/1.png" class="playboard-coin-1" />
-          <img src="assets/img/project/release_business/2.png" class="playboard-coin-3" />
+        <div class="release-business-board rounded-4 position-relative text-center d-flex flex-column justify-content-center align-items-center">
+          <img src="assets/img/project/release_business/1.png" class="release-panel-coin-1" />
+          <img src="assets/img/project/release_business/2.png" class="release-panel-coin-2" />
 
-          <div class="fs-1 fw-900 lh-sm text-dark">
+          <div class="fw-900 lh-sm text-dark" [style.font-size]="'3rem'">
             Release your business <br> Rewards on Snatch
           </div>
           <div class="mx-auto my-3" [style.width]="'12rem'">

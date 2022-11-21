@@ -38,6 +38,7 @@
     "ngx-drag-scroll": "^14.0.1",
     "path": "^0.12.7",
     "rxjs": "~7.5.0",
+    "scratchcard-js": "^1.4.10",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
@@ -55,5 +56,8 @@
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.7.3"
   },
-  "engines": { "node": "16.13.0", "npm": "8.1.0" }
+  "engines": {
+    "node": "16.13.0",
+    "npm": "8.1.0"
+  }
 }

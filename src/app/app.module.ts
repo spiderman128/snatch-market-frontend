@@ -56,7 +56,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FontAwesomeModule,
   ],
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   providers: [
     // External modules

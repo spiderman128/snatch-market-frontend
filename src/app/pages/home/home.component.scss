@@ -1,9 +1,9 @@
 .top-panel {
-    height: 810px;
+    height    : 810px;
     min-height: 810px;
-    width   : 100%;
-    position: relative;
-    overflow: hidden;
+    width     : 100%;
+    position  : relative;
+    overflow  : hidden;
 
     .top-panel-backimg {
         position: absolute;
@@ -86,11 +86,25 @@
 }
 
 .release-business-panel {
-    height          : 480px;
+    height          : 400px;
     width           : 100%;
-    background-color: white;
+    background-color: #f5f5f5;
+    overflow-x: hidden;
 }
-
+.release-panel-coin-1 {
+    position: absolute;
+    left    : -1.5rem;
+    top     : 55%;
+    width   : 180px;
+    height  : 180px;
+}
+.release-panel-coin-2 {
+    position: absolute;
+    right   : -5rem;
+    top     : 10%;
+    width   : 200px;
+    height  : 200px;
+}
 .release-business-board {
     height      : 100%;
     margin-left : 4rem !important;
@@ -112,37 +126,78 @@
 }
 
 #slider label {
-    margin       : auto;
-    width        : 300px;
-    height       : 350px;
-    border-radius: 10px;
-    position     : absolute;
-    left         : 0;
-    right        : 0;
-    cursor       : pointer;
-    transition   : transform 0.4s ease;
+    margin          : auto;
+    width           : 300px;
+    height          : 350px;
+    border-radius   : 10px;
+    position        : absolute;
+    left            : 0;
+    right           : 0;
+    cursor          : pointer;
+    transition      : transform 0.4s ease;
     background-color: white;
 }
 
 #slider .slider-image-wrapper {
-    background: #a5fda5;
+    background   : #a5fda5;
     border-radius: 10px;
-    width: 270px;
-    height: 260px;
-    margin: auto;
-    margin-top: 15px;
+    width        : 270px;
+    height       : 260px;
+    margin       : auto;
+    margin-top   : 15px;
 }
+
 #slider .slider-image-wrapper img {
-    width: 85%;
-    // height: 85%;
-    position: absolute;
-    left: 50%;
-    top: 25%;
-    transform: translate(-50%, -50%);
+    opacity  : 0;
+    width    : 100%;
+    height: 340px;
+    position : absolute;
+    left     : 0;
+    top      : -5rem;
 }
+
 .slider-card-footer img {
     border: 1px solid orange;
 }
+
+#s1:checked~#slide1,
+#s2:checked~#slide2,
+#s3:checked~#slide3,
+#s4:checked~#slide4,
+#s5:checked~#slide5 {
+    .slider-image-wrapper {
+        position: relative;
+
+        img {
+            opacity           : 1;
+            -webkit-transition: opacity 1s ease-in-out;
+            -moz-transition   : opacity 1s ease-in-out;
+            -ms-transition    : opacity 1s ease-in-out;
+            -o-transition     : opacity 1s ease-in-out;
+            transition        : opacity 1s ease-in-out;
+            animation         : zoom-in-zoom-out 1s ease 1;
+        }
+    }
+}
+
+
+
+@keyframes zoom-in-zoom-out {
+    0% {
+        transform: scale(0.5, 0.5);
+        position : absolute;
+        left     : 0;
+        top      : 0;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        position : absolute;
+        left     : 0;
+        top      : -5rem;
+    }
+}
+
 #s1:checked~#slide4,
 #s2:checked~#slide5,
 #s3:checked~#slide1,

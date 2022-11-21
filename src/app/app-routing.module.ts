@@ -15,6 +15,10 @@ const routes : Routes = [
     path         : 'home',
     loadChildren : () => import('./pages/home/home.module').then(m => m.HomeModule),
   },
+  {
+    path         : 'game/snatch',
+    loadChildren : () => import('./pages/game/snatch/snatch.module').then(m => m.SnatchModule),
+  },
   { path : '',   redirectTo : '/home', pathMatch : 'full' },
   { path : '**', component : NotFoundComponent }
 ];
