@@ -96,11 +96,8 @@ export class AppService extends MainService
     const url  = "Collections/GetNewRewardCollection";
     const opts = this.prepareRequest(null, 'GET', 'AppService : getNewRewardCollection', false );
     const { data } = await gretch<any, any>(url, opts).json();
-    console.log("data", data);
     if (!data)
       return false;
-
-    
     return data;
   }
 }

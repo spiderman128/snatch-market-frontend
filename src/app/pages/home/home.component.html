@@ -1,4 +1,4 @@
-<app-page-layout>
+<app-page-layout [isLoading]="isLoading" [headerTheme]="'dark'">
   <div class="container-fluid mt-2 mx-0 px-0">
 
     <app-progress-bar *ngIf="isLoading"></app-progress-bar>
@@ -215,35 +215,29 @@
         <div class="scroll-wrapper pb-5 mb-5">
           <drag-scroll #nav [scroll-x-wheel-enabled]="true">
             <div class="container-fluid px-5">
-              <div drag-scroll-item class="px-2" [style.width]="'19rem'">
-                <reward-collection-card></reward-collection-card>
+              <div drag-scroll-item class="px-2" [style.width]="'19rem'" *ngFor="let perNRewardItem of newRewardCollections;">
+                <reward-collection-card [data]="perNRewardItem"></reward-collection-card>
               </div>
-              <div drag-scroll-item class="px-2" [style.width]="'19rem'">
-                <reward-collection-card></reward-collection-card>
+              <div drag-scroll-item class="px-2" [style.width]="'19rem'" *ngFor="let perNRewardItem of newRewardCollections;">
+                <reward-collection-card [data]="perNRewardItem"></reward-collection-card>
               </div>
-              <div drag-scroll-item class="px-2" [style.width]="'19rem'">
-                <reward-collection-card></reward-collection-card>
+              <div drag-scroll-item class="px-2" [style.width]="'19rem'" *ngFor="let perNRewardItem of newRewardCollections;">
+                <reward-collection-card [data]="perNRewardItem"></reward-collection-card>
               </div>
-              <div drag-scroll-item class="px-2" [style.width]="'19rem'">
-                <reward-collection-card></reward-collection-card>
+              <div drag-scroll-item class="px-2" [style.width]="'19rem'" *ngFor="let perNRewardItem of newRewardCollections;">
+                <reward-collection-card [data]="perNRewardItem"></reward-collection-card>
               </div>
-              <div drag-scroll-item class="px-2" [style.width]="'19rem'">
-                <reward-collection-card></reward-collection-card>
+              <div drag-scroll-item class="px-2" [style.width]="'19rem'" *ngFor="let perNRewardItem of newRewardCollections;">
+                <reward-collection-card [data]="perNRewardItem"></reward-collection-card>
               </div>
-              <div drag-scroll-item class="px-2" [style.width]="'19rem'">
-                <reward-collection-card></reward-collection-card>
+              <div drag-scroll-item class="px-2" [style.width]="'19rem'" *ngFor="let perNRewardItem of newRewardCollections;">
+                <reward-collection-card [data]="perNRewardItem"></reward-collection-card>
               </div>
-              <div drag-scroll-item class="px-2" [style.width]="'19rem'">
-                <reward-collection-card></reward-collection-card>
+              <div drag-scroll-item class="px-2" [style.width]="'19rem'" *ngFor="let perNRewardItem of newRewardCollections;">
+                <reward-collection-card [data]="perNRewardItem"></reward-collection-card>
               </div>
-              <div drag-scroll-item class="px-2" [style.width]="'19rem'">
-                <reward-collection-card></reward-collection-card>
-              </div>
-              <div drag-scroll-item class="px-2" [style.width]="'19rem'">
-                <reward-collection-card></reward-collection-card>
-              </div>
-              <div drag-scroll-item class="px-2" [style.width]="'19rem'">
-                <reward-collection-card></reward-collection-card>
+              <div drag-scroll-item class="px-2" [style.width]="'19rem'" *ngFor="let perNRewardItem of newRewardCollections;">
+                <reward-collection-card [data]="perNRewardItem"></reward-collection-card>
               </div>
             </div>
           </drag-scroll>

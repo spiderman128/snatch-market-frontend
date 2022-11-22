@@ -1,5 +1,5 @@
-<app-layout-header>
+<app-layout-header [theme]="headerTheme">
 
   <ng-content></ng-content>
-  <app-layout-footer></app-layout-footer>
+  <app-layout-footer *ngIf="!isLoading"></app-layout-footer>
 </app-layout-header>

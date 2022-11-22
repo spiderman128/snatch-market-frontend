@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { NewRewardCollection } from '@interfaces/newrewardcollection';
 
 @Component({
   selector: 'reward-collection-card',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RewardCollectionCardComponent implements OnInit {
 
+  @Input() data: NewRewardCollection = {};
   constructor() { }
 
   ngOnInit(): void {
+    // console.log("personal data is here", this.data);
   }
 
 }

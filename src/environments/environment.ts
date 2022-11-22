@@ -9,7 +9,7 @@ import { EnvName } from '@enums/environment.enum';
 // const host   = 'localhost';
 // const port   = ':5000';
 // const path   = '/api/';
-const scheme = 'http://';
+const scheme = 'https://';
 const host   = 'snatchmarketplace.azurewebsites.net/';
 const port   = ':5000';
 const path   = '/api/';

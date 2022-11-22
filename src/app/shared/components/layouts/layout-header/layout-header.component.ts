@@ -1,5 +1,5 @@
 // Angular modules
-import { Component }   from '@angular/core';
+import { Component, Input }   from '@angular/core';
 import { OnInit }      from '@angular/core';
 import { Router }      from '@angular/router';
 
@@ -16,6 +16,8 @@ import { environment } from '@env/environment';
 })
 export class LayoutHeaderComponent implements OnInit
 {
+  @Input() theme : 'light' | 'dark' = 'dark';
+
   public appName         : string  = environment.appName;
   public isMenuCollapsed : boolean = true;
 

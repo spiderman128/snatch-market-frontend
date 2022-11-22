@@ -2,8 +2,8 @@ export interface NewRewardCollection {
     id?:               number;
     title?:            string;
     drawFee?:          number;
-    merchantImageURL?: string;
-    artImageURL?:      string;
+    merchantImageUrl?: string;
+    artImageUrl?:      string;
     rewardsLeft?:      number;
 }
 // Converts JSON strings to/from your types

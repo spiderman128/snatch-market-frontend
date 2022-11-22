@@ -1,5 +1,5 @@
 // Angular modules
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { OnInit }    from '@angular/core';
 
 @Component({
@@ -9,6 +9,8 @@ import { OnInit }    from '@angular/core';
 })
 export class PageLayoutComponent implements OnInit
 {
+  @Input() isLoading : boolean = false;
+  @Input() headerTheme : 'light' | 'dark' = 'dark';
   constructor()
   {
 
