@@ -10,7 +10,7 @@ export class ImageButtonComponent implements OnInit {
   @ViewChild("imageButtonElement", { static: true }) private imageButtonElement!: ElementRef<HTMLDivElement>;
 
   @Input() text: string = "Play Now";
-  @Input() size: string = 'normal';
+  @Input() size: string = 'md';
   @Output() onClick: EventEmitter<any> = new EventEmitter<any>();
   constructor() { }
 
@@ -19,6 +19,11 @@ export class ImageButtonComponent implements OnInit {
       this.imageButtonElement.nativeElement.style.setProperty('--height', '2.7rem');
       this.imageButtonElement.nativeElement.style.setProperty('--width', '2rem');
       this.imageButtonElement.nativeElement.style.setProperty('--font-size', '15px');
+    }
+    if (this.size == "lg") {
+      this.imageButtonElement.nativeElement.style.setProperty('--height', '3.8rem');
+      this.imageButtonElement.nativeElement.style.setProperty('--width', '3.5rem');
+      this.imageButtonElement.nativeElement.style.setProperty('--font-size', '30px');
     }
   }
 

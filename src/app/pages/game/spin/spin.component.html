@@ -1,6 +1,27 @@
-<app-page-layout>
-    <div class="bg-light text-dark py-5 text-center">
-        <image-button [text]="'Spin the wheel'"></image-button>
-        <div>You will be charged 100$</div>
+<app-page-layout [headerTheme]="'light'">
+  <div class="bg-light text-dark pt-5 text-center">
+    <div class="start-spin-button mx-auto">
+      <image-button
+        [text]="'Spin the wheel'"
+        (click)="calculatePrize()"
+        [size]="'lg'"
+      ></image-button>
     </div>
+
+    <div class="mt-3">You will be charged 100$</div>
+    <div class="spin-wrapper mt-5">
+      <div class="spin-mark">
+        <img src="/assets/img/project/game/spin/mark.png" width="80" />
+      </div>
+      <canvas
+        (click)="getSegment($event)"
+        class="spin-panel"
+        id="canvas"
+        [width]="spin_length * 2"
+        [height]="spin_length"
+      >
+        <p>Sorry, your browser doesn't support canvas. Please try another.</p>
+      </canvas>
+    </div>
+  </div>
 </app-page-layout>

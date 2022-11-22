@@ -12,16 +12,16 @@ const routes : Routes = [
     loadChildren : () => import('./pages/auth/auth.module').then(m => m.AuthModule),
   },
   {
-    path         : 'game/spin',
-    loadChildren : () => import('./pages/game/spin/spin.module').then(m => m.SpinModule),
-  },
-  {
     path         : 'home',
     loadChildren : () => import('./pages/home/home.module').then(m => m.HomeModule),
   },
   {
     path         : 'game/snatch',
     loadChildren : () => import('./pages/game/snatch/snatch.module').then(m => m.SnatchModule),
+  },
+  {
+    path         : 'game/spin',
+    loadChildren : () => import('./pages/game/spin/spin.module').then(m => m.SpinModule),
   },
   { path : '',   redirectTo : '/home', pathMatch : 'full' },
   { path : '**', component : NotFoundComponent }

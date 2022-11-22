@@ -34,6 +34,7 @@
     "bootstrap": "^5.2.2",
     "express": "^4.18.2",
     "gretchen": "^1.5.0",
+    "gsap": "^2.1.3",
     "jquery": "^3.6.1",
     "ngx-drag-scroll": "^14.0.1",
     "path": "^0.12.7",
