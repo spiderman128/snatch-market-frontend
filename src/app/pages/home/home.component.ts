@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit {
     // newRewards.array.forEach((element:NewRewardCollection) => {
     //   return this.newRewardCollections.push(element);
     // });
-    console.log(this.newRewardCollections);
+    console.log(newRewards);
     setTimeout(_ => {
       this.isLoading = false;
     }, 500);
