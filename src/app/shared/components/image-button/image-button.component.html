@@ -1,4 +1,9 @@
 <div class="image-button text-center mx-auto" (click)="onHandleClick()" #imageButtonElement>
-    <img src="assets/img/project/button.png" />
+    <!-- <img src="assets/img/project/button.png" /> -->
+    <div class="background-image-wrapper d-flex flex-row flex-wrap">
+        <div class="left-button-wrapper"></div>
+        <div class="repeat-button-wrapper flex-fill"></div>
+        <div class="right-button-wrapper"></div>
+    </div>
     <span class="img-button-text text-break text-center lh-sm fw-900 text-white">{{text | uppercase}}</span> 
 </div>

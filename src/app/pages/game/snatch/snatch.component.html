@@ -1,9 +1,109 @@
-<app-page-layout>
+<app-page-layout [headerTheme]="'light'">
     <div class="container-fluid snatch-container">
+        <div class="scroll-wrapper pt-3 pb-5">
+            <drag-scroll #nav [scroll-x-wheel-enabled]="true">
+                <div class="container-fluid px-5">
+                    <div drag-scroll-item class="mx-2">
+                        <div
+                            class="snatch-reward-item rounded-5 d-flex flex-column justify-content-center align-items-center">
+                            <p class="text-white">Lifetime Coffee</p>
+                            <p class="text-white">1 in 5000</p>
+                        </div>
+                    </div>
+                    <div drag-scroll-item class="mx-2">
+                        <div
+                            class="snatch-reward-item rounded-5 d-flex flex-column justify-content-center align-items-center">
+                            <p class="text-white">Coffee Every Monday</p>
+                            <p class="text-white">1 in 1000</p>
+                        </div>
+                    </div>
+                    <div drag-scroll-item class="mx-2">
+                        <div
+                            class="snatch-reward-item rounded-5 d-flex flex-column justify-content-center align-items-center">
+                            <p class="text-white">Coffee Every Monday</p>
+                            <p class="text-white">1 in 1000</p>
+                        </div>
+                    </div>
+                    <div drag-scroll-item class="mx-2">
+                        <div
+                            class="snatch-reward-item rounded-5 d-flex flex-column justify-content-center align-items-center">
+                            <p class="text-white">Coffee Every Monday</p>
+                            <p class="text-white">1 in 1000</p>
+                        </div>
+                    </div>
+                    <div drag-scroll-item class="mx-2">
+                        <div
+                            class="snatch-reward-item rounded-5 d-flex flex-column justify-content-center align-items-center">
+                            <p class="text-white">Coffee Every Monday</p>
+                            <p class="text-white">1 in 1000</p>
+                        </div>
+                    </div>
+                    <div drag-scroll-item class="mx-2">
+                        <div
+                            class="snatch-reward-item rounded-5 d-flex flex-column justify-content-center align-items-center">
+                            <p class="text-white">Coffee Every Monday</p>
+                            <p class="text-white">1 in 1000</p>
+                        </div>
+                    </div>
+                    <div drag-scroll-item class="mx-2">
+                        <div
+                            class="snatch-reward-item rounded-5 d-flex flex-column justify-content-center align-items-center">
+                            <p class="text-white">Coffee Every Monday</p>
+                            <p class="text-white">1 in 1000</p>
+                        </div>
+                    </div>
+                    <div drag-scroll-item class="mx-2">
+                        <div
+                            class="snatch-reward-item rounded-5 d-flex flex-column justify-content-center align-items-center">
+                            <p class="text-white">Coffee Every Monday</p>
+                            <p class="text-white">1 in 1000</p>
+                        </div>
+                    </div>
+                    <div drag-scroll-item class="mx-2">
+                        <div
+                            class="snatch-reward-item rounded-5 d-flex flex-column justify-content-center align-items-center">
+                            <p class="text-white">Coffee Every Monday</p>
+                            <p class="text-white">1 in 1000</p>
+                        </div>
+                    </div>
+                    <div drag-scroll-item class="mx-2">
+                        <div
+                            class="snatch-reward-item rounded-5 d-flex flex-column justify-content-center align-items-center">
+                            <p class="text-white">Coffee Every Monday</p>
+                            <p class="text-white">1 in 1000</p>
+                        </div>
+                    </div>
+                    <div drag-scroll-item class="mx-2">
+                        <div
+                            class="snatch-reward-item rounded-5 d-flex flex-column justify-content-center align-items-center">
+                            <p class="text-white">Coffee Every Monday</p>
+                            <p class="text-white">1 in 1000</p>
+                        </div>
+                    </div>
+                    <div drag-scroll-item class="mx-2">
+                        <div
+                            class="snatch-reward-item rounded-5 d-flex flex-column justify-content-center align-items-center">
+                            <p class="text-white">Coffee Every Monday</p>
+                            <p class="text-white">1 in 1000</p>
+                        </div>
+                    </div>
+                    <div drag-scroll-item class="mx-2">
+                        <div
+                            class="snatch-reward-item rounded-5 d-flex flex-column justify-content-center align-items-center">
+                            <p class="text-white">Lifetime Coffee</p>
+                            <p class="text-white">1 in 5000</p>
+                        </div>
+                    </div>
+                </div>
+            </drag-scroll>
+        </div>
         <div class="d-grid col-6 mx-auto g-5">
             <div class="sc__wrapper" [style.background]="'url(/assets/img/project/game/snatch/' + imageName + ')'">
                 <div id="js--sc--container"></div>
             </div>
+        </div>
+        <div class="d-grid mx-auto my-4" [style.width]="'40vw'">
+            <image-button [text]="'scratch & win'"></image-button>
         </div>
 
     </div>

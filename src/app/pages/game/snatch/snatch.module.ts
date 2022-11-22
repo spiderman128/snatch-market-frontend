@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { SnatchRoutingModule } from './snatch-routing.module';
 import { SnatchComponent } from './snatch.component';
 import { SharedModule } from 'src/app/shared/shared.module';
-
+import { DragScrollModule } from 'ngx-drag-scroll';
 
 @NgModule({
   declarations: [SnatchComponent],
@@ -12,7 +12,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     SnatchRoutingModule,
-    SharedModule
+    SharedModule,
+    DragScrollModule
   ]
 })
 export class SnatchModule { }

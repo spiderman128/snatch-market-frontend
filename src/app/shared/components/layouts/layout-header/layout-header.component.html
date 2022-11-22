@@ -1,8 +1,9 @@
 <!-- NOTE Navbar -->
-<nav class="navbar navbar-expand-lg" [ngClass]="theme == 'light' ? 'navbar-light' : 'navbar-dark'">
+<nav class="navbar navbar-expand-lg" [ngClass]="{'navbar-light text-dark' : theme == 'light', 'navbar-dark text-white' : theme =='dark' }">
   <div class="container-fluid px-5">
     <a class="navbar-brand" [routerLink]="['/']">
-      <img src="./assets/img/project/logo.png" [alt]="appName + ' Logo'" class="img-fluid me-2"/>
+      <img src="./assets/img/project/logo.png" *ngIf="theme=='dark'"  [alt]="appName + ' Logo'" class="img-fluid me-2"/>
+      <img src="./assets/img/project/logo-dark.png"  *ngIf="theme=='light'" [alt]="appName + ' Logo'" class="img-fluid me-2"/>
       <!-- {{ appName }} -->
     </a>
     <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,13 +33,22 @@
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 right-navbar">
 
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active']"><fa-icon [icon]="faSearch"></fa-icon></a>
+          <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active']">
+            <img src="./assets/img/project/navbar/search.png" width="24" *ngIf="theme=='dark'"  [alt]="appName + ' Logo'" class="img-fluid"/>
+            <img src="./assets/img/project/navbar/search-dark.png" width="24" *ngIf="theme=='light'" [alt]="appName + ' Logo'" class="img-fluid"/>
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active']"><fa-icon [icon]="faShoppingCart"></fa-icon></a>
+          <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active']">
+            <img src="./assets/img/project/navbar/cart.png" width="24" *ngIf="theme=='dark'"  [alt]="appName + ' Logo'" class="img-fluid"/>
+            <img src="./assets/img/project/navbar/cart-dark.png" width="24" *ngIf="theme=='light'" [alt]="appName + ' Logo'" class="img-fluid"/>
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active']"><fa-icon [icon]="faCircleUser"></fa-icon></a>
+          <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active']">
+            <img src="./assets/img/project/navbar/user.png" width="24" *ngIf="theme=='dark'"  [alt]="appName + ' Logo'" class="img-fluid"/>
+            <img src="./assets/img/project/navbar/user-dark.png" width="24" *ngIf="theme=='light'" [alt]="appName + ' Logo'" class="img-fluid"/>
+          </a>
         </li>
       </ul>
     </div>

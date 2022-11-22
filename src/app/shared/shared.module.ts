@@ -37,8 +37,6 @@ import { ProcessCardComponent } from './components/process-card/process-card.com
 import { RewardDropCardComponent } from './components/reward-drop-card/reward-drop-card.component';
 import { LayoutFooterComponent } from './components/layouts/layout-footer/layout-footer.component';
 
-
-
 @NgModule({
   imports:
     [

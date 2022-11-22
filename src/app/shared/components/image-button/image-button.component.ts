@@ -16,7 +16,9 @@ export class ImageButtonComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.size == "sm") {
-      this.imageButtonElement.nativeElement.style.setProperty('--height', '2.5rem');
+      this.imageButtonElement.nativeElement.style.setProperty('--height', '2.7rem');
+      this.imageButtonElement.nativeElement.style.setProperty('--width', '2rem');
+      this.imageButtonElement.nativeElement.style.setProperty('--font-size', '15px');
     }
   }
 

@@ -13,3 +13,21 @@
     background-size: 95% 90%!important;
     background-position: center!important;
 }
+
+// snatch reward itme
+.snatch-reward-item {
+    width: 10rem;
+    height: 2.5rem;
+    background-color: black;
+    font-family: app_font!important;
+    p.text-white {
+        font-size: 12px!important;
+        line-height: 1.2;
+        margin-bottom: 1px;
+    }
+
+}
+
+.scroll-wrapper {
+    cursor: pointer;
+}

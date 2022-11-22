@@ -1,8 +1,11 @@
 .image-button {
-    --height: 3.5rem;
+    --height: 3.4rem;
+    --width : 3rem;
+    --font-size : 18px;
     position: relative;
     height: var(--height);
-    img {
+    width: 100%;
+    .background-image-wrapper {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -11,6 +14,32 @@
         transform: translate(-50%, -50%);
         object-fit: contain;
         cursor: pointer;
+        .left-button-wrapper {
+            height: var(--height);
+            width: var(--width);
+            background-image: url('/assets/img/project/left-button.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+            margin-right: -2px;
+        }
+        .repeat-button-wrapper {
+            height: var(--height);
+            width: 1px;
+            background-image: url('/assets/img/project/repeat-button.png');
+            background-repeat: repeat-x;
+            background-position: center;
+            background-size: 100% 100%;
+        }
+        .right-button-wrapper {
+            height: var(--height);
+            width: var(--width);
+            background-image: url('/assets/img/project/right-button.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+            margin-left: -2px;
+        }
     }
     .img-button-text {
         position: absolute;
@@ -22,5 +51,6 @@
         text-shadow: 1px 1px 2px black;
         -webkit-text-stroke: 1px rgb(57, 57, 57);
         font-family: app_font!important;
+        font-size: var(--font-size);
     }
 }

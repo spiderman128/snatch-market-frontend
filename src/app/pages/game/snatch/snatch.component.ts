@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { DragScrollComponent } from 'ngx-drag-scroll';
 // @ts-ignore
 import { ScratchCard, SCRATCH_TYPE } from 'scratchcard-js';
 
@@ -9,6 +10,8 @@ import { ScratchCard, SCRATCH_TYPE } from 'scratchcard-js';
 })
 export class SnatchComponent implements OnInit {
 
+  @ViewChild('nav', { read: DragScrollComponent }) ds!: DragScrollComponent;
+  
   imageName = '1.png';
 
   scratchData = {
@@ -40,9 +43,9 @@ export class SnatchComponent implements OnInit {
   createNewScratchCard() {
     console.log(this.scratchData);
     const scContainer = document.getElementById('js--sc--container');
-    scContainer?.style.setProperty('height', scContainer!.offsetWidth * 0.8 + 'px');
+    scContainer?.style.setProperty('height', scContainer!.offsetWidth * 0.6 + 'px');
     this.scratchData.containerWidth = scContainer!.offsetWidth;
-    this.scratchData.containerHeight = scContainer!.offsetWidth * 0.8;
+    this.scratchData.containerHeight = scContainer!.offsetWidth * 0.6;
     const sc = new ScratchCard('#js--sc--container', this.scratchData);
     // Init
     sc.init()
