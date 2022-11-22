@@ -14,16 +14,15 @@ export class SpinComponent implements AfterViewInit {
   
 
   theWheel: any;
-  wheelPower = 0;
   wheelSpinning = false;
   winningSegment: string = "";
-  spin_length = Math.floor(Math.min(window.innerWidth, 840) * 0.35);
+  spin_length = Math.min(Math.floor(window.innerWidth * 0.35), 420);
 
   constructor() {
   }
   ngAfterViewInit(): void {
     this.theWheel = new Winwheel({
-      numSegments: 8,
+      numSegments: 1,
       outerRadius: this.spin_length,
       centerX: this.spin_length,
       centerY: this.spin_length,
@@ -38,6 +37,8 @@ export class SpinComponent implements AfterViewInit {
           {fillStyle: '#89f26e', text: 'Prize 6'},
           {fillStyle: '#7de6ef', text: 'Prize 7'},
           {fillStyle: '#e7706f', text: 'Prize 8'},
+          {fillStyle: '#7de6ef', text: 'Prize 9'},
+          {fillStyle: '#e7706f', text: 'Prize 10'},
         ],
       animation:
         {
@@ -57,7 +58,6 @@ export class SpinComponent implements AfterViewInit {
 
   startSpin(): void {
     if (this.wheelSpinning === false) {
-      this.wheelPower = 3;
       this.theWheel.animation.spins = 15;
     }
     this.theWheel.startAnimation(new TweenMax(new TimelineMax()));
