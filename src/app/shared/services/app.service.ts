@@ -88,4 +88,19 @@ export class AppService extends MainService
   // ----------------------------------------------------------------------------------------------
 
   // !SECTION Helpers
+
+  // ----- Collection Service
+
+  public async getNewRewardCollection() : Promise<any> 
+  {
+    const url  = "Collections/GetNewRewardCollection";
+    const opts = this.prepareRequest(null, 'GET', 'AppService : getNewRewardCollection', false );
+    const { data } = await gretch<any, any>(url, opts).json();
+    console.log("data", data);
+    if (!data)
+      return false;
+
+    
+    return data;
+  }
 }

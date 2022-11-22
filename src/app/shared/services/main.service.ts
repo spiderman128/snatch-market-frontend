@@ -19,12 +19,14 @@ export class MainService
   {
   }
 
-  public prepareRequest(body ?: any, method : 'GET' | 'POST' | 'PUT' | 'DELETE' = 'POST', from : string = '', headers: any = {}) : GretchOptions
+  public prepareRequest(body ?: any, method : 'GET' | 'POST' | 'PUT' | 'DELETE' = 'POST', from : string = '', credentials : boolean = true, headers: any = {}) : GretchOptions
   {
     // NOTE Prepare headers
     headers = Object.assign({
-      'Content-Type' : 'application/json',
-      'Accept'       : 'application/json'
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
     }, headers);
 
     // NOTE Add user token
@@ -35,7 +37,7 @@ export class MainService
     // // NOTE Prepare options
     var self = this;
     return {
-      credentials : 'include',
+      credentials : credentials ?'include' : 'omit',
       baseURL : environment.apiBaseUrl,
       method  : method,
       body    : body ? JSON.stringify(body) : null,

@@ -4,6 +4,10 @@ import { OnInit } from '@angular/core';
 
 import { DragScrollComponent } from "ngx-drag-scroll";
 
+// Services
+import { AppService } from '@services/app.service';
+import { NewRewardCollection, NewRewardCollectionConvert } from '@interfaces/newrewardcollection';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -35,15 +39,19 @@ export class HomeComponent implements OnInit {
       image: 'assets/img/project/reward_drops/1.png'
     }
   ];
-  constructor
-    (
-  ) { }
+  newRewardCollections: NewRewardCollection[] = [];
+  constructor(private appService: AppService) { }
 
   // -------------------------------------------------------------------------------
   // ---- NOTE Init ----------------------------------------------------------------
   // -------------------------------------------------------------------------------
 
-  public ngOnInit(): void {
+  public async ngOnInit(): Promise<void> {
+    const newRewards = await this.appService.getNewRewardCollection();
+    // newRewards.array.forEach((element:NewRewardCollection) => {
+    //   return this.newRewardCollections.push(element);
+    // });
+    console.log(this.newRewardCollections);
     setTimeout(_ => {
       this.isLoading = false;
     }, 500);
