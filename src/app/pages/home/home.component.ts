@@ -47,12 +47,18 @@ export class HomeComponent implements OnInit {
   // -------------------------------------------------------------------------------
 
   public async ngOnInit(): Promise<void> {
-    const newRewards = await this.appService.getNewRewardCollection();
-    newRewards.data.forEach((element:NewRewardCollection) => {
-      return this.newRewardCollections.push(element);
-    });
-    console.log(this.newRewardCollections);
-    this.isLoading = false;
+    try {
+      const newRewards = await this.appService.getNewRewardCollection();
+
+      newRewards.data.forEach((element: NewRewardCollection) => {
+        return this.newRewardCollections.push(element);
+      });
+      console.log(this.newRewardCollections);
+      this.isLoading = false;
+    } catch (error) {
+      this.isLoading = false;
+    }
+
   }
 
   // -------------------------------------------------------------------------------

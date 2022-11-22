@@ -6,3 +6,8 @@ footer {
     background-color: black;
     color: white;
 }
+@media screen and (max-width: 560px) {
+    .footer-title {
+        font-size: 14px!important;
+    }
+}

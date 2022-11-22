@@ -59,6 +59,12 @@
     background-color: black;
     margin-left     : 4rem !important;
     margin-right    : 4rem !important;
+
+}
+
+.play-board-title {
+    z-index  : 10 !important;
+    font-size: 3.5rem !important;
 }
 
 .playboard-coin-1 {
@@ -66,7 +72,7 @@
     left    : -3.5rem;
     top     : 40%;
     width   : 150px;
-    height  : 150px;
+    // height  : 150px;
 }
 
 .playboard-coin-2 {
@@ -74,7 +80,7 @@
     left    : 4.5rem;
     top     : 4rem;
     width   : 140px;
-    height  : 140px;
+    // height  : 140px;
 }
 
 .playboard-coin-3 {
@@ -82,33 +88,116 @@
     right   : 0rem;
     top     : 45%;
     width   : 140px;
-    height  : 140px;
+    // height  : 140px;
 }
 
+@media screen and (max-width:650px) {
+    .play-board-title {
+        z-index  : 10 !important;
+        font-size: 2rem !important;
+    }
+
+    .playboard-coin-1 {
+        width : 130px;
+        // height: 130px;
+    }
+
+    .playboard-coin-2,
+    .playboard-coin-3 {
+        width: 100px;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .play-to-earn {
+        height: 400px!important;
+    }
+    .play-board-title {
+        z-index  : 10 !important;
+        font-size: 1.4rem !important;
+    }
+
+    .playboard-coin-1 {
+        width : 100px;
+        // height: 100px;
+    }
+
+    .playboard-coin-2,
+    .playboard-coin-3 {
+        width: 80px;
+    }
+}
+
+
+
+// release panel
 .release-business-panel {
     height          : 400px;
     width           : 100%;
     background-color: #f5f5f5;
-    overflow-x: hidden;
+    overflow-x      : hidden;
 }
+
 .release-panel-coin-1 {
     position: absolute;
     left    : -1.5rem;
     top     : 55%;
     width   : 180px;
-    height  : 180px;
+    // height  : 180px;
 }
+
 .release-panel-coin-2 {
     position: absolute;
     right   : -5rem;
     top     : 10%;
     width   : 200px;
-    height  : 200px;
+    // height  : 200px;
 }
+
 .release-business-board {
     height      : 100%;
     margin-left : 4rem !important;
     margin-right: 4rem !important;
+
+}
+
+.release-board-title {
+    z-index  : 10 !important;
+    font-size: 3rem !important;
+}
+
+@media screen and (max-width: 650px) {
+    .release-board-title {
+        z-index  : 10 !important;
+        font-size: 2rem !important;
+    }
+
+    .release-panel-coin-1 {
+        width : 140px;
+        // height: 140px;
+    }
+
+    .release-panel-coin-2 {
+        width : 160px;
+        // height: 160px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .release-board-title {
+        z-index  : 10 !important;
+        font-size: 1.4rem !important;
+    }
+
+    .release-panel-coin-1 {
+        width : 100px;
+        // height: 140px;
+    }
+
+    .release-panel-coin-2 {
+        width : 120px;
+        // height: 160px;
+    }
 }
 
 // top panel slide
@@ -139,21 +228,34 @@
 }
 
 #slider .slider-image-wrapper {
-    background   : #a5fda5;
+    // background   : #a5fda5;
     border-radius: 10px;
     width        : 270px;
     height       : 260px;
     margin       : auto;
     margin-top   : 15px;
+    position     : relative;
 }
 
-#slider .slider-image-wrapper img {
-    opacity  : 0;
-    width    : 100%;
-    height: 340px;
-    position : absolute;
-    left     : 0;
-    top      : -5rem;
+#slider .slider-image-wrapper {
+    img.slider-image {
+        opacity : 0;
+        width   : 100%;
+        height  : 340px;
+        position: absolute;
+        left    : 0;
+        top     : -5rem;
+    }
+
+    img.slider-image-background {
+        left      : 50%;
+        top       : 50%;
+        transform : translate(-50%, -50%);
+        width     : 100%;
+        height    : 100%;
+        position  : absolute;
+        object-fit: fill;
+    }
 }
 
 .slider-card-footer img {
@@ -168,7 +270,7 @@
     .slider-image-wrapper {
         position: relative;
 
-        img {
+        img.slider-image {
             opacity           : 1;
             -webkit-transition: opacity 1s ease-in-out;
             -moz-transition   : opacity 1s ease-in-out;
@@ -245,4 +347,16 @@
 
 .slider-card-footer {
     height: 75px;
+
+    .footer-avatar {
+        height        : 48px;
+        width         : 48px;
+        border-radius : 50%;
+        border        : 1px solid #ff7200;
+        font-family   : app_font !important;
+        font-size     : 36px;
+        color         : #ff7200;
+        line-height   : 1.25;
+        text-transform: uppercase;
+    }
 }
