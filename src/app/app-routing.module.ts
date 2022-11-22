@@ -12,6 +12,10 @@ const routes : Routes = [
     loadChildren : () => import('./pages/auth/auth.module').then(m => m.AuthModule),
   },
   {
+    path         : 'game/spin',
+    loadChildren : () => import('./pages/game/spin/spin.module').then(m => m.SpinModule),
+  },
+  {
     path         : 'home',
     loadChildren : () => import('./pages/home/home.module').then(m => m.HomeModule),
   },
