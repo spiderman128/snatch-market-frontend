@@ -1,18 +1,50 @@
+.spin-wrapper {
+    position: relative;
+}
 .spin-mark {
     position: absolute;
     width: 100%;
+    z-index: 3;
     img {
         width: 5%;
     }
 }
 .spin-panel {
     margin-top: 4%;
+    margin-bottom: -5px;
     width: 70vw;
     height: 35vw;
-    max-width: 840px;
-    max-height: 420px;
+    max-width: 800px;
+    max-height: 400px;
+}
+.spin-center {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    z-index: 1;
+    img {
+        width: 5%;
+    }
 }
 
 .start-spin-button {
     width: 350px;
+}
+
+.spin-result {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    bottom: 0px;
+    z-index: 2;
+    img {
+        display: none;
+        -webkit-mask-image: url("/assets/img/project/game/spin/spin-mask.png");
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position-x: center;
+        -webkit-mask-position-y: bottom;
+        -webkit-mask-size: contain;
+        transform: rotate(0deg);
+        transform-origin: 50% 100%;
+    }
 }

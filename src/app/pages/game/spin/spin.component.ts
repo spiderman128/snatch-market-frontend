@@ -1,7 +1,7 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { debug } from 'console';
+import { AfterViewInit, Component  } from '@angular/core';
 // @ts-ignore
-import {TimelineMax, TweenMax} from 'gsap';
+import { TimelineMax, TweenMax } from 'gsap';
+
 
 declare let Winwheel: any;
 
@@ -16,47 +16,45 @@ export class SpinComponent implements AfterViewInit {
   theWheel: any;
   wheelSpinning = false;
   winningSegment: string = "";
-  spin_length = Math.min(Math.floor(window.innerWidth * 0.35), 420);
 
   constructor() {
   }
   ngAfterViewInit(): void {
+
     this.theWheel = new Winwheel({
-      numSegments: 1,
-      outerRadius: this.spin_length,
-      centerX: this.spin_length,
-      centerY: this.spin_length,
-      textFontSize: Math.floor(this.spin_length / 10),
+      numSegments: 10,
+      outerRadius: 620,
+      centerX: 620,
+      centerY: 620,
+      textFontSize: 25,
+      drawMode : 'segmentImage',
       segments:
         [
-          {fillStyle: '#eae56f', text: 'Prize 1'},
-          {fillStyle: '#89f26e', text: 'Prize 2'},
-          {fillStyle: '#7de6ef', text: 'Prize 3'},
-          {fillStyle: '#e7706f', text: 'Prize 4'},
-          {fillStyle: '#eae56f', text: 'Prize 5'},
-          {fillStyle: '#89f26e', text: 'Prize 6'},
-          {fillStyle: '#7de6ef', text: 'Prize 7'},
-          {fillStyle: '#e7706f', text: 'Prize 8'},
-          {fillStyle: '#7de6ef', text: 'Prize 9'},
-          {fillStyle: '#e7706f', text: 'Prize 10'},
+          {image: '/assets/img/project/game/spin/spin2.png', text: 'Prize 1'},
+          {image: '/assets/img/project/game/spin/spin3.png', text: 'Prize 2'},
+          {image: '/assets/img/project/game/spin/spin4.png', text: 'Prize 3'},
+          {image: '/assets/img/project/game/spin/spin2.png', text: 'Prize 4'},
+          {image: '/assets/img/project/game/spin/spin3.png', text: 'Prize 5'},
+          {image: '/assets/img/project/game/spin/spin4.png', text: 'Prize 6'},
+          {image: '/assets/img/project/game/spin/spin2.png', text: 'Prize 7'},
+          {image: '/assets/img/project/game/spin/spin3.png', text: 'Prize 8'},
+          {image: '/assets/img/project/game/spin/spin4.png', text: 'Prize 9'},
+          {image: '/assets/img/project/game/spin/spin1.png', text: 'Prize 10'},
         ],
       animation:
         {
           type: 'spinToStop',
           duration: 5,
-          spins: 8,
+          spins: 10,
           callbackFinished: this.alertPrize.bind(this)
-        },
-      pointerGuide:
-        {
-          display: true,
-          strokeStyle: 'red',
-          lineWidth: 3
         }
     });
   }
 
   startSpin(): void {
+    if (this.wheelSpinning == true) {
+      return;
+    }
     if (this.wheelSpinning === false) {
       this.theWheel.animation.spins = 15;
     }
@@ -73,9 +71,14 @@ export class SpinComponent implements AfterViewInit {
 
   alertPrize(): void {
     this.winningSegment = this.theWheel.getIndicatedSegment().text;
-    console.log(this.theWheel.animation.stopAngle);
-    alert('You have won ' + this.theWheel.getIndicatedSegment().text);
-    this.resetWheel();
+
+    var rect = document.getElementById('canvas')!.getBoundingClientRect();
+    var el_result = document.querySelector(".spin-result img");
+    var angle = this.theWheel.animation.stopAngle;
+    
+    el_result!.setAttribute("src", "/assets/img/project/game/spin/result.png");
+    el_result!.setAttribute("style", "transform: rotate(" + (18 - angle % 36) + "deg);display: initial;")
+    el_result!.setAttribute("height", "" + Math.floor((rect.right - rect.left)/2 * 0.94));
   }
 
   getSegment(e: any): void {
@@ -84,15 +87,9 @@ export class SpinComponent implements AfterViewInit {
   }
 
   calculatePrize(): void {
-    // This formula always makes the wheel stop somewhere inside prize 3 at least
-    // 1 degree away from the start and end edges of the segment.
-    const stopAt = (91 + Math.floor((Math.random() * 43)));
-    // const stopAt = (25 + Math.floor((Math.random() * 78)));
-    console.log('Stop at angle must lie between 90 and 135 degrees - ', stopAt);
-    // Important thing is to set the stopAngle of the animation before stating the spin.
+    const stopAt = Math.floor((Math.random() * 360));
+    console.log('Stop at angle must lie at - ', stopAt);
     this.theWheel.animation.stopAngle = stopAt;
-    // May as well start the spin from here.
     this.startSpin();
-    // this.theWheel.animation.callbackFinished = console.log('This after animation ends - ', this.theWheel.getIndicatedSegment());
   }
 }
