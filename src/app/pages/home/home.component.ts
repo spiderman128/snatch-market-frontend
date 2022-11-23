@@ -1,6 +1,6 @@
 // Angular modules
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-import { OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild, OnInit } from '@angular/core';
+
 
 import { DragScrollComponent } from "ngx-drag-scroll";
 
@@ -40,7 +40,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   ];
   newRewardCollections: NewRewardCollection[] = [];
+
+
   constructor(private appService: AppService) { }
+
+
   ngAfterViewInit(): void {
     this.onInitTopCarousel();
   }
@@ -51,6 +55,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   public async ngOnInit(): Promise<void> {
     try {
+
       const newRewards = await this.appService.getNewRewardCollection();
 
       newRewards.data.forEach((element: NewRewardCollection) => {
@@ -62,7 +67,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     } catch (error) {
       this.isLoading = false;
     }
-    
+
   }
 
   onInitTopCarousel() {
@@ -71,9 +76,23 @@ export class HomeComponent implements OnInit, AfterViewInit {
     //   let activeSliderDom = sliderWrapperDom?.querySelectorAll('input[type=`radio`]');
     //   console.log(activeSliderDom);
     // }, 1000)
-    let activeSliderDom = document.getElementById('slider');
-    console.log("item")
-    console.log(activeSliderDom);
+    let activeSliderDoms = document.querySelectorAll('#slider input');
+
+
+    setInterval(() => {
+      let nextSibling;
+      let activeSliderDom = document.querySelector('#slider input[checked="true"]');
+      let indexSliderDom = activeSliderDom?.getAttribute('data-index');
+      // console.log(activeSliderDom!.nextElementSibling);
+      if (activeSliderDoms.length == parseInt(indexSliderDom!.toString())) {
+        nextSibling = activeSliderDom?.parentNode?.firstElementChild;
+      } else {
+        nextSibling = activeSliderDom!.nextElementSibling;
+      }
+      activeSliderDom?.removeAttribute('checked');
+      nextSibling!.setAttribute('checked', 'true');
+    }, 2000);
+    // document.querySelector('#slider input[checked="true"]')
   }
   // -------------------------------------------------------------------------------
   // ---- NOTE Actions -------------------------------------------------------------
