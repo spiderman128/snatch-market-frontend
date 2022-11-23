@@ -171,8 +171,30 @@ body {
     }
 }
 
+@media screen and (min-width: 1200px) {
+    #js--sc--container {
+        width: 768px!important;
+    }  
+}
+@media (min-width: 992px) {
+    #js--sc--container {
+        width: 768px!important;
+    }  
+}
 
+@media (min-width: 768px) {
+    #js--sc--container {
+        width: 768px!important;
+    }   
+}
+
+@media (min-width: 576px) {
+    #js--sc--container {
+        width: 768px!important;
+    } 
+}
 @font-face {
     font-family: app_font;
     src        : url('../fonts/Gotham-Font/Gotham-Black.otf');
 }
+

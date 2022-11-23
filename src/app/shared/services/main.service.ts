@@ -42,7 +42,7 @@ export class MainService
       method  : method,
       body    : body ? JSON.stringify(body) : null,
       headers : headers,
-      timeout : 5000,
+      timeout : 99999,
       retry   : {
         attempts : 0
       },

@@ -1,19 +1,19 @@
 // Angular modules
-import { Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { OnInit } from '@angular/core';
 
 import { DragScrollComponent } from "ngx-drag-scroll";
 
 // Services
 import { AppService } from '@services/app.service';
-import { NewRewardCollection, NewRewardCollectionConvert } from '@interfaces/newrewardcollection';
+import { NewRewardCollection } from '@interfaces/newrewardcollection';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
 
   public isLoading: boolean = true;
 
@@ -41,6 +41,9 @@ export class HomeComponent implements OnInit {
   ];
   newRewardCollections: NewRewardCollection[] = [];
   constructor(private appService: AppService) { }
+  ngAfterViewInit(): void {
+    this.onInitTopCarousel();
+  }
 
   // -------------------------------------------------------------------------------
   // ---- NOTE Init ----------------------------------------------------------------
@@ -55,12 +58,23 @@ export class HomeComponent implements OnInit {
       });
       console.log(this.newRewardCollections);
       this.isLoading = false;
+
     } catch (error) {
       this.isLoading = false;
     }
-
+    
   }
 
+  onInitTopCarousel() {
+    // setInterval(() => {
+    //   const sliderWrapperDom = document.getElementById('slider');
+    //   let activeSliderDom = sliderWrapperDom?.querySelectorAll('input[type=`radio`]');
+    //   console.log(activeSliderDom);
+    // }, 1000)
+    let activeSliderDom = document.getElementById('slider');
+    console.log("item")
+    console.log(activeSliderDom);
+  }
   // -------------------------------------------------------------------------------
   // ---- NOTE Actions -------------------------------------------------------------
   // -------------------------------------------------------------------------------
