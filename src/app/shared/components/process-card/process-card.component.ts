@@ -19,12 +19,15 @@ export class ProcessCardComponent implements OnInit {
   }
   getImageUrl() {
     let _imageUrl = 'assets/img/project/lock.png';
-    switch (this.type) {
-      case "lock":
+    switch (this.index) {
+      case 1:
         _imageUrl = 'assets/img/project/lock.png';
         break;
-      case "finger":
+      case 2:
         _imageUrl = 'assets/img/project/finger.png';
+        break;
+      case 3:
+        _imageUrl = 'assets/img/project/process_3.png';
         break;
       default:
         break;
