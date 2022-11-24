@@ -97,14 +97,19 @@
                 </div>
             </drag-scroll>
         </div>
-        <div class="d-grid col-6 mx-auto g-5">
-            <div class="sc__wrapper" [style.background]="'url(/assets/img/project/game/snatch/' + imageName + ')'">
+        <div class="mx-auto g-5">
+            <div class="sc__wrapper mx-auto" [style.background]="'url(/assets/img/project/game/snatch/' + imageName + ')'">
                 <div id="js--sc--container"></div>
             </div>
         </div>
-        <div class="d-grid mx-auto my-4" [style.width]="'40vw'">
-            <image-button [text]="'scratch & win'"></image-button>
+        <div class="d-grid mx-auto my-5" [style.width]="'23vw'">
+            <image-button [text]="'scratch & win'" [size]="'lg'"></image-button>
         </div>
-
+        <div class="scratch-information text-dark text-center">
+            You will be charged 100$.
+        </div>
+        <div class="coin-image-wrapper">
+            <img src="assets/img/project/game/snatch/coin.png" />
+        </div>
     </div>
 </app-page-layout>

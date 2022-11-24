@@ -170,28 +170,77 @@ body {
         // border: 1px solid #26005f;
     }
 }
-
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1500px) {
     #js--sc--container {
-        width: 768px!important;
-    }  
-}
-@media (min-width: 992px) {
-    #js--sc--container {
-        width: 768px!important;
-    }  
-}
-
-@media (min-width: 768px) {
-    #js--sc--container {
-        width: 768px!important;
-    }   
-}
-
-@media (min-width: 576px) {
-    #js--sc--container {
-        width: 768px!important;
+        width: 720px!important;
+        height: 400px;
+    }
+    .sc__wrapper {
+        width: 720px!important;
+        height: 400px;
     } 
+}
+@media (min-width:1200px) and (max-width: 1499px) {
+    #js--sc--container {
+        width: 600px!important;
+        height: 350px;
+    }  
+    .sc__wrapper {
+        width: 600px!important;
+        height: 350px;
+    } 
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    #js--sc--container {
+        width: 550px!important;
+        height: 300px;
+    } 
+    .sc__wrapper {
+        width: 550px!important;
+        height: 300px;
+    }  
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    #js--sc--container {
+        width: 500px!important;
+        height: 280px;
+    }  
+    .sc__wrapper {
+        width: 500px!important;
+        height: 280px;
+    } 
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    #js--sc--container {
+        width: 300px!important;
+        height: 250px;
+    }   
+    .sc__wrapper {
+        width: 300px!important;
+        height: 250px;
+    } 
+}
+
+@media (min-width: 400px) and (max-width: 575px) {
+    #js--sc--container {
+        width: 300px!important;
+        height: 250px;
+    } 
+    .sc__wrapper {
+        width: 300px!important;
+        height: 250px;
+    } 
+}
+@media (max-width: 399px) {
+    #js--sc--container {
+        width: 300px!important;
+        height: 250px;
+    }
+    .sc__wrapper {
+        width: 300px!important;
+        height: 250px;
+    }  
 }
 @font-face {
     font-family: app_font;

@@ -21,7 +21,7 @@ export class ImageButtonComponent implements OnInit {
       this.imageButtonElement.nativeElement.style.setProperty('--font-size', '15px');
     }
     if (this.size == "lg") {
-      this.imageButtonElement.nativeElement.style.setProperty('--height', '3.8rem');
+      this.imageButtonElement.nativeElement.style.setProperty('--height', '4.5rem');
       this.imageButtonElement.nativeElement.style.setProperty('--width', '3.5rem');
       this.imageButtonElement.nativeElement.style.setProperty('--font-size', '30px');
     }

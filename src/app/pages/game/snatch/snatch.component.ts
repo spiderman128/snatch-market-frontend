@@ -43,9 +43,9 @@ export class SnatchComponent implements OnInit {
   createNewScratchCard() {
     console.log(this.scratchData);
     const scContainer = document.getElementById('js--sc--container');
-    scContainer?.style.setProperty('height', scContainer!.offsetWidth * 0.6 + 'px');
+    // scContainer?.style.setProperty('height', scContainer!.offsetWidth * 0.55 + 'px');
     this.scratchData.containerWidth = scContainer!.offsetWidth;
-    this.scratchData.containerHeight = scContainer!.offsetWidth * 0.6;
+    this.scratchData.containerHeight = scContainer!.offsetHeight;
     const sc = new ScratchCard('#js--sc--container', this.scratchData);
     // Init
     sc.init()

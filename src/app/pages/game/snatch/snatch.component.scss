@@ -12,6 +12,7 @@
     background-repeat: no-repeat!important;
     background-size: 95% 90%!important;
     background-position: center!important;
+    width: 100%;
 }
 
 // snatch reward itme
@@ -30,4 +31,13 @@
 
 .scroll-wrapper {
     cursor: pointer;
+}
+
+.coin-image-wrapper {
+    position: absolute;
+    right: 1rem;
+    bottom: 8rem;
+    img {
+        width: 10rem;
+    }
 }
