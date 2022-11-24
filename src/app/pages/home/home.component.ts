@@ -91,7 +91,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       }
       activeSliderDom?.removeAttribute('checked');
       nextSibling!.setAttribute('checked', 'true');
-    }, 3500);
+    }, 4000);
     // document.querySelector('#slider input[checked="true"]')
   }
   // -------------------------------------------------------------------------------
