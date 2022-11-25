@@ -85,6 +85,10 @@ body {
 
 }
 
+.main-container>div {
+    min-height: calc(100vh - 164px);
+}
+
 // scroll 
 .drag-scroll-content {
     overflow: hidden !important;

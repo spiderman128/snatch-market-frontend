@@ -9,34 +9,42 @@
         width: 5%;
     }
 }
-.spin-panel {
+.spin-component {
     margin-top: 4%;
-    vertical-align: bottom;
-    width: 70vw;
-    height: 35vw;
-    max-width: 800px;
-    max-height: 400px;
-}
-.spin-center {
-    position: absolute;
-    width: 100%;
-    bottom: 0px;
-    z-index: 2;
-    img {
-        width: 5%;
-        vertical-align: bottom
+    position: relative;
+    .spin-panel {
+        vertical-align: bottom;
+        width: 95vw;
+        height: 95vw;
+        max-width: 800px;
+        max-height: 800px;
+    }
+    .spin-center {      
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        img {            
+            width: 6%;
+        }
     }
 }
 
-.start-spin-button {
-    width: 350px;
+.snatch-reward-item {
+    width: 10rem;
+    height: 2.5rem;
+    background-color: black;
+    font-family: app_font!important;
+    p.text-white {
+        font-size: 12px!important;
+        line-height: 1.2;
+        margin-bottom: 1px;
+    }
 }
 
 .spin-result {
     position: absolute;
     width: 100%;
     overflow: hidden;
-    bottom: 0px;
     z-index: 1;
     img {
         display: none;

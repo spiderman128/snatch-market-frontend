@@ -1,6 +1,7 @@
-import { AfterViewInit, Component  } from '@angular/core';
+import { AfterViewInit, Component, ViewChild  } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { GameRewardModalComponent } from '@modals/game-reward-modal/game-reward-modal.component';
+import { DragScrollComponent } from 'ngx-drag-scroll';
 // @ts-ignore
 import { TimelineMax, TweenMax } from 'gsap';
 
@@ -14,10 +15,15 @@ declare let Winwheel: any;
 })
 export class SpinComponent implements AfterViewInit {
   
+  @ViewChild('nav', { read: DragScrollComponent }) ds!: DragScrollComponent;
 
   theWheel: any;
   wheelSpinning = false;
   winningSegment: string = "";
+  el_result_img: any;
+  el_result_div: any;
+  el_center: any;
+  el_center_img: any;
 
   constructor(private modalService: NgbModal) {
   }
@@ -51,6 +57,22 @@ export class SpinComponent implements AfterViewInit {
           callbackFinished: this.alertPrize.bind(this)
         }
     });
+
+    this.el_center_img = document.querySelector(".spin-center img");
+    this.el_result_img = document.querySelector(".spin-result img");
+    this.el_result_div = document.querySelector(".spin-result");
+    this.el_center = document.querySelector(".spin-center");
+    this.setElementPosition();
+  }
+  
+  setElementPosition(): void{
+    var canvas_rect = document.getElementById('canvas')!.getBoundingClientRect();
+    var center_rect = this.el_center_img!.getBoundingClientRect();
+    var center_y = (canvas_rect.bottom - canvas_rect.top) / 2;
+
+    this.el_result_img!.setAttribute("height", "" + (canvas_rect.right - canvas_rect.left) / 2 * 0.94);
+    this.el_result_div!.setAttribute("style", `bottom: ${center_y}px;`);
+    this.el_center!.setAttribute("style", `bottom: ${center_y - center_rect.width / 2}px;`);
   }
 
   startSpin(): void {
@@ -69,20 +91,18 @@ export class SpinComponent implements AfterViewInit {
     this.theWheel.rotationAngle = 0;
     this.theWheel.draw();
     this.wheelSpinning = false;
-    var el_result = document.querySelector(".spin-result img");
-    el_result!.setAttribute("style", "display: none;");
+    this.el_result_img!.setAttribute("style", "display: none;");
   }
 
   alertPrize(): void {
     this.winningSegment = this.theWheel.getIndicatedSegment().text;
 
     var rect = document.getElementById('canvas')!.getBoundingClientRect();
-    var el_result = document.querySelector(".spin-result img");
+    
     var angle = this.theWheel.animation.stopAngle;
     
-    el_result!.setAttribute("src", "/assets/img/project/game/spin/result.png");
-    el_result!.setAttribute("style", "transform: rotate(" + (18 - angle % 36) + "deg);display: initial;")
-    el_result!.setAttribute("height", "" + Math.floor((rect.right - rect.left)/2 * 0.94));
+    this.el_result_img!.setAttribute("src", "/assets/img/project/game/spin/result.png");
+    this.el_result_img!.setAttribute("style", `transform: rotate(${(18 - angle % 36)}deg);display: initial;`)
 
     setTimeout(() => {
       const modalRef = this.modalService.open(GameRewardModalComponent, { centered: true, modalDialogClass: 'game-reward-modal'});
