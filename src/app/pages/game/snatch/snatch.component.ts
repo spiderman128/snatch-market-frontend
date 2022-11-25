@@ -35,12 +35,12 @@ export class SnatchComponent implements OnInit {
       this.isStartScratch = false;
       const modalRef = this.modalService.open(GameRewardModalComponent, { centered: true, modalDialogClass: 'game-reward-modal' });
       modalRef.componentInstance.data = {
-        "buttonText": "spin again",
+        "buttonText": "snatch again",
         'reward_item_title': "Free Icecream for a Month",
-        'qr_code': 'assets/img/project/game/qr.png',
-        'symbol_image': 'assets/img/project/game/nike.png',
+        'qr_code': '/assets/img/project/game/qr.png',
+        'symbol_image': '/assets/img/project/game/nike.png',
         'reward_item_id': "78934dwjdc",
-        'reward_item_image': 'assets/img/project/game/spin/result.png'
+        'reward_item_image': '/assets/img/project/game/snatch/1.png'
       }
       // handle modal button click event
       modalRef.componentInstance.onButtonClick.subscribe((receivedData: any) => {

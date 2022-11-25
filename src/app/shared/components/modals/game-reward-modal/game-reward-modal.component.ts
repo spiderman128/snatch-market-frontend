@@ -16,8 +16,9 @@ export class GameRewardModalComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   onHandleButtonClick(data : any) {
-    this.modal.close();
     this.onButtonClick.emit("modal button is clicked");
+    this.modal.close();
   }
 }
