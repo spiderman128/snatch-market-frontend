@@ -11,7 +11,7 @@
 }
 .spin-panel {
     margin-top: 4%;
-    margin-bottom: -5px;
+    vertical-align: bottom;
     width: 70vw;
     height: 35vw;
     max-width: 800px;
@@ -21,9 +21,10 @@
     position: absolute;
     width: 100%;
     bottom: 0px;
-    z-index: 1;
+    z-index: 2;
     img {
         width: 5%;
+        vertical-align: bottom
     }
 }
 
@@ -36,7 +37,7 @@
     width: 100%;
     overflow: hidden;
     bottom: 0px;
-    z-index: 2;
+    z-index: 1;
     img {
         display: none;
         -webkit-mask-image: url("/assets/img/project/game/spin/spin-mask.png");
