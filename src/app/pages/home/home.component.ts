@@ -1,5 +1,5 @@
 // Angular modules
-import { AfterViewInit, Component, ElementRef, ViewChild, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild, OnInit, OnDestroy } from '@angular/core';
 
 
 import { DragScrollComponent } from "ngx-drag-scroll";
@@ -7,15 +7,17 @@ import { DragScrollComponent } from "ngx-drag-scroll";
 // Services
 import { AppService } from '@services/app.service';
 import { NewRewardCollection } from '@interfaces/newrewardcollection';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   public isLoading: boolean = true;
+  timer: any;
 
   @ViewChild('nav', { read: DragScrollComponent }) ds!: DragScrollComponent;
 
@@ -42,7 +44,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
   newRewardCollections: NewRewardCollection[] = [];
 
 
-  constructor(private appService: AppService) { }
+  constructor(private appService: AppService, private router: Router) { }
+  ngOnDestroy(): void {
+    clearInterval(this.timer);
+  }
 
 
   ngAfterViewInit(): void {
@@ -79,7 +84,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     let activeSliderDoms = document.querySelectorAll('#slider input');
 
 
-    setInterval(() => {
+    this.timer = setInterval(() => {
       let nextSibling;
       let activeSliderDom = document.querySelector('#slider input[checked="true"]');
       let indexSliderDom = activeSliderDom?.getAttribute('data-index');
@@ -94,24 +99,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }, 4000);
     // document.querySelector('#slider input[checked="true"]')
   }
-  // -------------------------------------------------------------------------------
-  // ---- NOTE Actions -------------------------------------------------------------
-  // -------------------------------------------------------------------------------
+  onHandleGoSpin(data : any) {
+    this.router.navigate(['/game/spin'], {replaceUrl : true});
+  }
 
-  // -------------------------------------------------------------------------------
-  // ---- NOTE Computed props ------------------------------------------------------
-  // -------------------------------------------------------------------------------
-
-  // -------------------------------------------------------------------------------
-  // ---- NOTE Helpers -------------------------------------------------------------
-  // -------------------------------------------------------------------------------
-
-  // -------------------------------------------------------------------------------
-  // ---- NOTE Requests ------------------------------------------------------------
-  // -------------------------------------------------------------------------------
-
-  // -------------------------------------------------------------------------------
-  // ---- NOTE Subscriptions -------------------------------------------------------
-  // -------------------------------------------------------------------------------
+  onHandleGoSnatch(data : any) {
+    this.router.navigate(['/game/snatch'], {replaceUrl : true});
+  }
 
 }

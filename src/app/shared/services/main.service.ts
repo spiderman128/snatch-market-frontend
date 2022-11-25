@@ -42,9 +42,9 @@ export class MainService
       method  : method,
       body    : body ? JSON.stringify(body) : null,
       headers : headers,
-      timeout : 99999,
+      // timeout : 2000,
       retry   : {
-        attempts : 0
+        attempts : 2
       },
       hooks : {
         async after({ status, error })

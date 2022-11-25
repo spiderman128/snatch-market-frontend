@@ -36,6 +36,7 @@ import { RewardCollectionCardComponent } from './components/reward-collection-ca
 import { ProcessCardComponent } from './components/process-card/process-card.component';
 import { RewardDropCardComponent } from './components/reward-drop-card/reward-drop-card.component';
 import { LayoutFooterComponent } from './components/layouts/layout-footer/layout-footer.component';
+import { GameRewardModalComponent } from './components/modals/game-reward-modal/game-reward-modal.component';
 
 @NgModule({
   imports:
@@ -77,6 +78,7 @@ import { LayoutFooterComponent } from './components/layouts/layout-footer/layout
       ProcessCardComponent,
       RewardDropCardComponent,
       LayoutFooterComponent,
+      GameRewardModalComponent,
     ],
   exports:
     [

@@ -1,0 +1,49 @@
+.reward-title {
+    width: 60%;
+    line-height: 1.2;
+    font-size: 18px;
+    font-family: app_font;
+    height: 70px;
+}
+.reward-item-id {
+    font-size: 22px;
+    font-family: app_font;
+}
+.reward-card-footer {
+    .left-footer-item img {
+        max-width: 48px;
+        // height: 48px;
+    }
+    .right-footer-item img {
+        // width: 48px;
+        // height: 48px;
+        max-width: 80px;
+    }
+}
+.button-content {
+    width: 260px;
+    padding: 30px 0px;
+}
+@media (max-width: 456px) {
+    .reward-title {
+        width: 70%;
+        font-size: 16px;
+    } 
+    .reward-card-footer {
+        .left-footer-item img {
+            max-width: 32px;
+            // height: 32px;
+        }
+        .right-footer-item img {
+            // height: 32px;
+            max-width: 50px;
+        }
+    }
+    .reward-item-id {
+        font-size: 18px;
+    }
+    .button-content {
+        width: 180px;
+        padding: 15px 0px;
+    }
+}

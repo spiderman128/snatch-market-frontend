@@ -222,7 +222,7 @@
           <div class="scroll-wrapper mx-3">
             <drag-scroll #nav [scroll-x-wheel-enabled]="true">
               <div class="container-fluid mb-5">
-                <div drag-scroll-item class="me-5 ms-3" [style.width]="'290px'" [style.height]="'385px'">
+                <div drag-scroll-item class="me-5 ms-3"  [style.width]="'290px'" [style.height]="'385px'">
                   <div class="card h-100 bg-dark text-white rounded-4 shadow">
                     <img src="/assets/img/project/card-background.png" class="card-img rounded-4 h-100" alt="...">
                     <div class="card-img-overlay d-flex flex-column p-0 m-0">
@@ -231,7 +231,7 @@
                         class="card-body-content flex-fill position-relative d-flex justify-content-center align-items-end">
                         <img src="assets/img/project/spin-wheel.png" class="three-game-image rounded-top rounded-4" />
                         <div class="mb-3" [style.width]="'9rem'">
-                          <image-button [text]="'play now'"></image-button>
+                          <image-button [text]="'play now'" (onClick)="onHandleGoSpin($event)"></image-button>
                         </div>
                       </div>
                     </div>
@@ -246,7 +246,7 @@
                         class="card-body-content flex-fill position-relative d-flex justify-content-center align-items-end">
                         <img src="assets/img/project/snatch.png" class="three-game-image rounded-top rounded-4" />
                         <div class="mb-3" [style.width]="'9rem'">
-                          <image-button [text]="'play now'"></image-button>
+                          <image-button [text]="'play now'" (onClick)="onHandleGoSnatch($event)"></image-button>
                         </div>
                       </div>
                     </div>

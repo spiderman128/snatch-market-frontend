@@ -1,4 +1,6 @@
 import { AfterViewInit, Component  } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { GameRewardModalComponent } from '@modals/game-reward-modal/game-reward-modal.component';
 // @ts-ignore
 import { TimelineMax, TweenMax } from 'gsap';
 
@@ -17,10 +19,10 @@ export class SpinComponent implements AfterViewInit {
   wheelSpinning = false;
   winningSegment: string = "";
 
-  constructor() {
+  constructor(private modalService: NgbModal) {
   }
   ngAfterViewInit(): void {
-
+    
     this.theWheel = new Winwheel({
       numSegments: 10,
       outerRadius: 620,
@@ -79,6 +81,20 @@ export class SpinComponent implements AfterViewInit {
     el_result!.setAttribute("src", "/assets/img/project/game/spin/result.png");
     el_result!.setAttribute("style", "transform: rotate(" + (18 - angle % 36) + "deg);display: initial;")
     el_result!.setAttribute("height", "" + Math.floor((rect.right - rect.left)/2 * 0.94));
+
+    const modalRef = this.modalService.open(GameRewardModalComponent, { centered: true, modalDialogClass: 'game-reward-modal'});
+    modalRef.componentInstance.data = {
+      "buttonText" : "spin again",
+      'reward_item_title' : "Free Icecream for a Month",
+      'qr_code' : 'assets/img/project/game/qr.png',
+      'symbol_image' : 'assets/img/project/game/symbol.png',
+      'reward_item_id' : "78934dwjdc",
+      'reward_item_image' : 'assets/img/project/game/spin/result.png'
+    }
+    // handle modal button click event
+    modalRef.componentInstance.onButtonClick.subscribe((receivedData: any) => {
+      console.log("modal button is clicked on spin wheel page");
+    });
   }
 
   getSegment(e: any): void {

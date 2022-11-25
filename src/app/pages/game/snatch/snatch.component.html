@@ -1,5 +1,5 @@
 <app-page-layout [headerTheme]="'light'">
-    <div class="container-fluid snatch-container">
+    <div class="container-fluid snatch-container" (window:resize)="onResize($event)">
         <div class="scroll-wrapper pt-3 pb-5">
             <drag-scroll #nav [scroll-x-wheel-enabled]="true">
                 <div class="container-fluid px-5">
@@ -98,14 +98,14 @@
             </drag-scroll>
         </div>
         <div class="mx-auto g-5">
-            <div class="sc__wrapper mx-auto" [style.background]="'url(/assets/img/project/game/snatch/' + imageName + ')'">
+            <div class="sc__wrapper mx-auto" [ngClass]="{'pe-none' : !isStartScratch}"  [style.background]="'url(/assets/img/project/game/snatch/' + imageName + ')'">
                 <div id="js--sc--container"></div>
             </div>
         </div>
-        <div class="d-grid mx-auto my-5" [style.width]="'23vw'">
-            <image-button [text]="'scratch & win'" [size]="'lg'"></image-button>
+        <div class="d-grid mx-auto scratch-button-content mt-5">
+            <image-button [text]="'scratch & win'" [size]="'lg'" (onClick)="onHanldeStartScratch($event)"></image-button>
         </div>
-        <div class="scratch-information text-dark text-center">
+        <div class="scratch-information text-dark text-center py-4 fw-bold">
             You will be charged 100$.
         </div>
         <div class="coin-image-wrapper">

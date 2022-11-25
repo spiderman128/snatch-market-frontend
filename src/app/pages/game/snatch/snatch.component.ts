@@ -1,7 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DragScrollComponent } from 'ngx-drag-scroll';
+import { GameRewardModalComponent } from '@modals/game-reward-modal/game-reward-modal.component';
 // @ts-ignore
 import { ScratchCard, SCRATCH_TYPE } from 'scratchcard-js';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-snatch',
@@ -11,9 +14,10 @@ import { ScratchCard, SCRATCH_TYPE } from 'scratchcard-js';
 export class SnatchComponent implements OnInit {
 
   @ViewChild('nav', { read: DragScrollComponent }) ds!: DragScrollComponent;
-  
-  imageName = '1.png';
 
+  imageName = '1.png';
+  isStartScratch = false;
+  scratchObject: any;
   scratchData = {
     scratchType: SCRATCH_TYPE.LINE,
     containerWidth: 300, //scContainer.offsetWidth,
@@ -28,10 +32,24 @@ export class SnatchComponent implements OnInit {
     pointSize: 4,
     callback: () => {
       console.log('Now the window will reload !');
+      this.isStartScratch = false;
+      const modalRef = this.modalService.open(GameRewardModalComponent, { centered: true, modalDialogClass: 'game-reward-modal' });
+      modalRef.componentInstance.data = {
+        "buttonText": "spin again",
+        'reward_item_title': "Free Icecream for a Month",
+        'qr_code': 'assets/img/project/game/qr.png',
+        'symbol_image': 'assets/img/project/game/nike.png',
+        'reward_item_id': "78934dwjdc",
+        'reward_item_image': 'assets/img/project/game/spin/result.png'
+      }
+      // handle modal button click event
+      modalRef.componentInstance.onButtonClick.subscribe((receivedData: any) => {
+        console.log("modal button is clicked on spin wheel page");
+      });
     },
   };
 
-  constructor() { }
+  constructor(private modalService: NgbModal, private router: Router) { }
 
   ngOnInit(): void {
     this.imageName = '1.png';
@@ -40,39 +58,48 @@ export class SnatchComponent implements OnInit {
     }, 100);
   }
 
+  onResize(event: any) {
+    // const scContainer = document.getElementById('js--sc--container');
+    // const canvasContainer = document.querySelector('#js--sc--container canvas');
+
+
+    // var styles = getComputedStyle(scContainer!),
+    //   w = parseInt(styles.getPropertyValue("width"), 10),
+    //   h = parseInt(styles.getPropertyValue("height"), 10);
+    // // canvasContainer?.setAttribute('width', w.toString());
+    // // canvasContainer?.setAttribute('height', h.toString());
+    // canvasContainer?.setAttribute('style', 'width:' + w.toString() + 'px; height:' + h.toString() + 'px;');
+    window.location?.reload();
+  }
   createNewScratchCard() {
-    console.log(this.scratchData);
+    // console.log(this.scratchData);
     const scContainer = document.getElementById('js--sc--container');
     // scContainer?.style.setProperty('height', scContainer!.offsetWidth * 0.55 + 'px');
     this.scratchData.containerWidth = scContainer!.offsetWidth;
     this.scratchData.containerHeight = scContainer!.offsetHeight;
-    const sc = new ScratchCard('#js--sc--container', this.scratchData);
+    this.scratchObject = new ScratchCard('#js--sc--container', this.scratchData);
     // Init
-    sc.init()
+    this.scratchObject.init()
       .then(() => {
-        sc.htmlBackground = sc.canvas.addEventListener('scratch.move', () => {
-          let percent = sc.getPercent().toFixed(2);
+        this.scratchObject.htmlBackground = this.scratchObject.canvas.addEventListener('scratch.move', () => {
+          let percent = this.scratchObject.getPercent().toFixed(2);
           console.log(percent);
-          // if (percent < 30) {
-          //   this.type = 'tryAgain';
-          //   this.imageName = 'bad.ico';
-          // } else {
-          //   if (this.type == 'win') {
-          //     this.imageName = 'baby.jpeg';
-          //   }
-          //   if (this.type != 'win') {
-          //     this.imageName = 'bad.ico';
-          //   }
-          // }
-          this.imageName = '1.png'
+          if (percent >= 80) {
+            this.imageName = '1.png'
+          }
+
         });
       })
       .catch((error: any) => {
         // image not loaded
         alert(error.message);
       });
+
   }
 
+  onHanldeStartScratch(data: any) {
+    this.isStartScratch = true;
+  }
   // setScratchMessage(param: any) {
   //   console.log(param);
   //   switch (param) {
