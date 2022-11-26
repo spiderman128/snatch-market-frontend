@@ -12,17 +12,22 @@
 .spin-component {
     margin-top: 4%;
     position: relative;
+
     .spin-panel {
         vertical-align: bottom;
-        width: 95vw;
-        height: 95vw;
-        max-width: 800px;
-        max-height: 800px;
+        width: 92vw;
+        height: 92vw;
+        max-width: 1000px;
+        max-height: 1000px;
     }
+
     .spin-center {      
         position: absolute;
         z-index: 2;
         width: 100%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
         img {            
             width: 6%;
         }
@@ -55,5 +60,22 @@
         -webkit-mask-size: contain;
         transform: rotate(0deg);
         transform-origin: 50% 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .spin-wrapper {
+        padding-bottom: 0px!important;
+    }
+    .spin-component {
+        height: 46vw;
+        max-height: 500px;
+        overflow: hidden;
+        .spin-center {
+            top: 100%;
+        }
+        .spin-result{
+            bottom: 0px!important;
+        }
     }
 }

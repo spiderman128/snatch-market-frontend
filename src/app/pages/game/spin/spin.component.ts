@@ -22,11 +22,10 @@ export class SpinComponent implements AfterViewInit {
   winningSegment: string = "";
   el_result_img: any;
   el_result_div: any;
-  el_center: any;
-  el_center_img: any;
 
   constructor(private modalService: NgbModal) {
   }
+  
   ngAfterViewInit(): void {
     
     this.theWheel = new Winwheel({
@@ -58,21 +57,17 @@ export class SpinComponent implements AfterViewInit {
         }
     });
 
-    this.el_center_img = document.querySelector(".spin-center img");
     this.el_result_img = document.querySelector(".spin-result img");
     this.el_result_div = document.querySelector(".spin-result");
-    this.el_center = document.querySelector(".spin-center");
     this.setElementPosition();
   }
   
   setElementPosition(): void{
     var canvas_rect = document.getElementById('canvas')!.getBoundingClientRect();
-    var center_rect = this.el_center_img!.getBoundingClientRect();
     var center_y = (canvas_rect.bottom - canvas_rect.top) / 2;
 
     this.el_result_img!.setAttribute("height", "" + (canvas_rect.right - canvas_rect.left) / 2 * 0.94);
     this.el_result_div!.setAttribute("style", `bottom: ${center_y}px;`);
-    this.el_center!.setAttribute("style", `bottom: ${center_y - center_rect.width / 2}px;`);
   }
 
   startSpin(): void {
