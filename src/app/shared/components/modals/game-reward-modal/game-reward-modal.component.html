@@ -1,18 +1,18 @@
 <div class="modal-body text-center">
     <div class="reward-image-wrapper mx-auto mt-3 rounded-4">
-        <div class="reward-title mx-auto pt-3 pb-2">{{data.reward_item_title}}</div>
-        <img class="reward-image" [src]="data.reward_item_image" />
-        <div class="reward-item-id mx-auto text-uppercase">{{data.reward_item_id}}</div>
+        <div class="reward-title mx-auto pt-3 pb-2">{{data.reward_item_title!}}</div>
+        <img class="reward-image" [src]="data.reward_item_image!" />
+        <div class="reward-item-id mx-auto text-uppercase">{{data.reward_item_id!}}</div>
         <div class="reward-card-footer d-flex flex-row justify-content-between align-items-center py-3">
             <div class="left-footer-item ms-4">
-                <img [src]="data.qr_code" />
+                <img [src]="data.qr_code!" />
             </div>
             <div class="right-footer-item me-4">
-                <img [src]="data.symbol_image" />
+                <img [src]="data.symbol_image!" />
             </div>
         </div>
     </div>
     <div class="button-content mx-auto">
-        <image-button [text]="data.buttonText" (onClick)="onHandleButtonClick($event)"></image-button>
+        <image-button [text]="data.buttonText!" (onClick)="onHandleButtonClick($event)"></image-button>
     </div>
 </div>
