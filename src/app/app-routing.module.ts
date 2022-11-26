@@ -23,6 +23,10 @@ const routes : Routes = [
     path         : 'game/spin',
     loadChildren : () => import('./pages/game/spin/spin.module').then(m => m.SpinModule),
   },
+  {
+    path         : 'game/pick',
+    loadChildren : () => import('./pages/game/pick/pick.module').then(m => m.PickModule),
+  },
   { path : '',   redirectTo : '/home', pathMatch : 'full' },
   { path : '**', component : NotFoundComponent }
 ];

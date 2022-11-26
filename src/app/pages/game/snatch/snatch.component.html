@@ -3,96 +3,8 @@
         <div class="scroll-wrapper pt-3 pb-5">
             <drag-scroll #nav [scroll-x-wheel-enabled]="true">
                 <div class="container-fluid px-5">
-                    <div drag-scroll-item class="mx-2">
-                        <div
-                            class="snatch-reward-item rounded-5 d-flex flex-column justify-content-center align-items-center">
-                            <p class="text-white">Lifetime Coffee</p>
-                            <p class="text-white">1 in 5000</p>
-                        </div>
-                    </div>
-                    <div drag-scroll-item class="mx-2">
-                        <div
-                            class="snatch-reward-item rounded-5 d-flex flex-column justify-content-center align-items-center">
-                            <p class="text-white">Coffee Every Monday</p>
-                            <p class="text-white">1 in 1000</p>
-                        </div>
-                    </div>
-                    <div drag-scroll-item class="mx-2">
-                        <div
-                            class="snatch-reward-item rounded-5 d-flex flex-column justify-content-center align-items-center">
-                            <p class="text-white">Coffee Every Monday</p>
-                            <p class="text-white">1 in 1000</p>
-                        </div>
-                    </div>
-                    <div drag-scroll-item class="mx-2">
-                        <div
-                            class="snatch-reward-item rounded-5 d-flex flex-column justify-content-center align-items-center">
-                            <p class="text-white">Coffee Every Monday</p>
-                            <p class="text-white">1 in 1000</p>
-                        </div>
-                    </div>
-                    <div drag-scroll-item class="mx-2">
-                        <div
-                            class="snatch-reward-item rounded-5 d-flex flex-column justify-content-center align-items-center">
-                            <p class="text-white">Coffee Every Monday</p>
-                            <p class="text-white">1 in 1000</p>
-                        </div>
-                    </div>
-                    <div drag-scroll-item class="mx-2">
-                        <div
-                            class="snatch-reward-item rounded-5 d-flex flex-column justify-content-center align-items-center">
-                            <p class="text-white">Coffee Every Monday</p>
-                            <p class="text-white">1 in 1000</p>
-                        </div>
-                    </div>
-                    <div drag-scroll-item class="mx-2">
-                        <div
-                            class="snatch-reward-item rounded-5 d-flex flex-column justify-content-center align-items-center">
-                            <p class="text-white">Coffee Every Monday</p>
-                            <p class="text-white">1 in 1000</p>
-                        </div>
-                    </div>
-                    <div drag-scroll-item class="mx-2">
-                        <div
-                            class="snatch-reward-item rounded-5 d-flex flex-column justify-content-center align-items-center">
-                            <p class="text-white">Coffee Every Monday</p>
-                            <p class="text-white">1 in 1000</p>
-                        </div>
-                    </div>
-                    <div drag-scroll-item class="mx-2">
-                        <div
-                            class="snatch-reward-item rounded-5 d-flex flex-column justify-content-center align-items-center">
-                            <p class="text-white">Coffee Every Monday</p>
-                            <p class="text-white">1 in 1000</p>
-                        </div>
-                    </div>
-                    <div drag-scroll-item class="mx-2">
-                        <div
-                            class="snatch-reward-item rounded-5 d-flex flex-column justify-content-center align-items-center">
-                            <p class="text-white">Coffee Every Monday</p>
-                            <p class="text-white">1 in 1000</p>
-                        </div>
-                    </div>
-                    <div drag-scroll-item class="mx-2">
-                        <div
-                            class="snatch-reward-item rounded-5 d-flex flex-column justify-content-center align-items-center">
-                            <p class="text-white">Coffee Every Monday</p>
-                            <p class="text-white">1 in 1000</p>
-                        </div>
-                    </div>
-                    <div drag-scroll-item class="mx-2">
-                        <div
-                            class="snatch-reward-item rounded-5 d-flex flex-column justify-content-center align-items-center">
-                            <p class="text-white">Coffee Every Monday</p>
-                            <p class="text-white">1 in 1000</p>
-                        </div>
-                    </div>
-                    <div drag-scroll-item class="mx-2">
-                        <div
-                            class="snatch-reward-item rounded-5 d-flex flex-column justify-content-center align-items-center">
-                            <p class="text-white">Lifetime Coffee</p>
-                            <p class="text-white">1 in 5000</p>
-                        </div>
+                    <div drag-scroll-item class="mx-2" *ngFor="let perItem of rewardItems;">
+                        <app-reward-item></app-reward-item>
                     </div>
                 </div>
             </drag-scroll>
@@ -105,7 +17,7 @@
         <div class="d-grid mx-auto scratch-button-content mt-5">
             <image-button [text]="'scratch & win'" [size]="'lg'" (onClick)="onHanldeStartScratch($event)"></image-button>
         </div>
-        <div class="scratch-information text-dark text-center py-4 fw-bold">
+        <div class="reward-information text-dark text-center py-4 fw-bold">
             You will be charged 100$.
         </div>
         <div class="coin-image-wrapper">

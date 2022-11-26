@@ -15,6 +15,7 @@ export class SnatchComponent implements OnInit {
 
   @ViewChild('nav', { read: DragScrollComponent }) ds!: DragScrollComponent;
 
+  rewardItems = new Array(20);
   imageName = '1.png';
   isStartScratch = false;
   scratchObject: any;
