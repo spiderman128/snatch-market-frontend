@@ -20,9 +20,9 @@
 
 .card-content {
     width           : 100%;
-    height          : 35vw;
+    height          : 30vw;
     position        : relative;
-    margin-top      : 120px;
+    margin-top      : 80px;
     // margin-bottom: 3rem;
 }
 
@@ -98,15 +98,17 @@
 
     .pick-card {
         width           : 18vw;
+        height          : 24vw;
         border          : none;
         background-color: transparent;
         position        : absolute;
         left            : calc(50% - 5vw);
         transform-origin: center;
-        pointer-events: none;
+        pointer-events  : none;
 
-        img {
-            width: 100%;
+        img.pick-card-backimg {
+            width : 100%;
+            height: 100%;
         }
     }
 
@@ -157,6 +159,7 @@
 
 .fcard {
     width     : 18vw;
+    height    : 24vw;
     visibility: hidden;
     opacity   : 0;
 }
@@ -207,7 +210,129 @@
     }
 }
 
+// =========================== flip card part =================================
+.flip-wrapper {
+    position     : absolute;
+    width        : 100%;
+    height       : 100%;
+    // box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
+    transition     : transform 1s;
+    transform-style: preserve-3d;
+    perspective    : 1000px;
+}
+
+.selectedCard .flip-wrapper {
+    transform : rotateY(180deg);
+    transition: transform 0.5s;
+}
+
+.flip-front,
+.flip-back {
+    position           : absolute;
+    width              : 100%;
+    height             : 100%;
+    background         : transparent;
+    text-align         : center;
+    backface-visibility: hidden;
+}
+
+img.front-image {
+    width : 100%;
+    height: 100%;
+}
+
+.flip-back {
+    background: transparent;
+    color     : white;
+    transform : rotateY(180deg);
+}
+
+.reward-image-wrapper {
+    width   : 100%;
+    height  : 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .reward-image {
+        width : 12vw;
+        height: 12vw;
+    }
+
+    .reward-title {
+        width      : 60%;
+        line-height: 1.2;
+        font-size  : 18px;
+        font-family: app_font;
+        height     : 70px;
+        word-break : break-word;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .reward-item-id {
+        font-size  : 18px;
+        font-family: app_font;
+    }
+
+    .reward-card-footer {
+        width: 95%;
+        .left-footer-item img {
+            max-width: 48px;
+            // height: 48px;
+        }
+
+        .right-footer-item img {
+            // width: 48px;
+            // height: 48px;
+            max-width: 80px;
+        }
+    }
+
+
+}
+
+// =========================== End flip card part =================================
 @media (max-width: 575px) {
+    .reward-image-wrapper {
+        .reward-image {
+            margin-top: 5px;
+            width : 12vw;
+            height: 12vw;
+        }
+    
+        .reward-title {
+            font-size  : 10px;
+            padding-bottom: 2px!important;
+            height: 60px;
+            display: none;
+        }
+    
+        .reward-item-id {
+            font-size  : 10px;
+        }
+    
+        .reward-card-footer {
+            padding: 0px!important;
+            width: 98%;
+            .left-footer-item img {
+                max-width: 18px;
+                // height: 48px;
+            }
+    
+            .right-footer-item img {
+                // width: 48px;
+                // height: 48px;
+                max-width: 36px;
+            }
+        }
+    
+    }
+    
     // .card-content-after {
     //     width: 100px;
     //     // height: 380px;
@@ -321,6 +446,38 @@
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
+    .reward-image-wrapper {
+        .reward-image {
+            width : 10vw;
+            height: 10vw;
+        }
+    
+        .reward-title {
+            font-size  : 10px;
+            padding-bottom: 2px!important;
+            height: 60px;
+        }
+    
+        .reward-item-id {
+            font-size  : 10px;
+        }
+    
+        .reward-card-footer {
+            padding-top: 0px!important;
+            width: 98%;
+            .left-footer-item img {
+                max-width: 18px;
+                // height: 48px;
+            }
+    
+            .right-footer-item img {
+                // width: 48px;
+                // height: 48px;
+                max-width: 36px;
+            }
+        }
+    
+    }
     // .card-content-after {
     //     width: 100px;
     //     // height: 380px;
@@ -432,6 +589,39 @@
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+    .reward-image-wrapper {
+        .reward-image {
+            width : 10vw;
+            height: 10vw;
+        }
+    
+        .reward-title {
+            font-size  : 12px;
+            padding-bottom: 2px!important;
+            height: 60px;
+        }
+    
+        .reward-item-id {
+            font-size  : 12px;
+        }
+    
+        .reward-card-footer {
+            padding-top: 2px!important;
+            width: 98%;
+            .left-footer-item img {
+                max-width: 32px;
+                // height: 48px;
+            }
+    
+            .right-footer-item img {
+                // width: 48px;
+                // height: 48px;
+                max-width: 40px;
+            }
+        }
+    
+    
+    }
     // .card-content {
     //     width : 250px;
     //     // height: 350px;
@@ -487,6 +677,36 @@
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
+    .reward-image-wrapper {
+        .reward-image {
+            width : 11vw;
+            height: 11vw;
+        }
+    
+        .reward-title {
+            font-size  : 16px;
+        }
+    
+        .reward-item-id {
+            font-size  : 16px;
+        }
+    
+        .reward-card-footer {
+            padding-top: 3px!important;
+            .left-footer-item img {
+                max-width: 28px;
+                // height: 48px;
+            }
+    
+            .right-footer-item img {
+                // width: 48px;
+                // height: 48px;
+                max-width: 55px;
+            }
+        }
+    
+    
+    }
     // .card-content {
     //     width : 250px;
     //     // height: 500px;
@@ -541,6 +761,35 @@
 }
 
 @media (min-width: 1200px) and (max-width: 1399px) {
+    .reward-image-wrapper {
+        .reward-image {
+            width : 11vw;
+            height: 11vw;
+        }
+    
+        .reward-title {
+            font-size  : 16px;
+        }
+    
+        .reward-item-id {
+            font-size  : 16px;
+        }
+    
+        .reward-card-footer {
+            .left-footer-item img {
+                max-width: 36px;
+                // height: 48px;
+            }
+    
+            .right-footer-item img {
+                // width: 48px;
+                // height: 48px;
+                max-width: 60px;
+            }
+        }
+    
+    
+    }
     // .card-content {
     //     width : 250px;
     //     // height: 500px;
@@ -598,19 +847,19 @@
     --left3 : 0px;
     --x3    : 0px;
     --y3    : 0px;
-    --z3   : 0px;
+    --z3    : 0px;
     --angle3: 0deg;
 
     --left4 : 0px;
     --x4    : 0px;
     --y4    : 0px;
-    --z4   : 0px;
+    --z4    : 0px;
     --angle4: 0deg;
 
     --left5 : 0px;
     --x5    : 0px;
     --y5    : 0px;
-    --z5   : 0px;
+    --z5    : 0px;
     --angle5: 0deg;
 }
 
@@ -629,10 +878,12 @@
     visibility: hidden;
     opacity   : 0;
 }
+
 .d-visible {
     visibility: visible;
     opacity   : 1;
 }
+
 .visible-ani {
     visibility: visible;
     animation : visible-ani 2s 1 forwards;
@@ -707,7 +958,7 @@
         -moz-transform   : translate3d(var(--x5), var(--y5), var(--z5)) rotate(var(--angle5));
         -o-transform     : translate3d(var(--x5), var(--y5), var(--z5)) rotate(var(--angle5));
         -ms-transform    : translate3d(var(--x5), var(--y5), var(--z5)) rotate(var(--angle5));
-        transform: translate3d(var(--x5), var(--y5), var(--z5)) rotate(var(--angle5));
+        transform        : translate3d(var(--x5), var(--y5), var(--z5)) rotate(var(--angle5));
     }
 
     100% {
@@ -724,3 +975,7 @@
         left: var(--left5);
     }
 }
+
+
+
+

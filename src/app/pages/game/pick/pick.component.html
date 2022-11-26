@@ -3,69 +3,90 @@
         <div class="scroll-wrapper pt-3 pb-5">
             <drag-scroll #nav [scroll-x-wheel-enabled]="true">
                 <div class="container-fluid px-5">
-                    <div drag-scroll-item class="mx-2" *ngFor="let perItem of rewardItems;" >
+                    <div drag-scroll-item class="mx-2" *ngFor="let perItem of rewardItems;">
                         <app-reward-item></app-reward-item>
                     </div>
                 </div>
             </drag-scroll>
         </div>
-        <div class="mx-auto card-content" id="card_content">
-            <div class="before-content mx-auto" [ngClass]="{'hidden' : isStartPick, 'visible' : !isStartPick}" #beforeContent>
+        <div class="mx-auto card-content mb-3" id="card_content">
+            <div class="before-content mx-auto" [ngClass]="{'hidden' : isStartPick, 'visible' : !isStartPick}"
+                #beforeContent>
                 <div class="card card-1">
                     <img src="assets/img/project/game/pick/card_2.png" />
                 </div>
                 <div class="card card-2">
-                    <img src="assets/img/project/game/pick/card_1.png" />    
+                    <img src="assets/img/project/game/pick/card_1.png" />
                 </div>
                 <div class="card card-3">
-                    <img src="assets/img/project/game/pick/card_2.png" />    
+                    <img src="assets/img/project/game/pick/card_2.png" />
                 </div>
                 <div class="card card-4">
-                    <img src="assets/img/project/game/pick/card_1.png" />    
+                    <img src="assets/img/project/game/pick/card_1.png" />
                 </div>
             </div>
-            <div class="after-content mx-auto" [ngClass]="{'hidden' : !isStartPick, 'visible' : isStartPick}" #afterContent>
+            <div class="after-content mx-auto" [ngClass]="{'hidden' : !isStartPick, 'visible' : isStartPick}"
+                #afterContent>
                 <label class="pick-card card-1" [ngClass]="{'card1-firstani ' : isStartPick}">
-                    <img src="assets/img/project/game/pick/card_1.png" />
+                    <img class="pick-card-backimg" src="assets/img/project/game/pick/card_1.png" />
                 </label>
                 <label class="pick-card card-2" [ngClass]="{'card2-firstani' : isStartPick}">
-                    <img src="assets/img/project/game/pick/card_2.png" />    
+                    <img class="pick-card-backimg" src="assets/img/project/game/pick/card_2.png" />
                 </label>
                 <label class="pick-card card-3" [ngClass]="{'card3-firstani' : isStartPick}">
-                    <img src="assets/img/project/game/pick/card_1.png" />    
+                    <img class="pick-card-backimg" src="assets/img/project/game/pick/card_1.png" />
                 </label>
                 <label class="pick-card card-4" [ngClass]="{'card4-firstani' : isStartPick}">
-                    <img src="assets/img/project/game/pick/card_2.png" />    
+                    <img class="pick-card-backimg" src="assets/img/project/game/pick/card_2.png" />
                 </label>
                 <label class="pick-card card-5" [ngClass]="{'card5-firstani' : isStartPick}">
-                    <img src="assets/img/project/game/pick/card_1.png" />    
+                    <img class="pick-card-backimg" src="assets/img/project/game/pick/card_1.png" />
                 </label>
 
 
                 <!-- final result arrangement of cards -->
 
-                <label class="pick-card fcard" (click)="onHandleSelectCard()">
-                    <img src="assets/img/project/game/pick/card_1.png" />
+                <label class="pick-card fcard" (click)="onHandleSelectCard($event)" *ngFor="let perCard of pickCards; let i = index;">
+                    <div class="flip-wrapper">
+                        <div class="flip-front">
+                            <img class="front-image" src="assets/img/project/game/pick/card_{{i % 2 == 0 ? 1 : 2}}.png" />
+                        </div>
+                        <div class="flip-back rounded-4" [style.background]="i % 2 == 0 ? '#ff7200' : '#eb5829'">
+                            <div class="reward-image-wrapper mx-auto rounded-4" >
+                                <div class="reward-title mx-auto py-3 text-white">Free Icecream for a Month</div>
+                                <img class="reward-image" src="assets/img/project/game/snatch/1.png" />
+                                <div class="reward-item-id mx-auto text-uppercase">78934dwjdc</div>
+                                <div class="reward-card-footer d-flex flex-row justify-content-between align-items-center py-3">
+                                    <div class="left-footer-item ms-2">
+                                        <img src="assets/img/project/game/qr.png" />
+                                    </div>
+                                    <div class="right-footer-item me-2">
+                                        <img src="assets/img/project/game/symbol.png" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+                <!-- <label class="pick-card fcard" (click)="onHandleSelectCard()">
+                    <img class="front-image" src="assets/img/project/game/pick/card_2.png" />
                 </label>
                 <label class="pick-card fcard" (click)="onHandleSelectCard()">
-                    <img src="assets/img/project/game/pick/card_2.png" />
+                    <img class="front-image" src="assets/img/project/game/pick/card_1.png" />
                 </label>
                 <label class="pick-card fcard" (click)="onHandleSelectCard()">
-                    <img src="assets/img/project/game/pick/card_1.png" />
+                    <img class="front-image" src="assets/img/project/game/pick/card_2.png" />
                 </label>
                 <label class="pick-card fcard" (click)="onHandleSelectCard()">
-                    <img src="assets/img/project/game/pick/card_2.png" />
-                </label>
-                <label class="pick-card fcard" (click)="onHandleSelectCard()">
-                    <img src="assets/img/project/game/pick/card_1.png" />
-                </label>
+                    <img class="front-image" src="assets/img/project/game/pick/card_1.png" />
+                </label> -->
             </div>
-            
+
         </div>
-        <div class="d-grid mx-auto button-content mt-5">
+        <div class="d-grid mx-auto button-content" [ngClass]="{'hidden' : isStartPick}">
             <image-button [text]="'pick a card'" [size]="'lg'" (onClick)="onHanldePickCard($event)"></image-button>
         </div>
-        <div class="reward-information text-dark text-center py-4 fw-bold">
+        <div class="reward-information text-dark text-center py-4 fw-bold" [ngClass]="{'hidden' : isStartPick}">
             You will be charged 100$.
         </div>
         <div class="coin-image-wrapper">

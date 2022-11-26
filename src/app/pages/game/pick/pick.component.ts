@@ -16,11 +16,11 @@ export class PickComponent implements OnInit {
 
   isStartPick = false;
   rewardItems = new Array(20);
+  pickCards = new Array(5);
 
   constructor(private modalService: NgbModal, private router: Router) { }
 
   ngOnInit(): void {
-
   }
 
   onHanldePickCard(data: any) {
@@ -92,6 +92,9 @@ export class PickComponent implements OnInit {
       document.querySelector('.after-content .card-4')!.classList.add('d-hidden');
       document.querySelector('.after-content .card-5')!.classList.add('d-hidden');
 
+      document.querySelectorAll('.fcard')[0].classList.add('pe-auto');
+      document.querySelectorAll('.fcard')[1].classList.add('pe-auto');
+
       document.querySelectorAll('.fcard')[2].classList.add('d-visible');
       document.querySelectorAll('.fcard')[2].classList.add('pe-auto');
       document.querySelectorAll('.fcard')[3].classList.add('d-visible');
@@ -160,7 +163,9 @@ export class PickComponent implements OnInit {
     return angle;
   }
 
-  onHandleSelectCard() {
-    console.log("card is clicked");
+  onHandleSelectCard(e: any) {
+    // console.log("card is clicked");
+    const parentDom = e.target.closest('.fcard');
+    parentDom.classList.add('selectedCard');
   }
 }
