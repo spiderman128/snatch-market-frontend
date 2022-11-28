@@ -11,8 +11,6 @@ import { environment }   from '@env/environment';
 // Helpers
 import { EmitterHelper } from '@helpers/emitter.helper';
 
-// Services
-import { AppService }    from '@services/app.service';
 
 @Component({
   selector    : 'app-login',
@@ -30,7 +28,7 @@ export class LoginComponent
   constructor
   (
     private router     : Router,
-    private appService : AppService,
+    // private appService : AppService,
   )
   {
     this.initFormGroup();
@@ -73,12 +71,12 @@ export class LoginComponent
 
     const email    = this.formGroup.controls.email.getRawValue();
     const password = this.formGroup.controls.password.getRawValue();
-    const success  = await this.appService.authenticate(email, password);
+    // const success  = await this.appService.authenticate(email, password);
 
     EmitterHelper.sendAuthLoading(false);
 
-    if (!success)
-      return;
+    // if (!success)
+    //   return;
 
     // NOTE Redirect to home
     this.router.navigate(['/home']);

@@ -20,8 +20,6 @@ import { AppRoutingModule }     from './app-routing.module';
 import { SharedModule }         from './shared/shared.module';
 import { StaticModule }         from './static/static.module';
 
-// Services
-import { AppService }           from '@services/app.service';
 
 // Components
 import { AppComponent }         from './app.component';
@@ -29,6 +27,17 @@ import { AppComponent }         from './app.component';
 // Factories
 import { appInitFactory }       from '@factories/app-init.factory';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+// storemodule 
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+
+import { appReducer } from './shared/store/app.reducer';
+
+// import reducer
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+
 
 
 @NgModule({
@@ -54,6 +63,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     StaticModule,
     AppRoutingModule,
     FontAwesomeModule,
+
+    StoreModule.forRoot({appState: appReducer}),
+    EffectsModule.forRoot([]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
   ],
   declarations: [
     AppComponent,
@@ -68,7 +81,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     },
 
     // Services
-    AppService,
+    // AppService,
 
     // Pipes
     DatePipe,

@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "heroku-postbuild": "ng build",
-    "add-page": "ng g m pages/page-name --routing && ng g component pages/page-name --skip-tests"
+    "add-page": "ng g m pages/page-name --routing && ng g component pages/page-name --skip-tests",
+    "json-run" : "json-server --watch db.json"
   },
   "private": true,
   "dependencies": {
@@ -27,6 +28,9 @@
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@ng-bootstrap/ng-bootstrap": "^13.1.0",
+    "@ngrx/effects": "^14.3.2",
+    "@ngrx/store": "^14.3.2",
+    "@ngrx/store-devtools": "^14.3.2",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
     "@popperjs/core": "^2.11.2",
@@ -37,6 +41,7 @@
     "gsap": "^2.1.3",
     "jquery": "^3.6.1",
     "ngx-drag-scroll": "^14.0.1",
+    "ngx-infinite-scroll": "^7.0.0",
     "path": "^0.12.7",
     "rxjs": "~7.5.0",
     "scratchcard-js": "^1.4.10",

@@ -9,7 +9,7 @@ import { Router }        from '@angular/router';
 import { EmitterHelper } from '@helpers/emitter.helper';
 
 // Services
-import { AppService }    from '@services/app.service';
+// import { AppService }    from '@services/app.service';
 
 @Component({
   selector    : 'app-forgot-password',
@@ -25,7 +25,7 @@ export class ForgotPasswordComponent
   constructor
   (
     public  router     : Router,
-    private appService : AppService,
+    // private appService : AppService,
   )
   {
     this.initFormGroup();
@@ -63,12 +63,12 @@ export class ForgotPasswordComponent
     EmitterHelper.sendAuthLoading(true);
 
     const email   = this.formGroup.controls.email.getRawValue();
-    const success = await this.appService.forgotPassword(email);
+    // const success = await this.appService.forgotPassword(email);
 
     EmitterHelper.sendAuthLoading(false);
 
-    if (!success)
-      return;
+    // if (!success)
+    //   return;
 
     // NOTE Redirect to validate account
     this.router.navigate(['/auth/validate-account']);

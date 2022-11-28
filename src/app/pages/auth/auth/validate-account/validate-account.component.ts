@@ -15,7 +15,7 @@ import { environment }    from '@env/environment';
 import { EmitterHelper }  from '@helpers/emitter.helper';
 
 // Services
-import { AppService }     from '@services/app.service';
+// import { AppService }     from '@services/app.service';
 
 @Component({
   selector    : 'app-validate-account',
@@ -33,7 +33,7 @@ export class ValidateAccountComponent implements OnInit
   (
     private router         : Router,
     private activatedRoute : ActivatedRoute,
-    private appService     : AppService,
+    // private appService     : AppService,
   )
   {
     this.initFormGroup();
@@ -85,12 +85,12 @@ export class ValidateAccountComponent implements OnInit
     EmitterHelper.sendAuthLoading(true);
 
     const password = this.formGroup.controls.password.getRawValue();
-    const success  = await this.appService.validateAccount(this.tokenFromUrl, password);
+    // const success  = await this.appService.validateAccount(this.tokenFromUrl, password);
 
     EmitterHelper.sendAuthLoading(false);
 
-    if (!success)
-      return;
+    // if (!success)
+    //   return;
 
     // NOTE Redirect to home
     this.router.navigate(['/home']);

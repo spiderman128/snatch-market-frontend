@@ -38,6 +38,9 @@ import { RewardDropCardComponent } from './components/reward-drop-card/reward-dr
 import { LayoutFooterComponent } from './components/layouts/layout-footer/layout-footer.component';
 import { GameRewardModalComponent } from './components/modals/game-reward-modal/game-reward-modal.component';
 import { RewardItemComponent } from './components/reward-item/reward-item.component';
+import { CollectionItemComponent } from './components/market-place/collection-item/collection-item.component';
+import { RewardCardItemComponent } from './components/market-place/reward-card-item/reward-card-item.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   imports:
@@ -81,6 +84,9 @@ import { RewardItemComponent } from './components/reward-item/reward-item.compon
       LayoutFooterComponent,
       GameRewardModalComponent,
       RewardItemComponent,
+      CollectionItemComponent,
+      RewardCardItemComponent,
+      PaginationComponent,
     ],
   exports:
     [
@@ -118,7 +124,10 @@ import { RewardItemComponent } from './components/reward-item/reward-item.compon
       RewardCollectionCardComponent,
       ProcessCardComponent,
       RewardDropCardComponent,
-      RewardItemComponent
+      RewardItemComponent,
+      CollectionItemComponent,
+      RewardCardItemComponent,
+      PaginationComponent,
     ],
   providers:
     [

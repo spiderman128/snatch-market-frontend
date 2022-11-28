@@ -27,6 +27,10 @@ const routes : Routes = [
     path         : 'game/pick',
     loadChildren : () => import('./pages/game/pick/pick.module').then(m => m.PickModule),
   },
+  {
+    path         : 'market-place',
+    loadChildren : () => import('./pages/market-place/market-place.module').then(m => m.MarketPlaceModule),
+  },
   { path : '',   redirectTo : '/home', pathMatch : 'full' },
   { path : '**', component : NotFoundComponent }
 ];

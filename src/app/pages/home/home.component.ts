@@ -4,8 +4,6 @@ import { AfterViewInit, Component, ElementRef, ViewChild, OnInit, OnDestroy } fr
 
 import { DragScrollComponent } from "ngx-drag-scroll";
 
-// Services
-import { AppService } from '@services/app.service';
 import { NewRewardCollection } from '@interfaces/newrewardcollection';
 import { Router } from '@angular/router';
 
@@ -44,7 +42,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   newRewardCollections: NewRewardCollection[] = [];
 
 
-  constructor(private appService: AppService, private router: Router) { }
+  constructor(private router: Router) { }
   ngOnDestroy(): void {
     clearInterval(this.timer);
   }
@@ -61,12 +59,12 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   public async ngOnInit(): Promise<void> {
     try {
 
-      const newRewards = await this.appService.getNewRewardCollection();
+      // const newRewards = await this.appService.getNewRewardCollection();
 
-      newRewards.data.forEach((element: NewRewardCollection) => {
-        return this.newRewardCollections.push(element);
-      });
-      console.log(this.newRewardCollections);
+      // newRewards.data.forEach((element: NewRewardCollection) => {
+      //   return this.newRewardCollections.push(element);
+      // });
+      // console.log(this.newRewardCollections);
       this.isLoading = false;
 
     } catch (error) {
