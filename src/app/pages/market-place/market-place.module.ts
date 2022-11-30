@@ -10,11 +10,21 @@ import { SharedModule } from 'src/app/shared/shared.module';
 
 import {EffectsModule} from '@ngrx/effects';
 import { MarketplaceEffect } from './store/marketplace.effect';
+import { NewComponent } from './new/new.component';
+import { CollectionsComponent } from './collections/collections.component';
+import { RewardsbytypeComponent } from './rewardsbytype/rewardsbytype.component';
+import { ItemDetailComponent } from './item-detail/item-detail.component';
+import { BrandComponent } from './brand/brand.component';
 
 
 @NgModule({
   declarations: [
-    MarketPlaceComponent
+    MarketPlaceComponent,
+    NewComponent,
+    CollectionsComponent,
+    RewardsbytypeComponent,
+    ItemDetailComponent,
+    BrandComponent
   ],
   imports: [
     CommonModule,

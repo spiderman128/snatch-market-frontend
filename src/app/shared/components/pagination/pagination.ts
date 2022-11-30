@@ -7,6 +7,7 @@ export class Pagination {
     public count: any;
     public page: any;
     public perPage: any;
+    public hasMiddle: any;
   
     constructor(
     ) { }

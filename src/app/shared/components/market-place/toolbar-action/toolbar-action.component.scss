@@ -1,0 +1,19 @@
+.toolbar-content {
+    height: 40px;
+    background-color: red;
+}
+
+#market_search_input, #market_sortby {
+    box-shadow: 2px 3px 1px #282828, white 2px 1px 0px inset;
+}
+#market_search_input:focus, #market_sortby:focus {
+    border-color: #ced4da!important;
+    box-shadow: 2px 3px 1px #282828, white 2px 1px 0px inset;
+}
+.market-search-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}

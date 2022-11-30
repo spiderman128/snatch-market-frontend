@@ -1,0 +1,3 @@
+<div class="app-button" [ngClass]="{'text-stroke' : isTextStroke, 'app-button-background' : !isBackgroundTransparent, 'text-dark' : isBackgroundTransparent}"  (click)="onClick($event)" #appButton>
+    {{text}}
+</div>

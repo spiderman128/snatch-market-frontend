@@ -11,5 +11,10 @@ export const collectionsFetchAPISuccess = createAction(
     props<{allCollections : MarketPlaceState['collections']}>()
 );
 
+export const isFilterShowAction = createAction(
+    "[IsFilterShow Action] Invoke isFilterShow Status",
+    props<{isShowFilterShow: boolean}>()
+);
+
 export class MarketplaceAction {
 }

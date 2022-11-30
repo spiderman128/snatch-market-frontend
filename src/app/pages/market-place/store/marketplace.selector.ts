@@ -17,3 +17,8 @@ export const selectBrands = createSelector(
     selectMarketplaceState,
     state => state.brands
 );
+
+export const selectIsFilterShow = createSelector(
+    selectMarketplaceState,
+    state => state.isFilterShow
+);

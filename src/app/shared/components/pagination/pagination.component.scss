@@ -1,0 +1,36 @@
+.page-item.active {
+    .page-link {
+        border-radius   : 50%;
+        background-color: #FF7200!important;
+        border-color: transparent;
+        color: white;
+    }
+
+}
+.pagination {
+    background-color: #7e7e7e17;
+}
+.page-item {
+    background-color: transparent!important;
+}
+.page-link {
+    border-style: none;
+    background-color: transparent!important;
+    color: black;
+    cursor: pointer;
+}
+// ul.pagination {
+//     padding: 5px 5px;
+// }
+.solar-page-link {
+    // padding: 5px;
+    font-size: 1.75rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    cursor: pointer;
+    // width: 32px;
+    // height: 32px;
+   label {
+    cursor: pointer;
+   }
+}

@@ -322,3 +322,10 @@ body {
     }
 
 }
+
+// brand page accordion custom style
+.brand-accordion-wrapper {
+    .accordion-button:focus {
+        box-shadow: none !important;
+    }
+}

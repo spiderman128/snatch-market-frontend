@@ -22,7 +22,7 @@ export class PaginationService {
     for (let idx = 0; idx < length; idx++, start += step) {
       range[idx] = start;
     }
-    
+
     return range;
   }
 
@@ -30,7 +30,8 @@ export class PaginationService {
     const totalPages = Math.ceil(totalItems / perPage);
     let startPage: number;
     let endPage: number;
-    const visiblePages = 7;
+    const visiblePages = 10;
+    let hasMiddle = false;
 
     if (currentPage < 1) {
       currentPage = 1;
@@ -41,23 +42,30 @@ export class PaginationService {
     if (totalPages <= visiblePages) {
       startPage = 1;
       endPage = totalPages;
-    } else {
-      if (currentPage <= visiblePages) {
-        startPage = 1;
-        endPage = visiblePages;
-      } else {
-        if (currentPage + 1 >= totalPages) {
-          startPage = totalPages - visiblePages + 1;
-          endPage = totalPages;
-          if (currentPage < startPage) {
-            startPage = currentPage + 1;
-            endPage = currentPage + 1;
-          }
-        } else {
-          endPage = currentPage;
-          startPage = endPage - visiblePages + 1;
-        }
-      }
+    }
+    else {
+      startPage = 1;
+      endPage = visiblePages;
+      if (totalPages > visiblePages + 2) hasMiddle = true;
+      else hasMiddle = false;
+      if (currentPage + 2 == totalPages) hasMiddle = false;
+      // if (currentPage <= visiblePages) {
+      //   startPage = 1;
+      //   endPage = visiblePages;
+      // }
+      // else {
+      //   if (currentPage + 1 >= totalPages) {
+      //     startPage = totalPages - visiblePages + 1;
+      //     endPage = totalPages;
+      //     if (currentPage < startPage) {
+      //       startPage = currentPage + 1;
+      //       endPage = currentPage + 1;
+      //     }
+      //   } else {
+      //     endPage = currentPage;
+      //     startPage = endPage - visiblePages + 1;
+      //   }
+      // }
     }
 
     const pages = this.range(startPage, endPage + 1, 1);
@@ -72,6 +80,7 @@ export class PaginationService {
     pagination.total = totalPages;
     pagination.current = currentPage;
     pagination.perPage = perPage;
+    pagination.hasMiddle = hasMiddle;
 
     return pagination;
 

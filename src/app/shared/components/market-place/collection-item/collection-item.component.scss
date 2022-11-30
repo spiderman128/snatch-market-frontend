@@ -3,15 +3,15 @@
     img.card-img-top {
         max-height: 120px;
         width: 80%;
-        object-fit: fill;
+        object-fit: cover;
     }
     .collection-symbol {
         position: absolute;
         left: 50%;
         top: -2rem;
         transform: translate(-50%, 0%);
-        width: 64px;
-        height: 64px;
+        width: 80px;
+        height: 80px;
         background-color: red;
         border-radius: 50%;
         img {

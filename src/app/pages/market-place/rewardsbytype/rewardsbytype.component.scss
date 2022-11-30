@@ -1,0 +1,9 @@
+#dropdownBasic1:focus, #dropdownBasic1:active {
+    border: none;
+}
+.dropdown-toggle::after{
+    vertical-align: middle!important;
+}
+.dropdown-item:active {
+    background-color: rgba($color: #000000, $alpha: 0.3)!important;
+}

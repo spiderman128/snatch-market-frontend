@@ -41,6 +41,9 @@ import { RewardItemComponent } from './components/reward-item/reward-item.compon
 import { CollectionItemComponent } from './components/market-place/collection-item/collection-item.component';
 import { RewardCardItemComponent } from './components/market-place/reward-card-item/reward-card-item.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { AppButtonComponent } from './components/buttons/app-button/app-button.component';
+import { ToolbarActionComponent } from './components/market-place/toolbar-action/toolbar-action.component';
+import { FilterPanelComponent } from './components/market-place/filter-panel/filter-panel.component';
 
 @NgModule({
   imports:
@@ -87,6 +90,9 @@ import { PaginationComponent } from './components/pagination/pagination.componen
       CollectionItemComponent,
       RewardCardItemComponent,
       PaginationComponent,
+      AppButtonComponent,
+      ToolbarActionComponent,
+      FilterPanelComponent,
     ],
   exports:
     [
@@ -128,6 +134,9 @@ import { PaginationComponent } from './components/pagination/pagination.componen
       CollectionItemComponent,
       RewardCardItemComponent,
       PaginationComponent,
+      AppButtonComponent,
+      ToolbarActionComponent,
+      FilterPanelComponent
     ],
   providers:
     [

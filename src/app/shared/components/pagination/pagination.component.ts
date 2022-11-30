@@ -31,10 +31,12 @@ export class PaginationComponent implements OnChanges {
       this.pagination.count,
       this.pagination.page,
       this.pagination.perPage);
+    console.log(this.pagination);
   }
 
   selectPage(page: number): void {
     this.changePage.emit(page);
+    
   }
 
 }

@@ -5,5 +5,6 @@ import { RewardModel } from "@interfaces/reward.model";
 export interface MarketPlaceState {
     collections: CollectionModel[],
     rewards : RewardModel[],
-    brands : BrandModel[]
+    brands : BrandModel[],
+    isFilterShow: boolean
 }

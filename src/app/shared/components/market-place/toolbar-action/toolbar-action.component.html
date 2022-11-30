@@ -1,0 +1,35 @@
+<div class="toolbar-action-content d-flex flex-row flex-wrap justify-content-between align-items-start py-4">
+    <div class="left-toolbar-content d-flex">
+        <label *ngIf="isFilterShow" class="me-2" [ngStyle]="{'width.rem' : 6}">
+            <app-custom-button [text]="'Filter'" [isBackgroundTransparent]="true" [isTextStroke]="false"
+                [size]="'sm'" (onClickEvent)="onHandleFilterClick($event)"></app-custom-button>
+        </label>
+        <label class="me-2" [ngStyle]="{'width.rem' : 12}">
+            <app-custom-button [text]="'what\'s new'" [size]="'sm'" [isTextStroke]="true"></app-custom-button>
+        </label>
+        <label class="me-2" [ngStyle]="{'width.rem' : 12}">
+            <app-custom-button [text]="'hot deal'" [isBackgroundTransparent]="true" [size]="'sm'"
+                [isTextStroke]="false"></app-custom-button>
+        </label>
+        <label class="me-2" [ngStyle]="{'width.rem' : 12}">
+            <app-custom-button [text]="'most viewed'" [isBackgroundTransparent]="true" [size]="'sm'"
+                [isTextStroke]="false"></app-custom-button>
+        </label>
+    </div>
+    <div class="right-toolbar-content d-grid" *ngIf="isSearchPanelShow">
+        <div class="input-group mb-2 position-relative" [ngStyle]="{'width.rem' : 18}">
+            <input type="text" id="market_search_input" class="form-control rounded-pill" placeholder="Search"
+                aria-label="Search" aria-describedby="market_search">
+            <img class="market-search-icon" src="assets/img/project/search_icon.svg" height="18" />
+        </div>
+        <div class="d-flex align-items-center">
+            <div [ngStyle]="{'width.%' : 30}">Sort By</div>
+            <select class="form-select rounded-pill" id="market_sortby" aria-label="Default select example">
+                <option selected>Name</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+    </div>
+</div>

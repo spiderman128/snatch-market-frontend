@@ -1,0 +1,24 @@
+.app-button {
+    --font-size: 18px;
+    --padding-size : 10px;
+    background: transparent;
+    border: 1px solid #282828;
+    margin: auto;
+    box-shadow: 1px 2px 1px #282828, white 2px 1px 0px inset;
+    border-radius: 50px;
+    color: white;
+    font-weight: 900;
+    padding: var(--padding-size) 0px;
+    text-align: center;
+    font-family: app_font !important;
+    cursor: pointer;
+    font-size: var(--font-size);
+    text-transform: uppercase;
+}
+.text-stroke {
+    -webkit-text-stroke: 1.5px #282828;
+    text-shadow: 1px 1.5px 1px #282828;
+}
+.app-button-background {
+    background-color: #ff7600;
+}
