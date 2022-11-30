@@ -8,7 +8,7 @@ import { EnvName } from '@enums/environment.enum';
 
 // const baseUrl = scheme + host + port + path;
 const scheme = 'https://';
-const host   = 'snatchmarketplace.azurewebsites.net/';
+const host   = 'dev.api.snatchrewards.io/';
 const port   = ':5000';
 const path   = '/api/';
 

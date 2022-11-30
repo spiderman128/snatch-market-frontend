@@ -10,7 +10,7 @@ import { EnvName } from '@enums/environment.enum';
 // const port   = ':5000';
 // const path   = '/api/';
 const scheme = 'https://';
-const host   = 'snatchmarketplace.azurewebsites.net/';
+const host   = 'dev.api.snatchrewards.io/';
 const port   = ':5000';
 const path   = '/api/';
 
