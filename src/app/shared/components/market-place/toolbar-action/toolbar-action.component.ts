@@ -9,8 +9,8 @@ export class ToolbarActionComponent implements OnInit {
 
   @Input() isFilterShow: boolean = true;
   @Input() isSearchPanelShow: boolean = true;
-  
-  @Output() onFilterAction: EventEmitter<any> = new EventEmitter<any>();
+
+  @Output() onToggleAction: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() { }
   
@@ -18,7 +18,7 @@ export class ToolbarActionComponent implements OnInit {
   ngOnInit(): void {
   }
   onHandleFilterClick(data: any) {
-    this.onFilterAction.emit('filter action is clicked');
+    this.onToggleAction.emit('filter action is clicked');
   }
 
 }

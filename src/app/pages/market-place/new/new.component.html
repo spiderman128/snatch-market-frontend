@@ -1,4 +1,4 @@
-<app-toolbar-action (onFilterAction)="onHanldeFilter($event)"></app-toolbar-action>
+<app-toolbar-action (onToggleAction)="onToggleFilter($event)"></app-toolbar-action>
 <div class="row">
     <div class="col-3" *ngIf="isShowFilterPanel">
         <app-filter-panel (onCloseEvent)="onHandleCloseFilterPanel($event)"></app-filter-panel>

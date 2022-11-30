@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
-import { invokeCollectionsAPI } from '../store/marketplace.action';
+import { invokeCollectionsAPI, isFilterShowAction } from '../store/marketplace.action';
 import { selectCollections, selectIsFilterShow } from '../store/marketplace.selector';
 
 @Component({
@@ -64,8 +64,9 @@ export class NewComponent implements OnInit {
   }
 
 
-  onHanldeFilter(event: any) {
+  onToggleFilter(event: any) {
     this.isShowFilterPanel = !this.isShowFilterPanel;
+    this.store.dispatch(isFilterShowAction({isShowFilterShow : this.isShowFilterPanel}))
   }
 
   onHandleDetail(data: any) {
@@ -73,5 +74,6 @@ export class NewComponent implements OnInit {
   }
   onHandleCloseFilterPanel(data: any) {
     this.isShowFilterPanel = false;
+    this.store.dispatch(isFilterShowAction({isShowFilterShow : this.isShowFilterPanel}))
   }
 }
