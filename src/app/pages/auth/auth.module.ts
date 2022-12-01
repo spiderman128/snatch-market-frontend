@@ -11,6 +11,7 @@ import { AuthComponent }            from './auth/auth.component';
 import { ForgotPasswordComponent }  from './auth/forgot-password/forgot-password.component';
 import { LoginComponent }           from './auth/login/login.component';
 import { ValidateAccountComponent } from './auth/validate-account/validate-account.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 @NgModule({
   declarations    :
@@ -18,13 +19,13 @@ import { ValidateAccountComponent } from './auth/validate-account/validate-accou
     AuthComponent,
     LoginComponent,
     ForgotPasswordComponent,
-    ValidateAccountComponent
+    ValidateAccountComponent,
+    SignupComponent,
   ],
   imports         :
   [
     CommonModule,
     AuthRoutingModule,
-
     SharedModule
   ],
 })

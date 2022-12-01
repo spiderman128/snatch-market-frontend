@@ -5,6 +5,7 @@ footer {
     width: 100%;
     background-color: black;
     color: white;
+    z-index: 100;
 }
 @media screen and (max-width: 560px) {
     .footer-title {

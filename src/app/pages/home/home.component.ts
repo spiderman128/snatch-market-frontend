@@ -105,4 +105,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.router.navigate(['/game/snatch'], {replaceUrl : true});
   }
 
+  onHanldeSignup(event: any) {
+    this.router.navigate(['/auth/signup']);
+  }
 }

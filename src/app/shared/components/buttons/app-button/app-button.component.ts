@@ -10,6 +10,7 @@ export class AppButtonComponent implements OnInit, AfterViewInit {
   @Input() text: string = "Text";
   @Input() isTextStroke : boolean = true;
   @Input() isBackgroundTransparent: boolean = false;
+  @Input() isTextDark: boolean = false;
   @Input() size : string = 'md';
   @Output() onClickEvent: EventEmitter<any> = new EventEmitter<any>();
   @ViewChild("appButton") appButton!: ElementRef<HTMLDivElement>;

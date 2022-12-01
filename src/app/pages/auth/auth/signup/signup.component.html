@@ -1,0 +1,14 @@
+<div class="d-flex flex-column justify-content-center h-100">
+    <div class="fs-2 fw-500 mx-auto mb-5">Sign Up</div>
+    <div class="mx-auto mb-3" [ngStyle]="{'width.rem' : 18}">
+        <app-custom-button [text]="'sign up as a user'"></app-custom-button>
+    </div>
+    <div class="mx-auto" [ngStyle]="{'width.rem' : 18}">
+        <app-custom-button [text]="'sign up as a merchant'" [isTextDark]="false" [isBackgroundTransparent]="true">
+        </app-custom-button>
+    </div>
+    <div class="mt-3">
+        <label>Already have an account? <a class="text-warning">Login here</a></label>
+    </div>
+
+</div>

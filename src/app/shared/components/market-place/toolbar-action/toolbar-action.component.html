@@ -1,19 +1,19 @@
 <div class="toolbar-action-content d-flex flex-row flex-wrap justify-content-between align-items-start py-4">
     <div class="left-toolbar-content d-flex">
         <label *ngIf="isFilterShow" class="me-2" [ngStyle]="{'width.rem' : 6}">
-            <app-custom-button [text]="'Filter'" [isBackgroundTransparent]="true" [isTextStroke]="false"
+            <app-custom-button [text]="'Filter'" [isBackgroundTransparent]="true" [isTextDark]="true" [isTextStroke]="false"
                 [size]="'sm'" (onClickEvent)="onHandleFilterClick($event)"></app-custom-button>
         </label>
         <label class="me-2" [ngStyle]="{'width.rem' : 12}">
             <app-custom-button [text]="'what\'s new'" [size]="'sm'" [isTextStroke]="true"></app-custom-button>
         </label>
         <label class="me-2" [ngStyle]="{'width.rem' : 12}">
-            <app-custom-button [text]="'hot deal'" [isBackgroundTransparent]="true" [size]="'sm'"
+            <app-custom-button [text]="'hot deal'" [isBackgroundTransparent]="true" [isTextDark]="true" [size]="'sm'"
                 [isTextStroke]="false"></app-custom-button>
         </label>
         <label class="me-2" [ngStyle]="{'width.rem' : 12}">
             <app-custom-button [text]="'most viewed'" [isBackgroundTransparent]="true" [size]="'sm'"
-                [isTextStroke]="false"></app-custom-button>
+                [isTextStroke]="false" [isTextDark]="true"></app-custom-button>
         </label>
     </div>
     <div class="right-toolbar-content d-grid" *ngIf="isSearchPanelShow">

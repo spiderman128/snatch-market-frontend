@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'process-card',
@@ -11,6 +11,7 @@ export class ProcessCardComponent implements OnInit {
   @Input() noImage: boolean = false;
   @Input() index: number = 1;
   @Input() buttonText: string = 'sign up';
+  @Output() onClickEvent: EventEmitter<any> = new EventEmitter<any>();
   imgUrl: string = '';
   constructor() { }
 
@@ -35,4 +36,7 @@ export class ProcessCardComponent implements OnInit {
     return _imageUrl;
   }
 
+  onClick() {
+    this.onClickEvent.emit('process event card is clicked');
+  }
 }

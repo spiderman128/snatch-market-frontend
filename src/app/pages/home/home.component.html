@@ -300,7 +300,7 @@
             <drag-scroll #nav [scroll-x-wheel-enabled]="true">
               <div class="container-fluid mb-5">
                 <div drag-scroll-item class="me-5 ms-3" [style.width]="'22rem'">
-                  <process-card [type]="'lock'" [index]="1" [buttonText]="'sign up'"></process-card>
+                  <process-card [type]="'lock'" [index]="1" [buttonText]="'sign up'" (onClickEvent)="onHanldeSignup($event)"></process-card>
                 </div>
                 <div drag-scroll-item class="mx-5" [style.width]="'22rem'">
                   <process-card [type]="'finger'" [index]="2" [buttonText]="'play now'"></process-card>

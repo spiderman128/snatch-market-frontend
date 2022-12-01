@@ -1,10 +1,11 @@
 import { createReducer, on } from '@ngrx/store';
-import { setAPIStatus } from './app.action';
+import { setAPIStatus, setUser } from './app.action';
 import { Appstate } from './app.state';
  
 export const initialState: Readonly<Appstate> = {
   apiResponseMessage: '',
   apiStatus: '',
+  user : null
 };
  
 export const appReducer = createReducer(
@@ -14,5 +15,10 @@ export const appReducer = createReducer(
       ...state,
       ...apiStatus
     };
+  }),
+  on(setUser, (state, {user}) => {
+    let newState = {...state};
+    newState.user = user;
+    return newState;
   })
 );
