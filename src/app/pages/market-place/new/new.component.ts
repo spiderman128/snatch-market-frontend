@@ -14,12 +14,13 @@ export class NewComponent implements OnInit {
   constructor(private store: Store, private router: Router) { }
 
   collections$ = this.store.pipe(select(selectCollections));
-  isShowFilterPanel$ = this.store.pipe(select(selectIsFilterShow));
+
   itemsCount = 1000;
   itemsPage = 1;
   itemsPerPage = 4;
 
   // filter action flag
+  isShowFilterPanel$ = this.store.pipe(select(selectIsFilterShow));
   isShowFilterPanel: boolean = false;
 
   ngOnInit(): void {
@@ -63,17 +64,8 @@ export class NewComponent implements OnInit {
     //         });
   }
 
-
-  onToggleFilter(event: any) {
-    this.isShowFilterPanel = !this.isShowFilterPanel;
-    this.store.dispatch(isFilterShowAction({isShowFilterShow : this.isShowFilterPanel}))
-  }
-
   onHandleDetail(data: any) {
     this.router.navigate(['/market-place/itemDetail/1']);
   }
-  onHandleCloseFilterPanel(data: any) {
-    this.isShowFilterPanel = false;
-    this.store.dispatch(isFilterShowAction({isShowFilterShow : this.isShowFilterPanel}))
-  }
+
 }

@@ -1,5 +1,14 @@
 <app-page-layout [headerTheme]="'light'">
     <div class="container-fluid market-place-content">
-        <router-outlet></router-outlet>
+        <app-toolbar-action (onToggleAction)="onToggleFilter($event)" [isSearchPanelShow]="isShowSearchAction"></app-toolbar-action>
+        <div class="row">
+            <div class="col-3" *ngIf="isShowFilterPanel">
+                <app-filter-panel (onCloseEvent)="onHandleCloseFilterPanel($event)"></app-filter-panel>
+            </div>
+            <div [ngClass]="{'col-9' : isShowFilterPanel, 'col-12' : !isShowFilterPanel}">
+                <router-outlet></router-outlet>
+            </div>  
+        </div>
+        
     </div>
 </app-page-layout>

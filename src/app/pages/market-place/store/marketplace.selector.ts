@@ -22,3 +22,7 @@ export const selectIsFilterShow = createSelector(
     selectMarketplaceState,
     state => state.isFilterShow
 );
+export const selectIsShowSearchAction = createSelector(
+    selectMarketplaceState,
+    state => state.isShowSearchAction
+);

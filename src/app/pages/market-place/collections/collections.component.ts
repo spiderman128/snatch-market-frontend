@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { select, Store } from '@ngrx/store';
-import { invokeCollectionsAPI } from '../store/marketplace.action';
-import { selectCollections } from '../store/marketplace.selector';
+import { invokeCollectionsAPI, isFilterShowAction } from '../store/marketplace.action';
+import { selectCollections, selectIsFilterShow } from '../store/marketplace.selector';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { selectCollections } from '../store/marketplace.selector';
 })
 export class CollectionsComponent implements OnInit {
 
-  constructor(private store: Store) { }
+  constructor(private store: Store, private router: Router) { }
 
   collections$ = this.store.pipe(select(selectCollections));
   itemsCount = 1000;
@@ -20,6 +21,7 @@ export class CollectionsComponent implements OnInit {
   itemsPerPage = 4;
 
   // filter action flag
+  isShowFilterPanel$ = this.store.pipe(select(selectIsFilterShow));
   isShowFilterPanel: boolean = false;
 
   ngOnInit(): void {
@@ -28,6 +30,7 @@ export class CollectionsComponent implements OnInit {
     this.collections$.subscribe(data => {
       console.log('component data', data)
     })
+    this.isShowFilterPanel$.subscribe(data => this.isShowFilterPanel = data);
   }
 
   onChangePage(_page: number) {
@@ -42,7 +45,7 @@ export class CollectionsComponent implements OnInit {
     if (page >= totalPages) {
       this.itemsPage = totalPages;
     }
-    
+
     // this.itemsCount = item.count;
     //       if (this.itemsPerPage < 1) {
     //         this.itemsPerPage = this.itemsPerPageDefault;
@@ -60,4 +63,7 @@ export class CollectionsComponent implements OnInit {
     //         });
   }
 
+  onHandleDetail(data: any) {
+    this.router.navigate(['/market-place/itemDetail/1']);
+  }
 }

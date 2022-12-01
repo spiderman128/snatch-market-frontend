@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 import { select, Store } from '@ngrx/store';
 import { invokeCollectionsAPI } from '../store/marketplace.action';
-import { selectCollections } from '../store/marketplace.selector';
+import { selectCollections, selectIsFilterShow } from '../store/marketplace.selector';
 
 @Component({
   selector: 'app-rewardsbytype',
@@ -22,12 +22,16 @@ export class RewardsbytypeComponent implements OnInit {
   // type state
   reward_type: string = "One Time User";
 
+  // 
+  isShowFilterPanel: boolean = false;
+  isShowFilterPanel$ = this.store.pipe(select(selectIsFilterShow));
   ngOnInit(): void {
     this.store.dispatch(invokeCollectionsAPI({ page: 1, limit: 5 }));
     console.log('component data', this.collections$)
     this.collections$.subscribe(data => {
       console.log('component data', data)
     })
+    this.isShowFilterPanel$.subscribe(data => this.isShowFilterPanel = data);
   }
 
   onChangePage(_page: number) {

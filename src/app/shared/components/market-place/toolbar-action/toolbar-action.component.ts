@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-toolbar-action',
@@ -12,7 +13,7 @@ export class ToolbarActionComponent implements OnInit {
 
   @Output() onToggleAction: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor() { }
+  constructor(private router: Router) { }
   
 
   ngOnInit(): void {
@@ -20,5 +21,7 @@ export class ToolbarActionComponent implements OnInit {
   onHandleFilterClick(data: any) {
     this.onToggleAction.emit('filter action is clicked');
   }
-
+  onHandleNew(event: any) {
+    this.router.navigate(['/market-place/new']);
+  }
 }

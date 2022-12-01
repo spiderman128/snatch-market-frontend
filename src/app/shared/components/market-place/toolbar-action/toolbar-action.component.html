@@ -5,7 +5,7 @@
                 [size]="'sm'" (onClickEvent)="onHandleFilterClick($event)"></app-custom-button>
         </label>
         <label class="me-2" [ngStyle]="{'width.rem' : 12}">
-            <app-custom-button [text]="'what\'s new'" [size]="'sm'" [isTextStroke]="true"></app-custom-button>
+            <app-custom-button (onClickEvent)="onHandleNew($event)" [text]="'what\'s new'" [size]="'sm'" [isTextStroke]="true"></app-custom-button>
         </label>
         <label class="me-2" [ngStyle]="{'width.rem' : 12}">
             <app-custom-button [text]="'hot deal'" [isBackgroundTransparent]="true" [isTextDark]="true" [size]="'sm'"

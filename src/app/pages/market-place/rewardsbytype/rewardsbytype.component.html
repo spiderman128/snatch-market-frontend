@@ -1,4 +1,3 @@
-<app-toolbar-action [isFilterShow]="false"></app-toolbar-action>
 <div class="mb-4">
     <div ngbDropdown class="d-inline-block">
         <label class="fs-3" id="dropdownBasic1" ngbDropdownToggle>
@@ -11,7 +10,7 @@
         </div>
     </div>
 </div>
-<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-4 row-cols-xxl-4 row-cols-sm-2 g-3">
+<div class="row row-cols-1  g-3" [ngClass]="{'row-cols-md-3 row-cols-lg-3 row-cols-xl-3 row-cols-xxl-3 row-cols-sm-2' : isShowFilterPanel, 'row-cols-md-3 row-cols-lg-4 row-cols-xl-4 row-cols-xxl-4 row-cols-sm-2' : !isShowFilterPanel}">
     <div class="col px-2">
         <app-reward-card-item (onItemClick)="onHandleDetail($event)"></app-reward-card-item>
     </div>

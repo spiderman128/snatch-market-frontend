@@ -16,5 +16,10 @@ export const isFilterShowAction = createAction(
     props<{isShowFilterShow: boolean}>()
 );
 
+export const isShowSearchAction = createAction(
+    "[Toolbar Search] Invoke toolbar search panel Status",
+    props<{isShowSearchAction: boolean}>()
+);
+
 export class MarketplaceAction {
 }

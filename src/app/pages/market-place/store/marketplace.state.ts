@@ -6,5 +6,6 @@ export interface MarketPlaceState {
     collections: CollectionModel[],
     rewards : RewardModel[],
     brands : BrandModel[],
-    isFilterShow: boolean
+    isFilterShow: boolean,
+    isShowSearchAction: boolean
 }
