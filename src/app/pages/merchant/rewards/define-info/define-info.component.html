@@ -1,0 +1,69 @@
+<div class="row m-0 px-0 py-5">
+    <div class="col-md-12 col-lg-8 col-xl-8 col-xs-12 col-sm-12 d-flex flex-column">
+        <div class="d-flex flex-wrap mb-3 px-2">
+            <label *ngFor="let perTab of tabData; let i =index;">
+                <div class="reward-tab py-2 px-2 rounded-2 me-2" (click)="onHanldeTransitionTab(i)"
+                    [ngClass]="{'active' : i == selectedRewardStepIndex}">
+                    {{perTab.title}}</div>
+            </label>
+
+        </div>
+        <div class="mb-3">
+            <p class="fs-5 px-3">Rewards 15% Off Valid 15/10/2022</p>
+        </div>
+        <div class="col-8 me-auto">
+            <div class="mb-3 ms-3">
+                <label for="reward_name" class="form-label text-secondary">Reward Name</label>
+                <input class="form-control fw-700" id="reward_name" placeholder="Reward name" value="15% Off Valid 15/10/2022" >
+            </div>
+        </div>
+        <div class="col-8 me-auto">
+            <div class="mb-3 ms-3">
+                <label for="reward_brief_info" class="form-label text-secondary">Reward Brief Description</label>
+                <textarea class="form-control" rows="4" id="reward_brief_description" value="" placeholder=""></textarea>
+            </div>
+        </div>
+        <div class="mb-3 ms-3 py-2">
+            <button class="btn rounded-pill confirm-button px-3">Confirm & Repeat</button>
+        </div>
+
+        <div class="mt-auto py-2 ms-3">
+            <button class="btn rounded-pill bg-dark text-white px-5" (click)="onNext()">Next</button>
+        </div>
+    </div>
+    <div class="col-md-12 col-lg-4 col-xl-4 col-xs-12  col-sm-12">
+        <div class="card text-center py-0 rounded-4 border-0 shadow my-0 info-wrapper">
+            <div class="card-header bg-white border-0 pt-4 pb-1">
+                The Process*
+            </div>
+            <div class="card-body p-0">
+                <div class="processimage-wrapper">
+                    <img class="img-fluid my-5" src="assets/img/project/merchant/merchant_reward_3.png" />
+                    <div class="selected_number_label">Select Number</div>
+                    <div class="reward_info_label">Reward Info</div>
+                    <div class="reward_details_label">Reward Detail</div>
+                    <div class="reward_repeat_label">Repeat</div>
+                </div>
+                <div class="py-3 fs-5">
+                    Rewards Category:
+                </div>
+                <div class="alert alert-odd rounded-0 border-0 text-center mb-0" role="alert">
+                    <div class="title fw-500">
+                        Time Based Rewards
+                    </div>
+                    <div class="info text-muted">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit
+                    </div>
+                </div>
+                <div class="alert rounded-0 border-0 text-center mb-0" role="alert">
+                    <div class="title fw-500">
+                        Use Based Rewards
+                    </div>
+                    <div class="info text-muted">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

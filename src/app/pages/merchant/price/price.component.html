@@ -1,0 +1,139 @@
+<div class="row m-0 px-0 py-5">
+    <div class="col-md-12 col-lg-8 col-xl-8 col-xs-12 col-sm-12 d-flex flex-column" *ngIf="!isHelp">
+        <div
+            class="progressbar-wrapper position-relative d-flex flex-column justify-content-center col-10 me-auto mb-4">
+            <div class="progress">
+                <div class="progress-bar text-end" role="progressbar" style="width: 25%;" aria-valuenow="50"
+                    aria-valuemin="10" aria-valuemax="500">
+                </div>
+            </div>
+            <div class="totalnumber-indicator text-center" [ngStyle]="{'left.%' : 25, 'font-size.px' : 18}">
+                <span class="text-center text-white">50</span>
+                <label>(10 % of Total Collection)</label>
+            </div>
+
+            <div class="label-indicator-wrapper d-flex">
+                <div class="min-label me-auto">
+                    10 USD
+                </div>
+                <div class="max-label">
+                    {{500 | number}} USD
+                </div>
+            </div>
+
+        </div>
+        <div class="mb-4 mt-4">
+            <button class="btn rounded-pill bg-main text-white px-5" (click)="onSetPriceByHelp()">Help Me Set a
+                Price</button>
+        </div>
+        <div class="mt-auto py-2">
+            <button class="btn rounded-pill bg-dark text-white px-5" (click)="onNext()">Next</button>
+        </div>
+    </div>
+    <div class="col-md-12 col-lg-8 col-xl-8 col-xs-12 col-sm-12 d-flex flex-column" *ngIf="isHelp">
+        <div class="card mb-4 rounded-5 border-0">
+            <div class="card-header bg-main border-0 rounded-5 py-3 rounded-bottom text-end">
+                <label class="text-white text-end ms-auto"> Cost of Reward | Preferred Currency</label>
+            </div>
+            <ng-scrollbar #scrollable track="all" pointerEventsMethod="scrollbar">
+                <div class="price-item d-flex px-3 rounded-2 my-3">
+                    <div class="d-grid me-auto py-2">
+                        <label>Reward 1</label>
+                        <label>50 Units - 5% 15% Off</label>
+                        <label>15/10/2022</label>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center" [ngStyle]="{'width.px' : 100, 'background' : '#AAAAAA'}">
+                        <label class="text-white fs-4 fw-500">400</label>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center" [ngStyle]="{'width.px' : 120}">
+                        <label class="text-dark fs-5 fw-500">USD</label>
+                    </div>
+                </div>
+                <div class="price-item d-flex px-3 rounded-2 my-3">
+                    <div class="d-grid me-auto py-2">
+                        <label>Reward 1</label>
+                        <label>50 Units - 5% 15% Off</label>
+                        <label>15/10/2022</label>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center" [ngStyle]="{'width.px' : 100, 'background' : '#AAAAAA'}">
+                        <label class="text-white fs-4 fw-500">400</label>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center" [ngStyle]="{'width.px' : 120}">
+                        <label class="text-dark fs-5 fw-500">USD</label>
+                    </div>
+                </div>
+                <div class="price-item d-flex px-3 rounded-2 my-3">
+                    <div class="d-grid me-auto py-2">
+                        <label>Reward 1</label>
+                        <label>50 Units - 5% 15% Off</label>
+                        <label>15/10/2022</label>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center" [ngStyle]="{'width.px' : 100, 'background' : '#AAAAAA'}">
+                        <label class="text-white fs-4 fw-500">400</label>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center" [ngStyle]="{'width.px' : 120}">
+                        <label class="text-dark fs-5 fw-500">USD</label>
+                    </div>
+                </div>
+                <div class="price-item d-flex px-3 rounded-2 my-3">
+                    <div class="d-grid me-auto py-2">
+                        <label>Reward 1</label>
+                        <label>50 Units - 5% 15% Off</label>
+                        <label>15/10/2022</label>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center" [ngStyle]="{'width.px' : 100, 'background' : '#AAAAAA'}">
+                        <label class="text-white fs-4 fw-500">400</label>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center" [ngStyle]="{'width.px' : 120}">
+                        <label class="text-dark fs-5 fw-500">USD</label>
+                    </div>
+                </div>
+                <div class="price-item d-flex px-3 rounded-2 my-3">
+                    <div class="d-grid me-auto py-2">
+                        <label>Reward 1</label>
+                        <label>50 Units - 5% 15% Off</label>
+                        <label>15/10/2022</label>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center" [ngStyle]="{'width.px' : 100, 'background' : '#AAAAAA'}">
+                        <label class="text-white fs-4 fw-500">400</label>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center" [ngStyle]="{'width.px' : 120}">
+                        <label class="text-dark fs-5 fw-500">USD</label>
+                    </div>
+                </div>
+            </ng-scrollbar>
+            <div class="card-footer px-0 py-3 d-flex justify-content-between align-items-center">
+                <label class="fw-800">Suggested Draw Price</label>
+                <label class="px-4 py-1 rounded-2" [ngStyle]="{'background' : '#E3E3E3'}">15 <span>USD</span></label>
+            </div>
+        </div>
+        <div class="mt-auto py-2 d-flex flex-row justify-content-between">
+            <button class="btn rounded-pill bg-dark text-white px-5" (click)="onNext()">Next</button>
+            <button class="btn rounded-pill bg-main text-white px-5">Use</button>
+        </div>
+    </div>
+    <div class="col-md-12 col-lg-4 col-xl-4 col-xs-12  col-sm-12">
+        <div class="card text-center py-0 rounded-4 border-0 shadow my-0 info-wrapper">
+            <div class="card-header bg-white border-0 py-4 pb-1">
+                Price*
+            </div>
+            <div class="card-body p-0">
+                <div class="alert alert-odd rounded-0 border-0 text-center mb-0" role="alert">
+                    <div class="info text-muted fw-900">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit
+                    </div>
+                </div>
+                <!-- <div class="alert rounded-0 border-0 text-center mb-0" role="alert">
+                    <div class="title fw-500">
+                        Price
+                    </div>
+                    <div class="info text-muted">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+    </div>
+</div>

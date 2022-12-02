@@ -1,0 +1,141 @@
+<div class="row m-0 px-0 py-5 mk-main-wrapper">
+    <div class="me-auto d-flex flex-column" [ngClass]="{'col-md-12 col-xl-11 col-xs-12' : !isDetail, 'col-md-12 col-lg-8 col-xs-12 ' : isDetail}">
+        <div class="d-flex mb-3">
+            <div class="my-auto ms-auto shadow px-2 py-3 rounded-2">
+                <img src="assets/img/project/merchant/filter_icon.png" width="24" class="img-fluid my-auto" />
+                <label class="fw-800 my-auto">Filters</label>
+            </div>
+        </div>
+        <div class="row row-cols-1" [ngClass]="{'row-cols-md-2 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4' : !isDetail, 'row-cols-md-2 row-cols-sm-2 row-cols-lg-2 row-cols-xl-3' : isDetail}">
+            <div class="col mb-3">
+                <div class="card text-center artist-card py-0 rounded-4 border-0 shadow my-0 h-100" (click)="onHandleDetail($event)">
+                    <img class="card-img-top rounded-4 rounded-bottom" src="assets/img/project/merchant/artwork/artlist_item.png" alt="Card image cap">
+                    <div class="card-body position-relative d-flex flex-column">
+                        <div class="artist-avatar">
+                            <img src="assets/img/project/merchant/artwork/artist_avatar.png" width="72" height="72" class="rounded-circle" >
+                        </div>
+                        <p class="card-text mt-auto">Artist Name</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-3">
+                <div class="card text-center artist-card py-0 rounded-4 border-0 shadow my-0 h-100" (click)="onHandleDetail($event)">
+                    <img class="card-img-top rounded-4 rounded-bottom" src="assets/img/project/merchant/artwork/artlist_item.png" alt="Card image cap">
+                    <div class="card-body position-relative d-flex flex-column">
+                        <div class="artist-avatar">
+                            <img src="assets/img/project/merchant/artwork/artist_avatar.png" width="72" height="72" class="rounded-circle" >
+                        </div>
+                        <p class="card-text mt-auto">Artist Name</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-3">
+                <div class="card text-center artist-card py-0 rounded-4 border-0 shadow my-0 h-100" (click)="onHandleDetail($event)">
+                    <img class="card-img-top rounded-4 rounded-bottom" src="assets/img/project/merchant/artwork/artlist_item.png" alt="Card image cap">
+                    <div class="card-body position-relative d-flex flex-column">
+                        <div class="artist-avatar">
+                            <img src="assets/img/project/merchant/artwork/artist_avatar.png" width="72" height="72" class="rounded-circle" >
+                        </div>
+                        <p class="card-text mt-auto">Artist Name</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-3">
+                <div class="card text-center artist-card py-0 rounded-4 border-0 shadow my-0 h-100" (click)="onHandleDetail($event)">
+                    <img class="card-img-top rounded-4 rounded-bottom" src="assets/img/project/merchant/artwork/artlist_item.png" alt="Card image cap">
+                    <div class="card-body position-relative d-flex flex-column">
+                        <div class="artist-avatar">
+                            <img src="assets/img/project/merchant/artwork/artist_avatar.png" width="72" height="72" class="rounded-circle" >
+                        </div>
+                        <p class="card-text mt-auto">Artist Name</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-3">
+                <div class="card text-center artist-card py-0 rounded-4 border-0 shadow my-0 h-100" (click)="onHandleDetail($event)">
+                    <img class="card-img-top rounded-4 rounded-bottom" src="assets/img/project/merchant/artwork/artlist_item.png" alt="Card image cap">
+                    <div class="card-body position-relative d-flex flex-column">
+                        <div class="artist-avatar">
+                            <img src="assets/img/project/merchant/artwork/artist_avatar.png" width="72" height="72" class="rounded-circle" >
+                        </div>
+                        <p class="card-text mt-auto">Artist Name</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-auto d-flex justify-content-between">
+            <button class="btn rounded-pill bg-dark px-5" (click)="onBack()">Back</button>
+            <button class="btn rounded-pill main-bg-color px-5" (click)="onNext()">Next</button>
+        </div>
+    </div>
+    <div class="col-md-12 col-lg-4 col-xs-12 mb-3" *ngIf="isDetail">
+        <div class="card text-center py-0 rounded-4 border-0 shadow my-0">
+            <div class="card-header px-3 bg-white border-0 pt-4 pb-1 d-flex flex-row justify-content-between align-items-center">
+                <label [ngStyle]="{'word-break' : 'break-word'}">Artist Profile</label> 
+                <button type="button" class="btn-close" (click)="onClose()"></button>
+            </div>
+            <div class="card-body">
+                <div class="d-flex flex-row align-items-center mb-4">
+                    <div class="me-auto">
+                        <img src="assets/img/project/merchant/artwork/artist_avatar.png" width="72" height="72" class="rounded-circle" >
+                    </div>
+                    <div class="profile-info d-flex flex-column justify-content-center ms-3">
+                        <label class="fw-700 text-start">Artist Name</label>
+                        <p class="mb-0 text-break lh-1">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-lg-2">
+                    <div class="col mb-3">
+                        <div class="card text-center py-0 rounded-4 border-0 shadow my-0 h-100">
+                            <img src="assets/img/project/merchant/artwork/3.png" class="img-fluid" />
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <div class="card text-center py-0 rounded-4 border-0 shadow my-0 h-100">
+                            <img src="assets/img/project/merchant/artwork/2.png" class="img-fluid" />
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <div class="card text-center py-0 rounded-4 border-0 shadow my-0 h-100">
+                            <img src="assets/img/project/merchant/artwork/1.png" class="img-fluid" />
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <div class="card text-center py-0 rounded-4 border-0 shadow my-0 h-100">
+                            <img src="assets/img/project/merchant/artwork/4.png" class="img-fluid" />
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mb-3">
+                    <a href="javascript: void();" class="text-muted">Show More</a>
+                </div>
+                <div class="text-center mb-3">
+                    <button class="btn rounded-pill main-bg-color px-5" (click)="onConfirm()">Confirm</button>
+                </div>
+                <!-- <div class="alert alert-odd rounded-0 border-0 text-center collection-detail-alert mb-0" role="alert">
+                    <div class="info text-secondary fw-900">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos atque unde molestiae iusto quaerat
+                        illo rerum, tempora dicta corporis cupiditate necessitatibus magnam
+                    </div>
+                </div> -->
+                <!-- <div class="alert rounded-0 border-0 text-center  mb-0" role="alert">
+                    <div class="title text-dark fs-6 fw-500">
+                        Draw Based Rewards Collection
+                    </div>
+                    <div class="info">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos atque unde molestiae iusto quaerat illo rerum, tempora dicta corporis cupiditate necessitatibus magnam
+                    </div>
+                </div>
+                <div class="alert rounded-0 mb-0 border-0 text-center collection-detail-alert" role="alert">
+                    <div class="title text-dark fs-6 fw-500">
+                        Draw Based Rewards Collection
+                    </div>
+                    <div class="info">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos atque unde molestiae iusto quaerat illo rerum, tempora dicta corporis cupiditate necessitatibus magnam
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>

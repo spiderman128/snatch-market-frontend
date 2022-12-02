@@ -44,6 +44,9 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 import { AppButtonComponent } from './components/buttons/app-button/app-button.component';
 import { ToolbarActionComponent } from './components/market-place/toolbar-action/toolbar-action.component';
 import { FilterPanelComponent } from './components/market-place/filter-panel/filter-panel.component';
+import { MerchantWizardDirective } from './directives/merchant-wizard.directive';
+
+
 
 @NgModule({
   imports:
@@ -93,6 +96,7 @@ import { FilterPanelComponent } from './components/market-place/filter-panel/fil
       AppButtonComponent,
       ToolbarActionComponent,
       FilterPanelComponent,
+      MerchantWizardDirective,
     ],
   exports:
     [
@@ -136,7 +140,8 @@ import { FilterPanelComponent } from './components/market-place/filter-panel/fil
       PaginationComponent,
       AppButtonComponent,
       ToolbarActionComponent,
-      FilterPanelComponent
+      FilterPanelComponent,
+      MerchantWizardDirective,
     ],
   providers:
     [

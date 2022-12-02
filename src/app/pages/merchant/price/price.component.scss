@@ -1,0 +1,109 @@
+.alert-odd {
+    background-color: #F2F2F2 !important;
+}
+
+.info-wrapper {
+    min-height: 400px;
+}
+
+.alert {
+    // overflow-y: scroll;
+    overflow: hidden;
+}
+
+.bg-main {
+    background-color: #FF7200;
+}
+
+.totalnumber-indicator {
+    position : absolute;
+    padding  : 5px;
+    left     : 0%;
+    top      : 50%;
+    transform: translateY(-50%);
+
+    span {
+        height          : 52px;
+        width           : 52px;
+        border-radius   : 50%;
+        background-color: #FF7200;
+        line-height     : 1;
+        display         : flex;
+        justify-content : center;
+        align-items     : center;
+    }
+
+    label {
+        position : absolute;
+        left     : 50;
+        font-size: 11px;
+        transform: translateX(-50%);
+        width    : 10rem;
+    }
+}
+
+.progressbar-wrapper {
+    height: 80px;
+
+    .progress {
+        height: 10px;
+    }
+
+    .progress-bar {
+        background-color: #FF7200;
+
+    }
+}
+
+.label-indicator-wrapper {
+    position : absolute;
+    left     : 50%;
+    top      : 80%;
+    transform: translate(-50%, -50%);
+    width    : 100%;
+}
+
+.min-label::before,
+.max-label::before {
+    display            : block;
+    // margin-left: 0.255em;
+    margin             : auto;
+    border-top         : 0;
+    text-align         : center;
+    content            : "";
+    border-right       : 0.3em solid transparent;
+    border-bottom      : 0.3em solid;
+    border-left        : 0.3em solid transparent;
+    border-bottom-color: #FF7200;
+    width              : 2px;
+    height             : 2px;
+}
+
+.min-label {
+    margin-left: -1.2rem;
+}
+
+.max-label {
+    margin-right: -1.2rem;
+}
+
+.btn.bg-main:focus {
+    background-color: #FF7200;
+}
+
+
+ng-scrollbar {
+    --scrollbar-size         : 8px;
+    --scrollbar-thumb-color  : gray;
+    --scrollbar-hover-size   : 12px;
+    --scrollbar-track-color  : rgba(0, 0, 0, 0.05);
+    --scrollbar-border-radius: 10px;
+
+    height       : 300px;
+    max-height   : 300px;
+    border-radius: 3px;
+}
+
+.price-item {
+    background-color: #E3E3E3;
+}

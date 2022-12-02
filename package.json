@@ -9,15 +9,17 @@
     "test": "ng test",
     "heroku-postbuild": "ng build",
     "add-page": "ng g m pages/page-name --routing && ng g component pages/page-name --skip-tests",
-    "json-run" : "json-server --watch db.json"
+    "json-run": "json-server --watch db.json"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^14.0.2",
+    "@angular/cdk": "^14.0.2",
     "@angular/common": "^14.0.2",
     "@angular/compiler": "^14.0.2",
     "@angular/core": "^14.0.2",
     "@angular/forms": "^14.0.2",
+    "@angular/material": "^14.0.2",
     "@angular/localize": "^14.0.2",
     "@angular/platform-browser": "^14.0.2",
     "@angular/platform-browser-dynamic": "^14.0.2",
@@ -42,6 +44,7 @@
     "jquery": "^3.6.1",
     "ngx-drag-scroll": "^14.0.1",
     "ngx-infinite-scroll": "^7.0.0",
+    "ngx-scrollbar": "^10.0.1",
     "path": "^0.12.7",
     "rxjs": "~7.5.0",
     "scratchcard-js": "^1.4.10",

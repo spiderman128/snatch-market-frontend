@@ -1,0 +1,16 @@
+.mk-main-wrapper {
+    min-height: 60vh;
+    --main-color: #FF7200;
+}
+.next-button {
+    background-color: #FF7200;
+}
+.alert-odd {
+    background-color: #F2F2F2 !important;
+}
+.main-color {
+    color: var(--main-color);
+}
+.main-bg-color {
+    background-color: var(--main-color);
+}

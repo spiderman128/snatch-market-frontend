@@ -1,0 +1,97 @@
+<div class="row m-0 px-0 py-5">
+    <div class="col-md-12 col-lg-8 col-xl-8 col-xs-12 col-sm-12 d-flex flex-column">
+        <div class="d-flex flex-wrap mb-3 px-2">
+            <label *ngFor="let perTab of tabData; let i =index;">
+                <div class="reward-tab py-2 px-2 rounded-2 me-2" (click)="onHanldeTransitionTab(i)"
+                    [ngClass]="{'active' : i == selectedRewardStepIndex}">
+                    {{perTab.title}}</div>
+            </label>
+
+        </div>
+        <div class="mb-3">
+            <p class="fs-5 px-2">50 Of The 500, I.E. 10% Of The Collection</p>
+        </div>
+        <div class="col-12 me-auto d-flex pe-4">
+            <div class="mb-3 ms-3" [ngStyle]="{'width.rem' : 15}">
+                <label for="reward_category" class="form-label text-secondary">Reward Category</label>
+                <select class="form-select" id="reward_category" aria-label="Default select example">
+                    <option selected>Time Based Reward</option>
+                    <option value="1">{{100 | number}}</option>
+                    <option value="2">{{200 | number}}</option>
+                    <option value="3">{{500 | number}}</option>
+                </select>
+            </div>
+            <div class="mb-3 ms-3 flex-fill">
+                <label for="reward_type" class="form-label text-secondary">Reward Type</label>
+                <select class="form-select" id="reward_type" aria-label="Default select example">
+                    <option selected>Percentage off - Time Limited</option>
+                    <option value="1">{{100 | number}}</option>
+                    <option value="2">{{200 | number}}</option>
+                    <option value="3">{{500 | number}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-12 me-auto d-flex pe-4">
+            <div class="mb-3 ms-3" [ngStyle]="{'width.rem' : 15}">
+                <textarea class="form-control" rows="4" id="reward_info" value="" placeholder="info"></textarea>
+            </div>
+            <div class="mb-3 ms-3 flex-fill d-flex flex-row align-items-center">
+                <div class="expiry-date-wrapper">
+                    <label for="expiryDate" class="form-label text-secondary">Expiry Date*</label>
+                    <div class="input-group">
+                        <input class="form-control" id="expiryDate" placeholder="dd/mm/yyyy" name="d2" #c2="ngModel"
+                            [(ngModel)]="expiryData" ngbDatepicker #d2="ngbDatepicker" />
+                        <img src="assets/img/project/calendar.png" class="calendar_addon" (click)="d2.toggle()" />
+                        <!-- <button class="btn btn-outline-secondary bi bi-calendar3" (click)="d2.toggle()" type="button"></button> -->
+                    </div>
+                    <label class="form-label text-secondary">Default value: Lifetime</label>
+                </div>
+                <div class="flex-fill ps-2">
+                    <button class="rounded-2 border-0 text-white auto-generate-btn me-auto" [ngStyle]="{'font-size.px' : 12}">Auto Generate</button>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3 ms-3 py-2">
+            <button class="btn rounded-pill confirm-button px-5 me-4" [ngStyle]="{'width.rem' : 10}">Confirm</button>
+        </div>
+
+        <div class="mt-auto py-2 ms-3">
+            <button class="btn rounded-pill bg-dark text-white px-5" (click)="onNext()" [ngStyle]="{'width.rem' : 10}">Next</button>
+        </div>
+    </div>
+    <div class="col-md-12 col-lg-4 col-xl-4 col-xs-12  col-sm-12">
+        <div class="card text-center py-0 rounded-4 border-0 shadow my-0 info-wrapper">
+            <div class="card-header bg-white border-0 pt-4 pb-1">
+                The Process*
+            </div>
+            <div class="card-body p-0">
+                <div class="processimage-wrapper">
+                    <img class="img-fluid my-5" src="assets/img/project/merchant/merchant_reward_2.png" />
+                    <div class="selected_number_label">Select Number</div>
+                    <div class="reward_info_label">Reward Info</div>
+                    <div class="reward_details_label">Reward Detail</div>
+                    <div class="reward_repeat_label">Repeat</div>
+                </div>
+                <div class="py-3 fs-5">
+                    Rewards Category:
+                </div>
+                <div class="alert alert-odd rounded-0 border-0 text-center mb-0" role="alert">
+                    <div class="title fw-500">
+                        Time Based Rewards
+                    </div>
+                    <div class="info text-muted">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit
+                    </div>
+                </div>
+                <div class="alert rounded-0 border-0 text-center mb-0" role="alert">
+                    <div class="title fw-500">
+                        Use Based Rewards
+                    </div>
+                    <div class="info text-muted">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<div class="row m-0 px-0 py-5">
+    <div class="col-md-8 col-xs-12 d-flex flex-column">
+        <div class="mb-3" [ngStyle]="{'width' : '100%'}">
+            <label for="launch_date" class="form-label">Collection Name</label>
+            <div class="input-group">
+                <input class="form-control collection_name" type="text" placeholder="Coffee Addicts"
+                    [(ngModel)]="collectionName" />
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="mb-3" [ngStyle]="{'width.rem' : 15}">
+                <label for="launch_date" class="form-label">Intended Launch Date</label>
+                <div class="input-group">
+                    <input class="form-control launch-date" placeholder="dd/mm/yyyy" name="d2" #c2="ngModel"
+                        [(ngModel)]="launchDate" ngbDatepicker #d2="ngbDatepicker" />
+                    <img src="assets/img/project/calendar.png" class="calendar_addon" (click)="d2.toggle()" />
+                    <!-- <button class="btn btn-outline-secondary bi bi-calendar3" (click)="d2.toggle()" type="button"></button> -->
+                </div>
+            </div>
+            <div class="mb-3 ms-3" [ngStyle]="{'width.rem' : 15}">
+                <label for="collection_type" class="form-label">Collection Type*</label>
+                <select class="form-select" id="collection_type" aria-label="Default select example">
+                    <option selected>Draw Based</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+        </div>
+        <div class="mt-auto">
+            <button class="btn rounded-pill next-button text-white px-5" (click)="onNext()">Next</button>
+        </div>
+    </div>
+    <div class="col-md-4 col-xs-12">
+        <div class="card text-center py-0 rounded-4 border-0 shadow my-0">
+            <div class="card-header bg-white border-0 py-4">
+                Collection Type Details*
+            </div>
+            <div class="card-body p-0">
+                <div class="alert rounded-0 border-0 text-center collection-detail-alert mb-0" role="alert">
+                    <div class="title text-dark fs-6 fw-500">
+                        Draw Based Rewards Collection
+                    </div>
+                    <div class="info">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos atque unde molestiae iusto quaerat illo rerum, tempora dicta corporis cupiditate necessitatibus magnam
+                    </div>
+                </div>
+                <div class="alert rounded-0 border-0 text-center  mb-0" role="alert">
+                    <div class="title text-dark fs-6 fw-500">
+                        Draw Based Rewards Collection
+                    </div>
+                    <div class="info">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos atque unde molestiae iusto quaerat illo rerum, tempora dicta corporis cupiditate necessitatibus magnam
+                    </div>
+                </div>
+                <div class="alert rounded-0 mb-0 border-0 text-center collection-detail-alert" role="alert">
+                    <div class="title text-dark fs-6 fw-500">
+                        Draw Based Rewards Collection
+                    </div>
+                    <div class="info">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos atque unde molestiae iusto quaerat illo rerum, tempora dicta corporis cupiditate necessitatibus magnam
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
