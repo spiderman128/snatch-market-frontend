@@ -3,7 +3,7 @@ import { MerchantState } from './merchant.state';
 import { setArtistStepIndexAction, setRewardStepIndexAction, setStepIndexAction } from './merchant.action';
 
 export const initialState : MerchantState = {
-    stepIndex : 5,
+    stepIndex : 0,
     rewardStepIndex : 0,
     artistStepIndex : 0
 }
