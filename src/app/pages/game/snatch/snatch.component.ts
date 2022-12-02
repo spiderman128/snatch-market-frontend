@@ -50,7 +50,9 @@ export class SnatchComponent implements OnInit {
     },
   };
 
-  constructor(private modalService: NgbModal, private router: Router) { }
+  constructor(private modalService: NgbModal, private router: Router) {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+   }
 
   ngOnInit(): void {
     this.imageName = '1.png';
@@ -70,7 +72,7 @@ export class SnatchComponent implements OnInit {
     // // canvasContainer?.setAttribute('width', w.toString());
     // // canvasContainer?.setAttribute('height', h.toString());
     // canvasContainer?.setAttribute('style', 'width:' + w.toString() + 'px; height:' + h.toString() + 'px;');
-    window.location?.reload();
+    this.router.navigate(['/game/snatch']);
   }
   createNewScratchCard() {
     // console.log(this.scratchData);

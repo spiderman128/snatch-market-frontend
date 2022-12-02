@@ -261,7 +261,7 @@
                         class="card-body-content flex-fill position-relative d-flex justify-content-center align-items-end">
                         <img src="assets/img/project/pick-card.png" class="three-game-image rounded-top rounded-4" />
                         <div class="mb-3" [style.width]="'9rem'">
-                          <image-button [text]="'play now'"></image-button>
+                          <image-button [text]="'play now'"  (onClick)="onHandleGoPickcard($event)"></image-button>
                         </div>
                       </div>
                     </div>

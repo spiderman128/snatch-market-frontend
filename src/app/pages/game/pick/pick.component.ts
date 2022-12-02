@@ -18,7 +18,10 @@ export class PickComponent implements OnInit {
   rewardItems = new Array(20);
   pickCards = new Array(5);
 
-  constructor(private modalService: NgbModal, private router: Router) { }
+  isRefresh: boolean = false;
+  constructor(private modalService: NgbModal, private router: Router) { 
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+  }
 
   ngOnInit(): void {
   }
@@ -27,7 +30,7 @@ export class PickComponent implements OnInit {
     this.isStartPick = true;
     setTimeout(() => {
       this.onArrangeCardToMatchWidth();
-    }, 3500);
+    }, 5500);
 
   }
   onArrangeCardToMatchWidth() {
@@ -165,7 +168,23 @@ export class PickComponent implements OnInit {
 
   onHandleSelectCard(e: any) {
     // console.log("card is clicked");
+    const fcards = document.querySelectorAll('.fcard');
+    fcards.forEach(element => {
+      element.classList.add('opacity-0');
+    })
     const parentDom = e.target.closest('.fcard');
+    parentDom.classList.add('opacity-1');
     parentDom.classList.add('selectedCard');
+    setTimeout(() => {
+      parentDom.setAttribute('style', 'opacity : 1; transition: all 1s;');
+      this.isRefresh = true;
+    }, 1500);
+
+  }
+  onResetPick(){
+    console.log(this.isRefresh);
+    if (this.isRefresh) {
+      this.router.navigate(['/game/pick']);
+    }
   }
 }

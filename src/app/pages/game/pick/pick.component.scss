@@ -154,7 +154,7 @@
 }
 
 .card1-firstani {
-    animation: card1-firstani 2s 1 1s forwards;
+    animation: card1-firstani 2s 2 1s forwards;
 }
 
 .fcard {
@@ -171,7 +171,7 @@
 }
 
 .card2-firstani {
-    animation: card2-firstani 2s 1 1s forwards;
+    animation: card2-firstani 2s 2 1s forwards;
 }
 
 @keyframes card2-firstani {
@@ -181,7 +181,7 @@
 }
 
 .card3-firstani {
-    animation: card3-firstani 2s 1 1s forwards;
+    animation: card3-firstani 2s 2 1s forwards;
 }
 
 @keyframes card3-firstani {
@@ -191,7 +191,7 @@
 }
 
 .card4-firstani {
-    animation: card4-firstani 2s 1 1s forwards;
+    animation: card4-firstani 2s 2 1s forwards;
 }
 
 @keyframes card4-firstani {
@@ -201,7 +201,7 @@
 }
 
 .card5-firstani {
-    animation: card5-firstani 2s 1 1s forwards;
+    animation: card5-firstani 2s 2 1s forwards;
 }
 
 @keyframes card5-firstani {
@@ -976,6 +976,14 @@ img.front-image {
     }
 }
 
+
+.opacity-0 {
+    opacity: 0!important;
+    transition: 2s opacity;
+}
+.opacity-1 {
+    opacity: 1!important;
+}
 
 
 

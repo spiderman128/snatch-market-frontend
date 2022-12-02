@@ -89,7 +89,7 @@
         <div class="reward-information text-dark text-center py-4 fw-bold" [ngClass]="{'hidden' : isStartPick}">
             You will be charged 100$.
         </div>
-        <div class="coin-image-wrapper">
+        <div class="coin-image-wrapper" (click)="onResetPick()">
             <img src="assets/img/project/game/snatch/coin.png" />
         </div>
     </div>

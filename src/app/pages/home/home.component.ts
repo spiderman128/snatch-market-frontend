@@ -108,4 +108,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   onHanldeSignup(event: any) {
     this.router.navigate(['/auth/signup']);
   }
+  onHandleGoPickcard(event: any) {
+    this.router.navigate(['/game/pick'], {replaceUrl : true});
+  }
 }
