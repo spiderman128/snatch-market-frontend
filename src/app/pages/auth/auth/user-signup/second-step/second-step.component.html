@@ -1,0 +1,35 @@
+<div class="mx-auto mb-3 input-group position-relative" [ngStyle]="{'width.rem' : 25, 'height.rem' : 3}">
+    <select class="form-control rounded-pill">
+        <option>Country</option>
+        <option>Country</option>
+        <option>Country</option>
+        <option>Country</option>
+        <option>Country</option>
+        <option>Country</option>
+    </select>
+</div>
+<div [ngStyle]="{'width.rem' : 25}" class="d-flex mx-auto">
+    <div class="me-auto mb-3 input-group position-relative" [ngStyle]="{'width.rem' : 8, 'height.rem' : 3}">
+        <input type="text" class="form-control rounded-pill" placeholder="Code">
+    </div>
+    <div class="mb-3 ms-2 input-group position-relative flex-fill" [ngStyle]="{'height.rem' : 3}">
+        <input type="text" class="form-control rounded-pill" placeholder="Phone Number">
+    </div>
+</div>
+<div class="mx-auto text-start mb-1" [ngStyle]="{'width.rem' : 25}">
+    <label>Select Identification</label>
+</div>
+
+<div [ngStyle]="{'width.rem' : 25}" class="d-flex mx-auto">
+    
+    <div class="me-auto mb-3 input-group position-relative d-flex flex-row align-items-center" [ngStyle]="{'width.rem' : 10, 'height.rem' : 3}">
+        <label class="form-control rounded-pill my-auto" [ngStyle]="{'height.rem' : 3, 'line-height' : 2}">Passport</label>
+    </div>
+    <div class="mb-3 input-group position-relative" [ngStyle]="{'width.rem' : 14, 'height.rem' : 3}">
+        <label class="form-control rounded-pill my-auto" [ngStyle]="{'height.rem' : 3, 'line-height' : 2}">ID</label>
+    </div>
+</div>
+<div class="mx-auto mb-4" [ngStyle]="{'width.rem' : 10, 'margin-top.rem': 3}">
+    <app-custom-button [text]="'Next'" (onClickEvent)="onClickNext($event)">
+    </app-custom-button>
+</div>

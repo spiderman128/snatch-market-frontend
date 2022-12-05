@@ -1,0 +1,53 @@
+<div class="text-dark d-grid col-7 mx-auto mb-5">
+    <label class="me-auto fw-500">step 2/5</label>
+    <label class="me-auto fs-3 fw-500">User List</label>
+    <label class="me-auto">optional</label>
+</div>
+<div class="col-7 mx-auto">
+    <div class="mb-3">
+        <label for="user_name" class="form-label text-secondary">User Name</label>
+        <input type="text" class="form-control" id="user_name">
+    </div>
+    <div class="mb-3">
+        <label for="firstname_category" class="form-label text-secondary">First Name</label>
+        <select class="form-select" id="firstname_category" aria-label="Default select example">
+            <option selected></option>
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="lastname_category" class="form-label text-secondary">Last Name</label>
+        <select class="form-select" id="lastname_category" aria-label="Default select example">
+            <option selected></option>
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="phone_number" class="form-label text-secondary">Phone Number</label>
+        <input type="text" class="form-control" id="phone_number">
+    </div>
+    <div class="mb-5">
+        <label for="email_address" class="form-label text-secondary">Email Address</label>
+        <input type="text" class="form-control" id="email_address">
+    </div>
+    <div class="mb-3">
+        <label class="form-label text-secondary">Identification Document</label>
+        <div class="ID-upload-content">
+            <img src="assets/img/project/up_arrow.png" width="32" class="img-fluid mx-auto my-auto" />
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label text-secondary">Give Portal Access</label>
+        <div class="d-flex">
+            <button class="btn bg-main text-dark me-3">Yes</button>
+            <button class="btn bg-main text-dark">No</button>
+        </div>
+    </div>
+    <div class="mb-5 d-grid">
+        <button class="btn next-button" (click)="onClickNext()">Next</button>
+    </div>
+</div>

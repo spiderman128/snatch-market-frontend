@@ -8,7 +8,11 @@ import { AuthComponent }            from './auth/auth.component';
 import { ForgotPasswordComponent }  from './auth/forgot-password/forgot-password.component';
 import { LoginComponent }           from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { UserSignupComponent } from './auth/user-signup/user-signup.component';
 import { ValidateAccountComponent } from './auth/validate-account/validate-account.component';
+import { MerchantComponent } from './merchant/merchant.component';
+import { MsignupSuccessComponent } from './msignup-success/msignup-success.component';
+import { SuccessComponent } from './success/success.component';
 
 const routes : Routes = [
   {
@@ -29,6 +33,10 @@ const routes : Routes = [
         component : SignupComponent
       },
       {
+        path      : 'user-signup',
+        component : UserSignupComponent
+      },
+      {
         path      : 'forgot-password',
         component : ForgotPasswordComponent,
       },
@@ -37,6 +45,18 @@ const routes : Routes = [
         component : ValidateAccountComponent,
       },
     ]
+  },
+  {
+    path: 'success',
+    component: SuccessComponent
+  },
+  {
+    path: 'merchant',
+    component: MerchantComponent
+  },
+  {
+    path: "msignup-success",
+    component : MsignupSuccessComponent
   }
 ];
 

@@ -1,0 +1,20 @@
+* {
+    color: black;
+}
+
+.form-control {
+    box-shadow: 2px 3px 1px #282828, white 2px 1px 1px inset;
+}
+
+.form-control:focus {
+    border-color: #ced4da !important;
+    box-shadow  : 2px 3px 1px #282828, white 2px 1px 1px inset;
+}
+
+img.addon-img {
+    position : absolute;
+    right    : 20px;
+    top      : 50%;
+    transform: translateY(-50%);
+    z-index  : 10;
+}

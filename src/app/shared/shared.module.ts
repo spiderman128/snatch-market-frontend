@@ -45,6 +45,8 @@ import { AppButtonComponent } from './components/buttons/app-button/app-button.c
 import { ToolbarActionComponent } from './components/market-place/toolbar-action/toolbar-action.component';
 import { FilterPanelComponent } from './components/market-place/filter-panel/filter-panel.component';
 import { MerchantWizardDirective } from './directives/merchant-wizard.directive';
+import { AuthWizardDirective } from './directives/auth-wizard.directive';
+
 
 
 
@@ -97,6 +99,7 @@ import { MerchantWizardDirective } from './directives/merchant-wizard.directive'
       ToolbarActionComponent,
       FilterPanelComponent,
       MerchantWizardDirective,
+      AuthWizardDirective,
     ],
   exports:
     [
@@ -130,6 +133,10 @@ import { MerchantWizardDirective } from './directives/merchant-wizard.directive'
 
       // Directives
       ModalWrapperDirective,
+      MerchantWizardDirective,
+      AuthWizardDirective,
+
+      // some component 
       ImageButtonComponent,
       RewardCollectionCardComponent,
       ProcessCardComponent,
@@ -141,7 +148,6 @@ import { MerchantWizardDirective } from './directives/merchant-wizard.directive'
       AppButtonComponent,
       ToolbarActionComponent,
       FilterPanelComponent,
-      MerchantWizardDirective,
     ],
   providers:
     [

@@ -1,0 +1,19 @@
+<div [ngStyle]="{'width.rem' : 25}" class="d-flex mx-auto">
+    <div class="me-auto mb-3 input-group position-relative" [ngStyle]="{'width.rem' : 10, 'height.rem' : 3}">
+        <input type="text" class="form-control rounded-pill" placeholder="First Name">
+    </div>
+    <div class="mb-3 input-group position-relative" [ngStyle]="{'width.rem' : 13, 'height.rem' : 3}">
+        <input type="text" class="form-control rounded-pill" placeholder="Last Name">
+    </div>
+</div>
+<div class="mx-auto mb-3 input-group position-relative" [ngStyle]="{'width.rem' : 25, 'height.rem' : 3}">
+    <input type="email" class="form-control rounded-pill" placeholder="Email Address">
+</div>
+<div class="mx-auto mb-4 input-group position-relative" [ngStyle]="{'width.rem' : 25, 'height.rem' : 3}">
+    <input type="password" class="form-control rounded-pill" placeholder="Password">
+    <img class="addon-img" src="assets/img/project/password_addon.png" height="18" />
+</div>
+<div class="mx-auto mb-4" [ngStyle]="{'width.rem' : 10, 'margin-top.rem': 3}">
+    <app-custom-button [text]="'Next'" (onClickEvent)="onClickNext($event)">
+    </app-custom-button>
+</div>

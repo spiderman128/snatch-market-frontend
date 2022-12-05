@@ -1,10 +1,10 @@
 <div class="d-flex flex-column justify-content-center h-100">
     <div class="fs-2 fw-500 mx-auto mb-5" [ngStyle]="{'margin-top.rem' : -10}">Sign Up</div>
     <div class="mx-auto mb-3" [ngStyle]="{'width.rem' : 25}">
-        <app-custom-button [text]="'sign up as a user'"></app-custom-button>
+        <app-custom-button [text]="'sign up as a user'" (onClickEvent)="onHandleGoUserSignup($event)"></app-custom-button>
     </div>
     <div class="mx-auto mb-4" [ngStyle]="{'width.rem' : 25}">
-        <app-custom-button [text]="'sign up as a merchant'" [isTextDark]="false" [isBackgroundTransparent]="true">
+        <app-custom-button [text]="'sign up as a merchant'" [isTextDark]="false" (onClickEvent)="onHandleGoMerchantSignup($event)" [isBackgroundTransparent]="true">
         </app-custom-button>
     </div>
     <div>

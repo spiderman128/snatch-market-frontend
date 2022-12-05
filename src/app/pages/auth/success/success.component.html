@@ -1,0 +1,30 @@
+<app-page-layout [headerTheme]="'dark'">
+    <div class="container-fluid m-0 p-0 success-wrapper text-center">
+        <div class="left-top-img">
+          <img src="assets/img/project/play_to_earn/1.png" />
+        </div>
+        <div class="left-middle-img">
+          <img src="assets/img/project/play_to_earn/2.png" />
+        </div>
+        <div class="left-bottom-img">
+          <img src="assets/img/project/release_business/1.png" />
+        </div>
+        <div class="right-top-img">
+          <img src="assets/img/project/play_to_earn/3.png" />
+        </div>
+        <div class="right-bottom-img">
+          <img src="assets/img/project/release_business/2.png" />
+        </div>
+        <div class="d-flex flex-column justify-content-center h-100">
+            <div class="mx-auto mb-5 d-grid" [ngStyle]="{'margin-top.rem' : -5}">
+              <label class="fw-500" [ngStyle]="{'font-size.px' : 60}">Congratulations!</label>
+              <label class="fs-3">Account Verified</label>
+            </div>
+            <div class="mx-auto mb-4" [ngStyle]="{'width.rem' : 10, 'margin-top.rem': 3}">
+              <app-custom-button [text]="'Next'" (onClickEvent)="onPlaynow($event)">
+              </app-custom-button>
+            </div>
+          </div>
+      </div>
+  </app-page-layout>
+  

@@ -1,0 +1,7 @@
+<div class="d-flex flex-column justify-content-center h-100">
+    <div class="mx-auto mb-5 d-grid" [ngStyle]="{'margin-top.rem' : -10}">
+        <label class="fs-2 fw-500 ">Create Account</label> 
+        <label [ngStyle]="{'color' : '#ff7600'}">Step {{selectedStepIndex + 1}} of 3</label>
+    </div>
+    <ng-template auth-wizard-host></ng-template>
+  </div>
