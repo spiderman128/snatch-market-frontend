@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { select, Store } from '@ngrx/store';
-import { invokeCollectionsAPI } from '../store/marketplace.action';
+import { InvokeRewardCollectionAPI } from '../store/marketplace.action';
 import { selectCollections, selectIsFilterShow } from '../store/marketplace.selector';
 
 @Component({
@@ -26,7 +26,8 @@ export class RewardsbytypeComponent implements OnInit {
   isShowFilterPanel: boolean = false;
   isShowFilterPanel$ = this.store.pipe(select(selectIsFilterShow));
   ngOnInit(): void {
-    this.store.dispatch(invokeCollectionsAPI({ page: 1, limit: 5 }));
+    // this.store.dispatch(invokeCollectionsAPI({ page: 1, limit: 5 }));
+    this.store.dispatch(InvokeRewardCollectionAPI());
     console.log('component data', this.collections$)
     this.collections$.subscribe(data => {
       console.log('component data', data)

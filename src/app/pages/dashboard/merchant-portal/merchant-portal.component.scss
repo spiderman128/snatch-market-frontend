@@ -1,0 +1,60 @@
+* {
+    color: black;
+}
+
+.top-card {
+    background-color: #F2F2F2 !important;
+    height: 300px!important;
+}
+
+.pie-chart {
+    --p          : 30;
+    --b          : 10px;
+    --c          : #FF7200;
+    --w          : 211px;
+    width        : var(--w);
+    aspect-ratio : 1;
+    display      : inline-grid;
+    place-content: center;
+    margin       : 5px;
+    font-size    : 25px;
+    font-weight  : bold;
+    font-family  : sans-serif;
+    position: relative;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.pie-chart:before {
+    content      : "";
+    position     : absolute;
+    border-radius: 50%;
+    inset        : 0;
+    background   : conic-gradient(var(--c) calc(var(--p)*1%), #fff 0);
+    border: 1px solid black;
+    width: 91%;
+    height: 91%;
+    top: 3px;
+    left: 6%;
+    // box-shadow: 2px 3px 1px #282828, white 2px 1px 1px inset;
+}
+
+.item-image {
+    width: 60px;
+    height: 60px;
+}
+.list-item-image {
+    width: 70px;
+    height: 70px;
+}
+
+
+.collection-img {
+    height: 211px;
+    width: 100%;
+}
+
+.money-spent-card {
+    height: 300px!important;
+    background-color: #000000;
+}

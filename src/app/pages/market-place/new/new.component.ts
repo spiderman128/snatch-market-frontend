@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
-import { invokeCollectionsAPI, isFilterShowAction } from '../store/marketplace.action';
+import { Subject, takeUntil } from 'rxjs';
+import * as marketActions from '../store/marketplace.action';
 import { selectCollections, selectIsFilterShow } from '../store/marketplace.selector';
 
 @Component({
@@ -9,9 +10,10 @@ import { selectCollections, selectIsFilterShow } from '../store/marketplace.sele
   templateUrl: './new.component.html',
   styleUrls: ['./new.component.scss']
 })
-export class NewComponent implements OnInit {
+export class NewComponent implements OnInit, OnDestroy {
 
   constructor(private store: Store, private router: Router) { }
+  
 
   collections$ = this.store.pipe(select(selectCollections));
 
@@ -23,17 +25,22 @@ export class NewComponent implements OnInit {
   isShowFilterPanel$ = this.store.pipe(select(selectIsFilterShow));
   isShowFilterPanel: boolean = false;
 
+  destroyed$ = new Subject<void>();
   ngOnInit(): void {
-    this.store.dispatch(invokeCollectionsAPI({ page: 1, limit: 5 }));
-    console.log('component data', this.collections$)
-    this.collections$.subscribe(data => {
-      console.log('component data', data)
-    })
-    this.isShowFilterPanel$.subscribe(data => {
+    // this.store.dispatch(invokeCollectionsAPI({ page: 1, limit: 5 }));
+    this.store.dispatch(marketActions.InvokeRewardCollectionAPI());
+    // this.collections$.subscribe(data => {
+    //   console.log('component data', data)
+    // })
+    this.isShowFilterPanel$.pipe(takeUntil(this.destroyed$)).subscribe(data => {
       this.isShowFilterPanel = data;
     })
   }
 
+  ngOnDestroy(): void {
+    this.destroyed$.next();
+    this.destroyed$.complete();
+  }
   onChangePage(_page: number) {
     this.itemsPage = _page;
 

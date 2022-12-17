@@ -18,8 +18,8 @@ export class Toast
     this.withHeader = true;
     this.body       = body;
     this.type       = type ?? 'danger';
-    this.autoHide   = false;
-    this.delay      = 10000; // 10 sec
+    this.autoHide   = true;
+    this.delay      = 2500; // 10 sec
 
     this.headerKey  = this.type.toUpperCase();
   }

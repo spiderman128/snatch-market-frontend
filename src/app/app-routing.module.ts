@@ -35,6 +35,10 @@ const routes : Routes = [
     path         : 'merchant',
     loadChildren : () => import('./pages/merchant/merchant.module').then(m => m.MerchantModule),
   },
+  {
+    path : 'dashboard',
+    loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule)
+  },
   { path : '',   redirectTo : '/home', pathMatch : 'full' },
   { path : '**', component : NotFoundComponent }
 ];

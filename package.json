@@ -37,11 +37,13 @@
     "@ngx-translate/http-loader": "^7.0.0",
     "@popperjs/core": "^2.11.2",
     "angular-svg-icon": "^14.0.0",
+    "apexcharts": "^3.36.3",
     "bootstrap": "^5.2.2",
     "express": "^4.18.2",
     "gretchen": "^1.5.0",
     "gsap": "^2.1.3",
     "jquery": "^3.6.1",
+    "ng-apexcharts": "^1.7.4",
     "ng-otp-input": "^1.8.5",
     "ngx-drag-scroll": "^14.0.1",
     "ngx-infinite-scroll": "^7.0.0",
@@ -67,7 +69,7 @@
     "typescript": "~4.7.3"
   },
   "engines": {
-    "node": "16.13.0",
-    "npm": "8.1.0"
+    "node": "^14.15.0 || >=16.10.0",
+    "npm": ">= 6"
   }
 }

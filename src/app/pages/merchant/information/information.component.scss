@@ -38,10 +38,16 @@ input.launch-date,
     background-color: #F2F2F2!important;
 }
 .alert {
-    height: 148px!important;
+    height: 120px!important;
     // overflow-y: scroll;
     overflow: hidden;
 }
 .next-button {
     background-color: #FF7200;
+}
+.title {
+    font-size: 14px;
+}
+.info {
+    font-size: 14px;
 }

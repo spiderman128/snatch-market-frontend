@@ -134,6 +134,7 @@
     transform : translateY(-50%);
     word-break: break-word;
     width     : 80px;
+    font-size: 14px;
 }
 
 .reward_info_label {
@@ -143,6 +144,7 @@
     transform : translateX(-50%);
     word-break: break-word;
     width     : 120px;
+    font-size: 14px;
 }
 
 .reward_details_label {
@@ -152,6 +154,7 @@
     transform : translateY(-50%);
     word-break: break-word;
     width     : 80px;
+    font-size: 14px;
 }
 
 .reward_repeat_label {
@@ -193,4 +196,11 @@
     background-color: #FF7200;
     padding: 15px 10px;
     width: 100%;
+}
+
+.title {
+    font-size: 14px;
+}
+.info {
+    font-size: 14px;
 }

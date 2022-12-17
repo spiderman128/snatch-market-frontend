@@ -1,0 +1,34 @@
+.manage-user-wrapper {
+    min-height      : calc(100vh - 168px);
+    position        : relative;
+    background-color: white;
+    color           : black;
+}
+
+ng-scrollbar {
+    --scrollbar-size         : 8px;
+    --scrollbar-thumb-color  : gray;
+    --scrollbar-hover-size   : 12px;
+    --scrollbar-track-color  : rgba(0, 0, 0, 0.05);
+    --scrollbar-border-radius: 10px;
+
+    height       : 465px;
+    max-height   : 465px;
+    border-radius: 3px;
+}
+.card {
+    background-color: #F2F2F2;
+}
+.form-control {
+    width        : 100%;
+    border       : white;
+    font-size    : 15px;
+    &:focus-visible {
+        outline: none;
+    }
+
+    &:focus {
+        border    : white;
+        box-shadow: none;
+    }
+}

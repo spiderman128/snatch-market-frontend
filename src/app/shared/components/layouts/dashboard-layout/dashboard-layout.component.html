@@ -1,0 +1,14 @@
+<div class="d-flex flex-row" [ngStyle]="{'background-color' : 'white'}">
+    <div class="side-bar shadow border-end">
+        <app-sidebar-layout [routesData]="sidebarNavs"></app-sidebar-layout>
+    </div>
+    <div class="flex-fill">
+        <app-layout-header [theme]="'light'">
+            <div class="main-container">
+                <ng-content></ng-content>
+              </div>
+        </app-layout-header>
+    </div>
+    
+</div>
+<app-layout-footer *ngIf="!isLoading"></app-layout-footer>

@@ -1,0 +1,22 @@
+.merchant-wrapper {
+    min-height      : calc(100vh - 168px);
+    position        : relative;
+    background-color: white;
+    color           : black;
+}
+.form-control {
+    width        : 100%;
+    padding      : 12px 18px;
+    border       : white;
+    color        : #4a4a4a;
+    font-size    : 15px;
+    background-color: #F2F2F2;
+    &:focus-visible {
+        outline: none;
+    }
+
+    &:focus {
+        border    : white;
+        box-shadow: none;
+    }
+}

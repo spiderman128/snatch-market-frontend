@@ -1,0 +1,28 @@
+.arrow-button-left {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #282828;
+    margin: auto;
+    border-radius: 50%;
+    box-shadow: -2px 1px 0px #282828, white 0px 1px 0px inset;
+    cursor: pointer;
+    background-color: #EE7930;
+    background-image: url('/assets/img/project/dashboard/arrow_left.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+}
+.arrow-button-right {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #282828;
+    margin: auto;
+    border-radius: 50%;
+    box-shadow: -2px 1px 0px #282828, white 0px 1px 0px inset;
+    cursor: pointer;
+    background-color: #EE7930;
+    background-image: url('/assets/img/project/dashboard/arrow_right.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+}

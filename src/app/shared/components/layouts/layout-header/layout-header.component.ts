@@ -8,6 +8,8 @@ import { faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons';
 // Internal modules
 import { environment } from '@env/environment';
 
+import { AppService } from '@services/app.service';
+import { TokenStorageService } from '@services/token-storage.service';
 
 @Component({
   selector    : 'app-layout-header',
@@ -24,9 +26,12 @@ export class LayoutHeaderComponent implements OnInit
   faSearch = faSearch;
   faShoppingCart = faShoppingCart;
   faCircleUser = faCircleUser;
+  isLoggedIn: boolean = false;
   constructor
   (
     private router : Router,
+    private appService: AppService,
+    private tokenStorgeService: TokenStorageService
   )
   {
 
@@ -34,37 +39,14 @@ export class LayoutHeaderComponent implements OnInit
 
   public ngOnInit() : void
   {
-
+    this.isLoggedIn = this.appService.getUserLoggedIn();
   }
-
-  // -------------------------------------------------------------------------------
-  // ---- NOTE Init ----------------------------------------------------------------
-  // -------------------------------------------------------------------------------
-
-  // -------------------------------------------------------------------------------
-  // ---- NOTE Actions -------------------------------------------------------------
-  // -------------------------------------------------------------------------------
 
   public async onClickLogout() : Promise<void>
   {
     // NOTE Redirect to login
-    this.router.navigate(['/auth/login']);
+    this.tokenStorgeService.signOut();
+    this.router.navigate(['/auth/login'], {replaceUrl: true});
   }
-
-  // -------------------------------------------------------------------------------
-  // ---- NOTE Computed props ------------------------------------------------------
-  // -------------------------------------------------------------------------------
-
-  // -------------------------------------------------------------------------------
-  // ---- NOTE Helpers -------------------------------------------------------------
-  // -------------------------------------------------------------------------------
-
-  // -------------------------------------------------------------------------------
-  // ---- NOTE Requests ------------------------------------------------------------
-  // -------------------------------------------------------------------------------
-
-  // -------------------------------------------------------------------------------
-  // ---- NOTE Subscriptions -------------------------------------------------------
-  // -------------------------------------------------------------------------------
 
 }

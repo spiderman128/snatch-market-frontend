@@ -46,6 +46,9 @@ import { ToolbarActionComponent } from './components/market-place/toolbar-action
 import { FilterPanelComponent } from './components/market-place/filter-panel/filter-panel.component';
 import { MerchantWizardDirective } from './directives/merchant-wizard.directive';
 import { AuthWizardDirective } from './directives/auth-wizard.directive';
+import { DashboardLayoutComponent } from './components/layouts/dashboard-layout/dashboard-layout.component';
+import { SidebarLayoutComponent } from './components/layouts/sidebar-layout/sidebar-layout.component';
+import { ArrowButtonComponent } from './components/dashboard/arrow-button/arrow-button.component';
 
 
 
@@ -100,6 +103,9 @@ import { AuthWizardDirective } from './directives/auth-wizard.directive';
       FilterPanelComponent,
       MerchantWizardDirective,
       AuthWizardDirective,
+      DashboardLayoutComponent,
+      SidebarLayoutComponent,
+      ArrowButtonComponent,
     ],
   exports:
     [
@@ -148,6 +154,10 @@ import { AuthWizardDirective } from './directives/auth-wizard.directive';
       AppButtonComponent,
       ToolbarActionComponent,
       FilterPanelComponent,
+
+      DashboardLayoutComponent,
+      SidebarLayoutComponent,
+      ArrowButtonComponent,
     ],
   providers:
     [

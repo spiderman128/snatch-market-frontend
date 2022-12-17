@@ -29,3 +29,22 @@
     color: black!important;
   }
 }
+
+.dropdown-toggle::after {
+  border-width: 0px!important;
+}
+.custom-dropdownmenu-content::after, .custom-dropdownmenu-content::before {
+  content: '';
+  position: absolute;
+  display: block;
+  bottom: 100%;
+  right: 20px;
+  border: 6px solid transparent;
+  border-bottom-color: #fff;
+
+}
+.custom-dropdownmenu-content::after {
+  right: 19px;
+  border: 5px solid transparent;
+  border-bottom-color: #fff;
+}

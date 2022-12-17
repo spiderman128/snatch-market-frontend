@@ -7,6 +7,11 @@ import { DragScrollComponent } from "ngx-drag-scroll";
 import { NewRewardCollection } from '@interfaces/newrewardcollection';
 import { Router } from '@angular/router';
 
+import { Store, select } from '@ngrx/store';
+import { InvokeNewRewardCollection, InvokeNewRewardDropped } from './store/home.actions';
+import { selectNewRewardCollection, selectNewRewardDropped } from './store/home.selectors';
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -19,36 +24,17 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @ViewChild('nav', { read: DragScrollComponent }) ds!: DragScrollComponent;
 
-  rewardDropsData: any = [
-    {
-      title: "Free Caramel Macchiato for Life",
-      tag: "Starbucks",
-      fee: 50,
-      image: 'assets/img/project/reward_drops/2.png'
-    },
-    {
-      title: "Free Jordans Every Month",
-      tag: "Nike",
-      fee: 50,
-      image: 'assets/img/project/reward_drops/3.png'
-    },
-    {
-      title: "Free Icecream for Life",
-      tag: "Starbucks",
-      fee: 50,
-      image: 'assets/img/project/reward_drops/1.png'
-    }
-  ];
-  newRewardCollections: NewRewardCollection[] = [];
+  newRewardCollection$ = this.store.pipe(select(selectNewRewardCollection));
+  newRewardDropped$ = this.store.pipe(select(selectNewRewardDropped));
 
-
-  constructor(private router: Router) { }
+  constructor(private router: Router, private store: Store) { }
   ngOnDestroy(): void {
     clearInterval(this.timer);
   }
 
 
   ngAfterViewInit(): void {
+    
     this.onInitTopCarousel();
   }
 
@@ -56,21 +42,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   // ---- NOTE Init ----------------------------------------------------------------
   // -------------------------------------------------------------------------------
 
-  public async ngOnInit(): Promise<void> {
-    try {
-
-      // const newRewards = await this.appService.getNewRewardCollection();
-
-      // newRewards.data.forEach((element: NewRewardCollection) => {
-      //   return this.newRewardCollections.push(element);
-      // });
-      // console.log(this.newRewardCollections);
-      this.isLoading = false;
-
-    } catch (error) {
-      this.isLoading = false;
-    }
-
+  ngOnInit(){
+    this.isLoading = false;
+    this.store.dispatch(InvokeNewRewardCollection());
+    this.store.dispatch(InvokeNewRewardDropped());
   }
 
   onInitTopCarousel() {

@@ -1,0 +1,13 @@
+body {
+    background-color: white!important;
+}
+.side-bar {
+    width: 68px;
+    min-width: 68px;
+    max-width: 68px;
+    min-height: calc(100vh - 100px);
+    background: white;
+    border-radius: 25px!important;
+    border-top-left-radius: 0px!important;
+    border-bottom-left-radius: 0px!important;
+}

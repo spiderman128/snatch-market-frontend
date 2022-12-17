@@ -1,0 +1,152 @@
+<div class="dashboard-wrapper ps-2">
+    <div class="row p-0 m-0 pe-5">
+        <div class="col-md-8 col-sm-12 mb-3">
+            <div class="d-flex justify-content-between align-items-center" [ngStyle]="{'height.px' : 60}">
+                <label class="fs-3 me-auto">Pending Approval</label>
+                <div class="d-flex justify-content-center">
+                    <app-arrow-button class="me-2" [isLeft]="true"></app-arrow-button>
+                    <app-arrow-button class="ms-2" [isRight]="true"></app-arrow-button>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 g-5">
+                <div class="col mb-3">
+                    <div class="card top-card border-0 rounded-5 d-flex flex-column justify-content-center">
+                        <div class="px-3 pt-3">
+                            <img src="assets/img/project/dashboard/home/reward_1.png" class="collection-img" />
+                        </div>
+                        <div
+                            class="collection-title d-flex flex-column justify-content-center align-items-start flex-fill px-4">
+                            <label class="fw-bold fs-4 mb-0">Merchant 1</label>
+                            <label class="text-muted" [ngStyle]="{'font-size.px' : 10}">Lanuch Date: </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card top-card border-0 rounded-5 d-flex flex-column justify-content-center">
+                        <div class="px-3 pt-3">
+                            <img src="assets/img/project/dashboard/home/reward_2.png" class="collection-img" />
+                        </div>
+                        <div
+                            class="collection-title d-flex flex-column justify-content-center align-items-start flex-fill px-4">
+                            <label class="fw-bold fs-4 mb-0">Merchant 2</label>
+                            <label class="text-muted" [ngStyle]="{'font-size.px' : 10}">Lanuch Date: </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card top-card border-0 rounded-5 d-flex flex-column justify-content-center">
+                        <div class="px-3 pt-3">
+                            <img src="assets/img/project/dashboard/home/reward_3.png" class="collection-img" />
+                        </div>
+                        <div
+                            class="collection-title d-flex flex-column justify-content-center align-items-start flex-fill px-4">
+                            <label class="fw-bold fs-4 mb-0">Merchant 3</label>
+                            <label class="text-muted text-start" [ngStyle]="{'font-size.px' : 10}">Lanuch Date: </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <label class="fs-3 me-auto mb-3">Transaction Analysis</label>
+                <div class="col-md-12 col-sm-12 mb-3">
+                    <div class="card top-card border-0 rounded-4">
+                        <div class="card-body">
+                            <apx-chart [series]="chartOptions.series!" [chart]="chartOptions.chart!"
+                                [dataLabels]="chartOptions.dataLabels!" [plotOptions]="chartOptions.plotOptions!"
+                                [yaxis]="chartOptions.yaxis!" [legend]="chartOptions.legend!"
+                                [fill]="chartOptions.fill!" [stroke]="chartOptions.stroke!"
+                                [tooltip]="chartOptions.tooltip!" [xaxis]="chartOptions.xaxis!"></apx-chart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12 mb-3">
+            <label class="fs-3" [ngStyle]="{'height.px' : 60}">Key Stats</label>
+            <div class="row row-cols-2 g-4 mb-3">
+                <div class="col">
+                    <div class="card border-0 rounded-4">
+                        <div class="card-body">
+                            <p>Active Users %</p>
+                            <p class="fs-2">45%</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card border-0 rounded-4">
+                        <div class="card-body">
+                            <p>Active Users %</p>
+                            <p class="fs-2">45%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="items-list">
+                <div
+                    class="d-flex flex-row justify-content-start align-items-center rounded-4 shadow bg-custom py-2 px-3 mb-3">
+                    <div class="item-image me-3">
+                        <img src="assets/img/project/dashboard/image_1.png" class="img-fluid" />
+                    </div>
+                    <div class="fw-100" [ngStyle]="{'color': '#A9ACAF'}">
+                        Fees Generated/Daily
+                    </div>
+
+                </div>
+                <div
+                    class="d-flex flex-row justify-content-start align-items-center rounded-4 shadow bg-custom py-2 px-3 mb-3">
+                    <div class="item-image me-3">
+                        <img src="assets/img/project/dashboard/image_1.png" class="img-fluid" />
+                    </div>
+                    <div class="fw-100" [ngStyle]="{'color': '#A9ACAF'}">
+                        Active Collections
+                    </div>
+
+                </div>
+                <div
+                    class="d-flex flex-row justify-content-start align-items-center rounded-4 shadow bg-custom py-2 px-3 mb-3">
+                    <div class="item-image me-3">
+                        <img src="assets/img/project/dashboard/image_1.png" class="img-fluid" />
+                    </div>
+                    <div class="fw-100" [ngStyle]="{'color': '#A9ACAF'}">
+                        Fees Generated/Monthly
+                    </div>
+
+                </div>
+                <div
+                    class="d-flex flex-row justify-content-start align-items-center rounded-4 shadow bg-custom py-2 px-3 mb-3">
+                    <div class="item-image me-3">
+                        <img src="assets/img/project/dashboard/image_1.png" class="img-fluid" />
+                    </div>
+                    <div class="fw-100" [ngStyle]="{'color': '#A9ACAF'}">
+                        Total Nb of Users
+                    </div>
+
+                </div>
+                <div
+                    class="d-flex flex-row justify-content-start align-items-center rounded-4 shadow bg-custom py-2 px-3 mb-3">
+                    <div class="item-image me-3">
+                        <img src="assets/img/project/dashboard/image_1.png" class="img-fluid" />
+                    </div>
+                    <div class="fw-100" [ngStyle]="{'color': '#A9ACAF'}">
+                        Total Nb of <br>
+                        Registered Merchants
+                    </div>
+
+                </div>
+                <div
+                    class="d-flex flex-row justify-content-start align-items-center rounded-4 shadow bg-custom py-2 px-3 mb-3">
+                    <div class="item-image me-3">
+                        <img src="assets/img/project/dashboard/image_1.png" class="img-fluid" />
+                    </div>
+                    <div class="fw-100" [ngStyle]="{'color': '#A9ACAF'}">
+                        Fees Generated/Daily
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>

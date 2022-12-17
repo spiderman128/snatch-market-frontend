@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { RewardCollection } from '@interfaces/collection.model';
 
 @Component({
   selector: 'app-reward-card-item',
@@ -7,6 +8,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class RewardCardItemComponent implements OnInit {
 
+  @Input() data: any = {}
   @Output() onItemClick: EventEmitter<any> = new EventEmitter<any>();
   constructor() { }
 

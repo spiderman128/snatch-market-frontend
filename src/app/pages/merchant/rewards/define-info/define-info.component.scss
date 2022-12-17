@@ -143,6 +143,7 @@
     transform : translateX(-50%);
     word-break: break-word;
     width     : 120px;
+    font-size: 14px;
 }
 
 .reward_details_label {
@@ -152,6 +153,7 @@
     transform : translateY(-50%);
     word-break: break-word;
     width     : 80px;
+    font-size: 14px;
 }
 .reward_repeat_label {
     position  : absolute;
@@ -160,6 +162,7 @@
     transform : translateX(-50%);
     word-break: break-word;
     width     : 80px;
+    font-size: 14px;
 }
 
 .calendar_addon {
@@ -192,4 +195,11 @@
     background-color: #FF7200;
     padding: 15px 10px;
     width: 100%;
+}
+
+.title {
+    font-size: 14px;
+}
+.info {
+    font-size: 14px;
 }

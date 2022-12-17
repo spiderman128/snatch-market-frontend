@@ -1,0 +1,55 @@
+.manage-reward-wrapper {
+    min-height      : calc(100vh - 168px);
+    position        : relative;
+    background-color: white;
+    color           : black;
+}
+
+.form-check-input:checked {
+    background-color: #23C062;
+    border-color: #269a54;
+}
+
+.table-wrapper {
+    th:not(:last-child) {
+        background-image   : url('/assets/img/project/dashboard/th_border.png');
+        background-repeat  : no-repeat;
+        background-position: right center;
+    }
+    th {
+        background-color: #F2F2F2;
+    }
+    tr:not(.separator) {
+        background-color: #F2F2F2;
+        td {
+            .cell-item  {
+                height: 60px;
+            }
+            .cell-image {
+                width: 100%;
+                height: 60px;
+                object-fit: cover;
+            }
+        }
+    }
+    th:first-child {
+        border-top-left-radius: 10px!important;
+    }
+    th:last-child {
+        border-top-right-radius: 10px!important;
+    }
+    tr.separator {
+        height: 10px;
+    }
+
+    tr,th, td {
+        font-weight: 300;
+        font-size: 12px;
+        text-align: center;
+    }
+    tbody {
+        tr, th, td {
+            border: none;
+        }
+    }
+}

@@ -1,19 +1,33 @@
 <div class="d-flex flex-column justify-content-center h-100">
   <div class="fs-2 fw-500 mx-auto mb-5" [ngStyle]="{'margin-top.rem' : -10}">Gain Access</div>
-  <form [formGroup]="formGroup" (ngSubmit)="onClickSubmit()">
+  <form [formGroup]="formGroup" (ngSubmit)="onClickSubmit($event)">
     <div class="mx-auto mb-3 input-group position-relative" [ngStyle]="{'width.rem' : 25, 'height.rem' : 3}">
-      <input type="email" formControlName="email" class="form-control rounded-pill" placeholder="Email Address">
+      <input type="text" formControlName="email" class="form-control rounded-pill" placeholder="Email Address"
+        [ngClass]="{ 'is-invalid' : formGroup.controls.email.errors && formGroup.controls.email.touched }">
+      <!-- NOTE Errors -->
+      <div class="invalid-feedback" *ngIf="formGroup.controls.email.hasError('required')">
+        {{ 'FIELD_REQUIRED' | translate }}
+      </div>
+      <div class="invalid-feedback" *ngIf="formGroup.controls.email.hasError('email')">
+        {{ 'FIELD_EMAIL' | translate }}
+      </div>
     </div>
     <div class="mx-auto mb-4 input-group position-relative" [ngStyle]="{'width.rem' : 25, 'height.rem' : 3}">
-      <input type="password" formControlName="password" class="form-control rounded-pill" placeholder="Password">
+      <input type="password" formControlName="password" class="form-control rounded-pill" placeholder="Password"
+      [ngClass]="{ 'is-invalid' : formGroup.controls.password.errors && formGroup.controls.password.touched }">
       <img class="addon-img" src="assets/img/project/password_addon.png" height="18" />
+      <!-- NOTE Errors -->
+      <div class="invalid-feedback" *ngIf="formGroup.controls.password.hasError('required')">
+        {{ 'FIELD_REQUIRED' | translate }}
+      </div>
     </div>
     <div class="mx-auto text-start mb-4" [ngStyle]="{'width.rem' : 25}">
-      <a class="ps-3" routerLink="/auth/forgot-password" [ngStyle]="{'color' : '#ff7600', 'text-decoration' : 'none'}">Forgot
+      <a class="ps-3" routerLink="/auth/forgot-password"
+        [ngStyle]="{'color' : '#ff7600', 'text-decoration' : 'none'}">Forgot
         Password? </a>
     </div>
     <div class="mx-auto mb-4" [ngStyle]="{'width.rem' : 10}">
-      <app-custom-button [text]="'login'">
+      <app-custom-button [text]="isLoading? 'Processing...' : 'Login'" (onClickEvent)="onLogin($event)">
       </app-custom-button>
     </div>
     <div class="mx-auto mb-4">
@@ -25,7 +39,8 @@
       </label>
     </div>
     <div class="mx-auto">
-      <label >Do you have an account? <a [routerLink]="'/auth/user-signup'" [ngStyle]="{'color' : '#ff7600', 'text-decoration' : 'none'}">Sign up here</a></label>
+      <label>Do you have an account? <a [routerLink]="'/auth/user-signup'"
+          [ngStyle]="{'color' : '#ff7600', 'text-decoration' : 'none'}">Sign up here</a></label>
     </div>
   </form>
 

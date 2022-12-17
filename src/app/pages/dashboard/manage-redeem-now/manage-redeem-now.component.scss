@@ -1,0 +1,64 @@
+.manage-reward-wrapper {
+    min-height      : calc(100vh - 168px);
+    position        : relative;
+    background-color: white;
+    color           : black;
+}
+
+.form-check-input:checked {
+    background-color: #23C062;
+    border-color    : #269a54;
+}
+
+.dropdown-toggle::after {
+    color: #EE7930 !important;
+}
+
+.card {
+    background-color: #FF9F00;
+
+    .item-image {
+        width: 70%;
+
+        img {
+            width     : 100%;
+            height    : 100%;
+            object-fit: cover;
+        }
+    }
+
+    .redeem-btn {
+        border-top-left-radius : 0px !important;
+        border-top-right-radius: 0px !important;
+    }
+
+    .left-side {
+        width: 15%;
+
+        img {
+            width     : 100%;
+            height    : 100%;
+            object-fit: cover;
+        }
+    }
+    .right-side {
+        // max-width: 35%;
+        img {
+            width     : 100%;
+            height    : 50px;
+            object-fit: cover;
+        }
+    }
+}
+
+.green-circle {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    background-color: greenyellow;
+}
+
+.divider {
+    background-color: #979595eb;
+    height: 2px;
+}

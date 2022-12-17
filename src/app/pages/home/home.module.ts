@@ -10,6 +10,11 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent }     from './home.component';
 // drag scroll 
 import { DragScrollModule } from 'ngx-drag-scroll';
+
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { homeReducer } from './store/home.reducer';
+import { HomeEffect } from './store/home.effects';
 @NgModule({
   imports :
   [
@@ -17,6 +22,8 @@ import { DragScrollModule } from 'ngx-drag-scroll';
     HomeRoutingModule,
     SharedModule,
     DragScrollModule,
+    StoreModule.forFeature('homestates', homeReducer),
+    EffectsModule.forFeature([HomeEffect])
   ],
   declarations :
   [

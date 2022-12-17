@@ -1,0 +1,19 @@
+.sidebar-item {
+    padding: 5px;
+    cursor: pointer;
+}
+.sidebar-item-image {
+    width: 1.5rem;
+    height: 1.5rem;
+    object-fit: contain;
+    padding: 3px;
+}
+.dot {
+    width: 5px;
+    height: 5px;
+    background-color: #FF7200;
+    border-radius: 50%;
+}
+.active-color {
+    color: #FF7200;
+}

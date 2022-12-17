@@ -1,11 +1,11 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { select, Store } from '@ngrx/store';
-import { EMPTY, map, mergeMap, withLatestFrom } from 'rxjs';
+import { EMPTY, map, mergeMap, switchMap, withLatestFrom } from 'rxjs';
 import { CollectionService } from "@services/collection.service";
-import { invokeCollectionsAPI, collectionsFetchAPISuccess } from "./marketplace.action";
+import * as marketActions from "./marketplace.action";
 import { selectCollections } from "./marketplace.selector";
-import { CollectionModel } from "@interfaces/collection.model";
+import { RewardCollection } from "@interfaces/collection.model";
 
 @Injectable()
 export class MarketplaceEffect {
@@ -31,14 +31,27 @@ export class MarketplaceEffect {
     //         })
     //     );
     // });
-    loadAllCollections$ = createEffect(() => {
+    // loadAllCollections$ = createEffect(() => {
+    //     return this.actions$.pipe(
+    //         ofType(invokeCollectionsAPI),
+    //         mergeMap(({page, limit}) => {
+    //             return this.collectionService.getAll(page, limit)
+    //                 .pipe(
+    //                     map((data: any) => collectionsFetchAPISuccess({ allCollections: data }))
+    //                 );
+    //         })
+    //     );
+    // });
+    loadRewardCollections$ = createEffect(() => {
         return this.actions$.pipe(
-            ofType(invokeCollectionsAPI),
-            mergeMap(({page, limit}) => {
-                return this.collectionService.getAll(page, limit)
-                    .pipe(
-                        map((data: any) => collectionsFetchAPISuccess({ allCollections: data }))
-                    );
+            ofType(marketActions.InvokeRewardCollectionAPI),
+            switchMap(action => {
+                return this.collectionService.getRewardCollections().pipe(
+                    map((response: any) => {
+                        console.log(response);
+                        return marketActions.RewardCollectionFetchAPISuccess({rewardCollections: response.data});
+                    })
+                );
             })
         );
     });

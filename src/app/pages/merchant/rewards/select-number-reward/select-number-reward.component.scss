@@ -129,6 +129,7 @@
     transform : translateY(-50%);
     word-break: break-word;
     width: 80px;
+    font-size: 14px;
 }
 .reward_info_label {
     position  : absolute;
@@ -137,6 +138,7 @@
     transform : translateX(-50%);
     word-break: break-word;
     width: 120px;
+    font-size: 14px;
 }
 .reward_details_label {
     position  : absolute;
@@ -145,4 +147,12 @@
     transform : translateY(-50%);
     word-break: break-word;
     width: 80px;
+    font-size: 14px;
+}
+
+.title {
+    font-size: 14px;
+}
+.info {
+    font-size: 14px;
 }

@@ -18,9 +18,9 @@ import { FirstStepComponent } from './auth/user-signup/first-step/first-step.com
 import { StoreModule } from '@ngrx/store';
 import { authReducer } from './store/auth.reducer';
 import { EffectsModule } from '@ngrx/effects';
+import { AuthEffect } from './store/auth.effect';
 import { SecondStepComponent } from './auth/user-signup/second-step/second-step.component';
 import { ThirdStepComponent } from './auth/user-signup/third-step/third-step.component';
-// import { MerchantEffect } from './store/merchant.effect';
 
 import { NgOtpInputModule } from  'ng-otp-input';
 import { SuccessComponent } from './success/success.component';
@@ -60,6 +60,7 @@ import { MsignupSuccessComponent } from './msignup-success/msignup-success.compo
     SharedModule,
     NgOtpInputModule,
     StoreModule.forFeature('authstate', authReducer),
+    EffectsModule.forFeature([AuthEffect])
   ],
 })
 export class AuthModule { }

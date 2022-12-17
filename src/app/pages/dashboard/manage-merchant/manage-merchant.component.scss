@@ -1,0 +1,58 @@
+* {
+    color: black;
+}
+
+.merchant-wrapper {
+    min-height      : calc(100vh - 168px);
+    position        : relative;
+    background-color: white;
+    color           : black;
+}
+
+.merchant-table {
+    tbody {
+        tr {
+            background-color: transparent;
+            border          : none;
+
+            td {
+                text-align    : center;
+                vertical-align: middle;
+                border        : none;
+            }
+
+            td:not(:last-child) {
+                background-color: rgba(0, 0, 0, 0.05);
+            }
+        }
+
+        td:nth-child(5),
+        td:nth-child(6) {
+            word-break: break-word;
+        }
+    }
+
+    th:not(:last-child) {
+        background-image   : url('/assets/img/project/dashboard/th_border.png');
+        background-repeat  : no-repeat;
+        background-position: right center;
+    }
+
+    tr.separator {
+        height: 10px;
+    }
+
+    thead {
+
+        tr,
+        th {
+            border: none;
+        }
+    }
+}
+
+.action-btn {
+    width : 60px;
+    height: 60px;
+    cursor: pointer;
+}

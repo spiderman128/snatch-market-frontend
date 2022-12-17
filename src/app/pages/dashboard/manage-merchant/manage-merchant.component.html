@@ -1,0 +1,142 @@
+<div class="merchant-wrapper d-flex flex-column">
+    <div class="row p-0 m-0 px-5 mb-auto">
+        <label class="fs-3 me-auto ps-0 mb-3">Manage Merchant</label>
+        <div class="merchant-table-wrapper p-0">
+            <table class="table merchant-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Company Name</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Country</th>
+                        <th scope="col">City</th>
+                        <th scope="col" [ngStyle]="{'width.%': 18}">Certificate Of Registeration*</th>
+                        <th scope="col" [ngStyle]="{'width.%': 18}">VAT Certificate*</th>
+                        <th scope="col">Company Website</th>
+                        <th scope="col" class="text-center" [ngStyle]="{'width.%': 18}">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="separator"></tr>
+                    <tr>
+                        <td>Text</td>
+                        <td>Text</td>
+                        <td>Text</td>
+                        <td>Text</td>
+                        <td>Pressable PDF With Image Preview</td>
+                        <td>Pressable PDF With Image Preview</td>
+                        <td>Pressable Link</td>
+                        <td>
+                            <div class="d-flex flex-row justify-content-center align-items-center">
+                                <div
+                                    class="action-btn d-flex flex-column justify-content-center align-items-center shadow rounded-3" (click)="onClickView()">
+                                    <img src="assets/img/project/dashboard/action_view.png" width="24" height="24" />
+                                    <label [ngStyle]="{'font-size.px' : 12}" class="p-1 cursor-pointer">View</label>
+                                </div>
+                                <div
+                                    class="action-btn d-flex flex-column justify-content-center align-items-center shadow rounded-3" (click)="onClickDecline()">
+                                    <img src="assets/img/project/dashboard/action_decline.png" width="24" height="24" />
+                                    <label [ngStyle]="{'font-size.px' : 12}" class="p-1 cursor-pointer">Decline</label>
+                                </div>
+                                <div
+                                    class="action-btn d-flex flex-column justify-content-center align-items-center shadow rounded-3" (click)="onClickApprove()">
+                                    <img src="assets/img/project/dashboard/action_approve.png" width="24" height="24" />
+                                    <label [ngStyle]="{'font-size.px' : 12}" class="p-1 cursor-pointer">Approve</label>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="separator"></tr>
+                    <tr>
+                        <td>Text</td>
+                        <td>Text</td>
+                        <td>Text</td>
+                        <td>Text</td>
+                        <td>Pressable PDF With Image Preview</td>
+                        <td>Pressable PDF With Image Preview</td>
+                        <td>Pressable Link</td>
+                        <td>
+                            <div class="d-flex flex-row justify-content-center align-items-center">
+                                <div
+                                    class="action-btn d-flex flex-column justify-content-center align-items-center shadow rounded-3">
+                                    <img src="assets/img/project/dashboard/action_view.png" width="24" height="24" />
+                                    <label [ngStyle]="{'font-size.px' : 12}" class="p-1 cursor-pointer">View</label>
+                                </div>
+                                <div
+                                    class="action-btn d-flex flex-column justify-content-center align-items-center shadow rounded-3">
+                                    <img src="assets/img/project/dashboard/action_decline.png" width="24" height="24" />
+                                    <label [ngStyle]="{'font-size.px' : 12}" class="p-1 cursor-pointer">Decline</label>
+                                </div>
+                                <div
+                                    class="action-btn d-flex flex-column justify-content-center align-items-center shadow rounded-3">
+                                    <img src="assets/img/project/dashboard/action_approve.png" width="24" height="24" />
+                                    <label [ngStyle]="{'font-size.px' : 12}" class="p-1 cursor-pointer">Approve</label>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="separator"></tr>
+                    <tr>
+                        <td>Text</td>
+                        <td>Text</td>
+                        <td>Text</td>
+                        <td>Text</td>
+                        <td>Pressable PDF With Image Preview</td>
+                        <td>Pressable PDF With Image Preview</td>
+                        <td>Pressable Link</td>
+                        <td>
+                            <div class="d-flex flex-row justify-content-center align-items-center">
+                                <div
+                                    class="action-btn d-flex flex-column justify-content-center align-items-center shadow rounded-3">
+                                    <img src="assets/img/project/dashboard/action_view.png" width="24" height="24" />
+                                    <label [ngStyle]="{'font-size.px' : 12}" class="p-1 cursor-pointer">View</label>
+                                </div>
+                                <div
+                                    class="action-btn d-flex flex-column justify-content-center align-items-center shadow rounded-3">
+                                    <img src="assets/img/project/dashboard/action_decline.png" width="24" height="24" />
+                                    <label [ngStyle]="{'font-size.px' : 12}" class="p-1 cursor-pointer">Decline</label>
+                                </div>
+                                <div
+                                    class="action-btn d-flex flex-column justify-content-center align-items-center shadow rounded-3">
+                                    <img src="assets/img/project/dashboard/action_approve.png" width="24" height="24" />
+                                    <label [ngStyle]="{'font-size.px' : 12}" class="p-1 cursor-pointer">Approve</label>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="separator"></tr>
+                    <tr>
+                        <td>Text</td>
+                        <td>Text</td>
+                        <td>Text</td>
+                        <td>Text</td>
+                        <td>Pressable PDF With Image Preview</td>
+                        <td>Pressable PDF With Image Preview</td>
+                        <td>Pressable Link</td>
+                        <td>
+                            <div class="d-flex flex-row justify-content-center align-items-center">
+                                <div
+                                    class="action-btn d-flex flex-column justify-content-center align-items-center shadow rounded-3">
+                                    <img src="assets/img/project/dashboard/action_view.png" width="24" height="24" />
+                                    <label [ngStyle]="{'font-size.px' : 12}" class="p-1 cursor-pointer">View</label>
+                                </div>
+                                <div
+                                    class="action-btn d-flex flex-column justify-content-center align-items-center shadow rounded-3">
+                                    <img src="assets/img/project/dashboard/action_decline.png" width="24" height="24" />
+                                    <label [ngStyle]="{'font-size.px' : 12}" class="p-1 cursor-pointer">Decline</label>
+                                </div>
+                                <div
+                                    class="action-btn d-flex flex-column justify-content-center align-items-center shadow rounded-3">
+                                    <img src="assets/img/project/dashboard/action_approve.png" width="24" height="24" />
+                                    <label [ngStyle]="{'font-size.px' : 12}" class="p-1 cursor-pointer">Approve</label>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <app-pagination [count]="itemsCount" [page]="itemsPage" [perPage]="itemsPerPage" (changePage)="onChangePage($event)">
+    </app-pagination>
+</div>

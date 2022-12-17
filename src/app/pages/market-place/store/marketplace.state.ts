@@ -1,9 +1,9 @@
 import { BrandModel } from "@interfaces/brand.model";
-import { CollectionModel } from "@interfaces/collection.model";
+import { RewardCollection } from "@interfaces/collection.model";
 import { RewardModel } from "@interfaces/reward.model";
 
 export interface MarketPlaceState {
-    collections: CollectionModel[],
+    collections: RewardCollection[],
     rewards : RewardModel[],
     brands : BrandModel[],
     isFilterShow: boolean,

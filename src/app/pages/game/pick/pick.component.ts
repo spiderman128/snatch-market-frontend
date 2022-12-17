@@ -30,7 +30,7 @@ export class PickComponent implements OnInit {
     this.isStartPick = true;
     setTimeout(() => {
       this.onArrangeCardToMatchWidth();
-    }, 5500);
+    }, 3500);
 
   }
   onArrangeCardToMatchWidth() {
@@ -168,17 +168,19 @@ export class PickComponent implements OnInit {
 
   onHandleSelectCard(e: any) {
     // console.log("card is clicked");
+    const parentDom = e.target.closest('.fcard');
     const fcards = document.querySelectorAll('.fcard');
     fcards.forEach(element => {
       element.classList.add('opacity-0');
     })
-    const parentDom = e.target.closest('.fcard');
+    
     parentDom.classList.add('opacity-1');
     parentDom.classList.add('selectedCard');
     setTimeout(() => {
       parentDom.setAttribute('style', 'opacity : 1; transition: all 1s;');
       this.isRefresh = true;
     }, 1500);
+    this.isRefresh = true;
 
   }
   onResetPick(){

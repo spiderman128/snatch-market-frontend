@@ -24,7 +24,7 @@
     height: 400px;
 }
 .alert {
-    height: 148px!important;
+    height: 120px!important;
     // overflow-y: scroll;
     overflow: hidden;
 }
@@ -78,4 +78,8 @@
     border-bottom-color: #FF7200;
     width: 2px;
     height: 2px;
+}
+
+.info {
+    font-size: 14px;
 }

@@ -1,0 +1,25 @@
+.manage-reward-wrapper {
+    min-height      : calc(100vh - 168px);
+    position        : relative;
+    background-color: white;
+    color           : black;
+}
+
+.form-check-input:checked {
+    background-color: #23C062;
+    border-color: #269a54;
+}
+.dropdown-toggle::after {
+    color: #EE7930!important;
+}
+.card {
+    background-color: #F2F2F2;
+    .item-image {
+        width: 80%;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

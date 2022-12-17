@@ -37,7 +37,11 @@ import { appReducer } from './shared/store/app.reducer';
 // import reducer
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-
+import { AppService } from '@services/app.service';
+import { TokenStorageService } from '@services/token-storage.service';
+import { authInterceptorProviders } from '@helpers/auth.interceptor';
+import { AuthGuard } from '@services/auth.guard';
+import { SecureInnerPageGuard } from '@services/secure-inner-page.guard';
 
 
 @NgModule({
@@ -81,7 +85,10 @@ import { environment } from '../environments/environment';
     },
 
     // Services
-    // AppService,
+    AppService,
+    TokenStorageService,
+    AuthGuard,
+    SecureInnerPageGuard,
 
     // Pipes
     DatePipe,
@@ -89,6 +96,7 @@ import { environment } from '../environments/environment';
     // Guards
 
     // Interceptors
+    authInterceptorProviders
   ],
   bootstrap: [AppComponent]
 })

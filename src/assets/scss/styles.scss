@@ -11,6 +11,7 @@
 // NOTE Complete bootstrap
 @import 'bootstrap/scss/bootstrap.scss';
 
+
 // NOTE Bootstrap configuration
 // @import '~bootstrap/scss/functions';
 // @import '~bootstrap/scss/variables';
@@ -328,4 +329,9 @@ body {
     .accordion-button:focus {
         box-shadow: none !important;
     }
+}
+
+
+.btn-main-bg {
+    background-color: #EE7930!important;
 }

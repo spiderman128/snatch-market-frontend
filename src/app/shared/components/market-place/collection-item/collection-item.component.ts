@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
-import { CollectionModel } from '@interfaces/collection.model';
+import { RewardCollection } from '@interfaces/collection.model';
 
 @Component({
   selector: 'app-collection-item',
@@ -8,7 +8,7 @@ import { CollectionModel } from '@interfaces/collection.model';
 })
 export class CollectionItemComponent implements OnInit {
 
-  @Input() collection!: CollectionModel;
+  @Input() collection!: RewardCollection;
   constructor() { }
 
   ngOnInit(): void {

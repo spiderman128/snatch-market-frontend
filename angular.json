@@ -36,7 +36,8 @@
             "scripts": [
               "node_modules/gsap/src/minified/TimelineMax.min.js",
               "node_modules/gsap/src/minified/TweenMax.min.js",
-              "src/assets/js/Winwheel.min.js"
+              "src/assets/js/Winwheel.min.js",
+              "node_modules/apexcharts/dist/apexcharts.min.js"
             ]
           },
           "configurations": {

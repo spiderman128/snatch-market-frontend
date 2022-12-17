@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { environment } from '@env/environment';
 import { ToastManager } from '../components/blocks/toast/toast.manager';
-import { CollectionModel } from '@interfaces/collection.model';
+import { RewardCollection } from '@interfaces/collection.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,11 +16,25 @@ export class CollectionService {
   }
 
   getAll(page: number = 2, limit = 12) {
-    return this.http.get<CollectionModel[]>(`http://localhost:3000/collections` ,{
+    return this.http.get<RewardCollection[]>(`http://localhost:3000/collections` ,{
       params : {
         _limit : limit,
         _page : page
       }
     });
+  }
+
+  // home page new reward collection 
+  getNewRewardCollection() {
+    return this.http.get(`${this.baseUrl}Collections/GetNewRewardCollection`);
+  }
+
+  //  home page new reward dropped
+  getNewRewardDropped() {
+    return this.http.get(`${this.baseUrl}Collections/GetNewRewardsDropped`);
+  }
+  // market place
+  getRewardCollections() {
+    return this.http.get(`${this.baseUrl}Collections/GetRewardCollection`)
   }
 }

@@ -282,7 +282,7 @@
             <drag-scroll #nav [scroll-x-wheel-enabled]="true">
               <div class="container-fluid px-5">
                 <div drag-scroll-item class="px-2" [style.width]="'19rem'"
-                  *ngFor="let perNRewardItem of newRewardCollections;" >
+                  *ngFor="let perNRewardItem of newRewardCollection$|async;" >
                   <reward-collection-card [data]="perNRewardItem"></reward-collection-card>
                 </div>
               </div>
@@ -322,11 +322,7 @@
             <drag-scroll #nav [scroll-x-wheel-enabled]="true">
               <div class="container-fluid px-5">
                 <div drag-scroll-item class="mx-2" [style.width]="'19rem'"
-                  *ngFor="let perRewardDrop of rewardDropsData;">
-                  <reward-drop-card [data]="perRewardDrop"></reward-drop-card>
-                </div>
-                <div drag-scroll-item class="mx-2" [style.width]="'19rem'"
-                  *ngFor="let perRewardDrop of rewardDropsData;">
+                  *ngFor="let perRewardDrop of newRewardDropped$ | async;">
                   <reward-drop-card [data]="perRewardDrop"></reward-drop-card>
                 </div>
               </div>

@@ -1,15 +1,24 @@
 import { createAction, props } from '@ngrx/store';
 import { MarketPlaceState } from './marketplace.state';
 
-export const invokeCollectionsAPI = createAction(
-    "[Collection API] Invoke Collections Fetch API",
-    props<{page : number, limit: number}>()
+
+export const InvokeRewardCollectionAPI = createAction(
+    "[Reward Collection API] Invoke Reward Collection API",
 );
 
-export const collectionsFetchAPISuccess = createAction(
-    "[Collection API] Fetch API Success",
-    props<{allCollections : MarketPlaceState['collections']}>()
+export const RewardCollectionFetchAPISuccess = createAction(
+    "[Reward Collection API] Fetch API Success",
+    props<{rewardCollections: MarketPlaceState['collections']}>()
 );
+
+// export const invokeCollectionsAPI = createAction(
+//     "[Collection API] Invoke Collections Fetch API",
+//     props<{page : number, limit: number}>()
+// );
+// export const collectionsFetchAPISuccess = createAction(
+//     "[Collection API] Fetch API Success",
+//     props<{allCollections : MarketPlaceState['collections']}>()
+// );
 
 export const isFilterShowAction = createAction(
     "[IsFilterShow Action] Invoke isFilterShow Status",
