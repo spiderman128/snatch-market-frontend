@@ -3,4 +3,19 @@
     label {
         cursor: pointer;
     }
+    .form-check-input{
+        border-radius: 0;
+        border-color: black;
+        &:checked{
+            background-image: none;
+            border-radius: 0;
+        }
+        &:checked{
+            background-color: #ff7200;
+            border-color: black;
+        }
+        &:focus{
+            box-shadow: none;
+        }
+    }
 }

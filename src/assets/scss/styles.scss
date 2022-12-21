@@ -335,3 +335,16 @@ body {
 .btn-main-bg {
     background-color: #EE7930!important;
 }
+
+.brand-accordion-wrapper {
+    .accordion-button::after {
+        color: orange!important;
+        content: "▼";
+        transform: none!important;
+        background: none;
+    }
+}
+.custom-caret-select {
+    background-image: url("/assets/img/project/select-arrow.png")!important;
+    background-size: 24px;
+}

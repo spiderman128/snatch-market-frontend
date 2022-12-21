@@ -47,6 +47,9 @@
         tr,
         th {
             border: none;
+            word-break: break-word;
+            text-align: center;
+            vertical-align: middle;
         }
     }
 }
