@@ -48,3 +48,11 @@
   border: 5px solid transparent;
   border-bottom-color: #fff;
 }
+@media screen and (max-width: 992px) {
+  .navbar .navbar-toggler {
+    display: none;
+  }
+  .navbar .navbar-brand {
+    margin-left: auto;
+  }
+}

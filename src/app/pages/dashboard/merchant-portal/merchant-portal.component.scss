@@ -1,60 +1,66 @@
 * {
-    color: black;
+  color: black;
 }
 
 .top-card {
-    background-color: #F2F2F2 !important;
-    height: 300px!important;
+  background-color: #f2f2f2 !important;
 }
 
 .pie-chart {
-    --p          : 30;
-    --b          : 10px;
-    --c          : #FF7200;
-    --w          : 211px;
-    width        : var(--w);
-    aspect-ratio : 1;
-    display      : inline-grid;
-    place-content: center;
-    margin       : 5px;
-    font-size    : 25px;
-    font-weight  : bold;
-    font-family  : sans-serif;
-    position: relative;
-    background-color: black;
-    border-radius: 50%;
+  --p: 30;
+  --b: 10px;
+  --c: #ff7200;
+  --w: 211px;
+  width: var(--w);
+  aspect-ratio: 1;
+  display: inline-grid;
+  place-content: center;
+  margin: 5px;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: sans-serif;
+  position: relative;
+  background-color: black;
+  border-radius: 50%;
 }
 
 .pie-chart:before {
-    content      : "";
-    position     : absolute;
-    border-radius: 50%;
-    inset        : 0;
-    background   : conic-gradient(var(--c) calc(var(--p)*1%), #fff 0);
-    border: 1px solid black;
-    width: 91%;
-    height: 91%;
-    top: 3px;
-    left: 6%;
-    // box-shadow: 2px 3px 1px #282828, white 2px 1px 1px inset;
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 0;
+  background: conic-gradient(var(--c) calc(var(--p) * 1%), #fff 0);
+  border: 1px solid black;
+  width: 91%;
+  height: 91%;
+  top: 3px;
+  left: 6%;
+  // box-shadow: 2px 3px 1px #282828, white 2px 1px 1px inset;
 }
 
 .item-image {
-    width: 60px;
-    height: 60px;
+  width: 60px;
+  height: 60px;
 }
 .list-item-image {
-    width: 70px;
-    height: 70px;
+  width: 70px;
+  height: 70px;
 }
 
-
 .collection-img {
-    height: 211px;
-    width: 100%;
+  height: auto;
+  width: 100%;
+  max-width: 230px;
+  margin-bottom: 15px;
 }
 
 .money-spent-card {
-    height: 300px!important;
-    background-color: #000000;
+  height: 300px !important;
+  background-color: #000000;
+}
+
+@media screen and (min-width: 992px) {
+  .component-redeem-reward {
+    order: 3;
+  }
 }
