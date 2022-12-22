@@ -49,6 +49,7 @@ import { AuthWizardDirective } from './directives/auth-wizard.directive';
 import { DashboardLayoutComponent } from './components/layouts/dashboard-layout/dashboard-layout.component';
 import { SidebarLayoutComponent } from './components/layouts/sidebar-layout/sidebar-layout.component';
 import { ArrowButtonComponent } from './components/dashboard/arrow-button/arrow-button.component';
+import { SearchInputComponent } from './components/search-input/search-input.component';
 
 
 
@@ -106,6 +107,7 @@ import { ArrowButtonComponent } from './components/dashboard/arrow-button/arrow-
       DashboardLayoutComponent,
       SidebarLayoutComponent,
       ArrowButtonComponent,
+      SearchInputComponent,
     ],
   exports:
     [
@@ -158,6 +160,7 @@ import { ArrowButtonComponent } from './components/dashboard/arrow-button/arrow-
       DashboardLayoutComponent,
       SidebarLayoutComponent,
       ArrowButtonComponent,
+      SearchInputComponent
     ],
   providers:
     [

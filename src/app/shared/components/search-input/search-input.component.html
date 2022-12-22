@@ -1,0 +1,7 @@
+<div class="search-box" [ngClass]="{'active': searchActive}">
+  <input type="text" placeholder="Type to search..." />
+  <div class="search-btn" (click)="toggleSearch()">
+    <img src="./assets/img/project/navbar/search.png" width="24" *ngIf="(theme=='dark' && !searchActive)" class="img-fluid"/>
+    <img src="./assets/img/project/navbar/search-dark.png" width="24" *ngIf="(theme=='light' && !searchActive) || searchActive" class="img-fluid"/>
+  </div>
+</div>

@@ -33,10 +33,11 @@
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 right-navbar">
 
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active']">
+          <!-- <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active']">
             <img src="./assets/img/project/navbar/search.png" width="24" *ngIf="theme=='dark'"  [alt]="appName + ' Logo'" class="img-fluid"/>
             <img src="./assets/img/project/navbar/search-dark.png" width="24" *ngIf="theme=='light'" [alt]="appName + ' Logo'" class="img-fluid"/>
-          </a>
+          </a> -->
+          <app-search-input [theme]="theme"></app-search-input>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active']">
