@@ -19,7 +19,7 @@ export class PickComponent implements OnInit {
   pickCards = new Array(5);
 
   isRefresh: boolean = false;
-  constructor(private modalService: NgbModal, private router: Router) { 
+  constructor(private modalService: NgbModal, private router: Router) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
 
@@ -173,7 +173,7 @@ export class PickComponent implements OnInit {
     fcards.forEach(element => {
       element.classList.add('opacity-0');
     })
-    
+
     parentDom.classList.add('opacity-1');
     parentDom.classList.add('selectedCard');
     setTimeout(() => {
@@ -183,10 +183,31 @@ export class PickComponent implements OnInit {
     this.isRefresh = true;
 
   }
-  onResetPick(){
-    console.log(this.isRefresh);
+  onResetPick() {
+    // console.log(this.isRefresh);
+
+    const expandedFabs = document.querySelectorAll('.expanded-fab');
+    expandedFabs.forEach(element => {
+      console.log(element.classList.contains('opacity-0'));
+      if (element.classList.contains('opacity-0')) {
+        element.classList.remove('opacity-0');
+        element.classList.add('opacity-1')
+      } else {
+        element.classList.remove('opacity-1');
+        element.classList.add('opacity-0')
+      }
+    });
+  }
+  onClickLightning() {
+    console.log("lightning")
+  }
+  onClickRefresh() {
+    console.log("Refresh")
     if (this.isRefresh) {
       this.router.navigate(['/game/pick']);
     }
+  }
+  onClickTurning() {
+    console.log("Turning")
   }
 }

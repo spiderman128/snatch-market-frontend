@@ -11,7 +11,7 @@ export class SidebarLayoutComponent implements OnInit {
 
   @Input() routesData: SidebarItem[] = [];
 
-  @Output() onCloseEvent: EventEmitter<any> = new EventEmitter<any>(); 
+  // @Output() onCloseEvent: EventEmitter<any> = new EventEmitter<any>(); 
   @Output() onItemClickEvent: EventEmitter<any> = new EventEmitter<any>();
   constructor(private router: Router) { }
 
@@ -19,11 +19,24 @@ export class SidebarLayoutComponent implements OnInit {
   }
 
   onClickClose() {
-    this.onCloseEvent.emit('');
+    const sidebarContentDom = document.querySelector('.sidebar-content');
+    const toggleButtonDom = document.querySelector('.toggle-menu-btn');
+    toggleButtonDom?.classList.remove('display-none');
+    toggleButtonDom?.classList.add('display-block');
+    sidebarContentDom?.classList.remove('display-block');
+    sidebarContentDom?.classList.add('display-none')
+    // this.onCloseEvent.emit('');
   }
 
   onClickItem(item: SidebarItem) {
     this.router.navigate([item.itemUrl]);
   }
-
+  onClickToggleButton() {
+    const sidebarContentDom = document.querySelector('.sidebar-content');
+    const toggleButtonDom = document.querySelector('.toggle-menu-btn');
+    toggleButtonDom?.classList.remove('display-block');
+    toggleButtonDom?.classList.add('display-none');
+    sidebarContentDom?.classList.remove('display-none');
+    sidebarContentDom?.classList.add('display-block')
+  }
 }

@@ -278,6 +278,14 @@ body {
     font-family: app_font;
     src        : url('../fonts/Gotham-Font/Gotham-Black.otf');
 }
+@font-face {
+    font-family: Robo_Regular;
+    src        : url('../fonts/Robo/Roboto-Regular.ttf');
+}
+@font-face {
+    font-family: Robo_Medium;
+    src        : url('../fonts/Robo/Roboto-Medium.ttf');
+}
 
 // modal part
 .game-reward-modal {
@@ -333,7 +341,7 @@ body {
 
 
 .btn-main-bg {
-    background-color: #EE7930!important;
+background-color: #FF7200!important;
 }
 
 .brand-accordion-wrapper {

@@ -46,17 +46,20 @@
 
                 <!-- final result arrangement of cards -->
 
-                <label class="pick-card fcard" (click)="onHandleSelectCard($event)" *ngFor="let perCard of pickCards; let i = index;">
+                <label class="pick-card fcard" (click)="onHandleSelectCard($event)"
+                    *ngFor="let perCard of pickCards; let i = index;">
                     <div class="flip-wrapper">
                         <div class="flip-front">
-                            <img class="front-image" src="assets/img/project/game/pick/card_{{i % 2 == 0 ? 1 : 2}}.png" />
+                            <img class="front-image"
+                                src="assets/img/project/game/pick/card_{{i % 2 == 0 ? 1 : 2}}.png" />
                         </div>
                         <div class="flip-back rounded-4" [style.background]="i % 2 == 0 ? '#ff7200' : '#eb5829'">
-                            <div class="reward-image-wrapper mx-auto rounded-4" >
+                            <div class="reward-image-wrapper mx-auto rounded-4">
                                 <div class="reward-title mx-auto py-3 text-white">Free Icecream for a Month</div>
                                 <img class="reward-image" src="assets/img/project/game/snatch/1.png" />
                                 <div class="reward-item-id mx-auto text-uppercase">78934dwjdc</div>
-                                <div class="reward-card-footer d-flex flex-row justify-content-between align-items-center py-3">
+                                <div
+                                    class="reward-card-footer d-flex flex-row justify-content-between align-items-center py-3">
                                     <div class="left-footer-item ms-2">
                                         <img src="assets/img/project/game/qr.png" />
                                     </div>
@@ -89,8 +92,19 @@
         <div class="reward-information text-dark text-center py-4 fw-bold" [ngClass]="{'hidden' : isStartPick}">
             You will be charged 100$.
         </div>
-        <div class="coin-image-wrapper" (click)="onResetPick()">
-            <img src="assets/img/project/game/snatch/coin.png" />
+        <div class="coin-image-wrapper" >
+            <div class="position-relative">
+                <img src="assets/img/project/game/snatch/coin.png" (click)="onResetPick()"/>
+                <div class="expanded-fab lightning opacity-0" (click)="onClickLightning()">
+                    <div class="inner-item d-flex justify-content-center align-items-center">Lighiting</div>
+                </div>
+                <div class="expanded-fab refresh opacity-0" (click)="onClickRefresh()">
+                    <div class="inner-item d-flex justify-content-center align-items-center">Lighiting</div>
+                </div>
+                <div class="expanded-fab turn opacity-0" (click)="onClickTurning()">
+                    <div class="inner-item d-flex justify-content-center align-items-center">Lighiting</div>
+                </div>
+            </div>
         </div>
     </div>
 </app-page-layout>

@@ -25,5 +25,19 @@
     .redeem-btn {
         border-top-left-radius: 0px!important;
         border-top-right-radius: 0px!important;
+        font-family: Robo_Regular;
+        font-size: 18px;
+    }
+}
+
+.info{
+    p {
+        font-family: app_font;
+        font-size: 18px;
+        margin-top: 5px;
+    }
+    label {
+        font-size: 12px;
+        padding: 10px 0px!important;
     }
 }

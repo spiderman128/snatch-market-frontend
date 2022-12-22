@@ -1,6 +1,6 @@
 <div class="d-flex flex-row" [ngStyle]="{'background-color' : 'white'}">
     <div class="side-bar shadow border-end">
-        <app-sidebar-layout [routesData]="sidebarNavs"></app-sidebar-layout>
+        <app-sidebar-layout [routesData]="sidebarNavs" (onCloseEvent)="onCloseSidebar($event)"></app-sidebar-layout>
     </div>
     <div class="flex-fill">
         <app-layout-header [theme]="'light'">

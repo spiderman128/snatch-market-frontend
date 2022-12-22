@@ -4,9 +4,11 @@
 
 .top-card {
     background-color: #F2F2F2 !important;
-    height: 300px!important;
+    height: 400px!important;
 }
-
+.top-reward-card {
+    background-color: #F2F2F2 !important;
+}
 .pie-chart {
     --p          : 30;
     --b          : 10px;
@@ -48,13 +50,19 @@
     height: 70px;
 }
 
-
-.collection-img {
-    height: 211px;
+.collection-image-wrapper {
+    height: 360px;
     width: 100%;
+    .collection-img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+    }
 }
 
+
 .money-spent-card {
-    height: 300px!important;
+    height: 400px!important;
     background-color: #000000;
 }

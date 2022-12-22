@@ -6,6 +6,9 @@
     background-color: #F2F2F2 !important;
     height: 300px!important;
 }
+.top-pending-card {
+    background-color: #F2F2F2 !important;
+}
 
 .pie-chart {
     --p          : 30;
@@ -48,11 +51,15 @@
     height: 70px;
 }
 
-
-.collection-img {
-    height: 211px;
+.collection-img-wrapper {
     width: 100%;
+    .collection-img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
 }
+
 
 .money-spent-card {
     height: 300px!important;

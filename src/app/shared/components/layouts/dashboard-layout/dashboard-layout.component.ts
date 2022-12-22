@@ -31,4 +31,7 @@ export class DashboardLayoutComponent implements OnInit, OnDestroy {
     })
   }
 
+  onCloseSidebar(event: any) {
+    
+  }
 }

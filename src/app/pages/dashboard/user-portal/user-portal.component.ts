@@ -58,7 +58,7 @@ export class UserPortalComponent implements OnInit {
       ],
       chart: {
         type: "bar",
-        height: 200
+        height: 340
       },
       plotOptions: {
         bar: {

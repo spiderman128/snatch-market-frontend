@@ -1,14 +1,22 @@
 <div class="d-flex flex-column">
-    <div class="mx-auto" [ngStyle]="{'margin-top.rem' : 1.75, 'margin-bottom.rem' : 2, 'cursor' : 'pointer'}" (click)="onClickClose()">
-        <img src="assets/img/project/dashboard/close.png" class="img-fluid sidebar-item-image" />
-    </div>
-    <div class="sidebar-item mb-3" *ngFor="let item of routesData; let i = index;">
-        <div class=" d-flex flex-column justify-content-center align-items-center cursor-pointer" (click)="onClickItem(item)">
-            <img [src]="item.isActive? item.activeImage: item.image" class="img-fluid sidebar-item-image" />
-            <label class="mt-1 text-center cursor-pointer" [ngClass]="{'text-dark' : !item.isActive, 'active-color' : item.isActive}"  [ngStyle]="{'font-size.px' : 10, 'word-break' : 'break-word'}">{{item.title}}</label>
-            <label class="mt-1" [ngClass]="{'dot' : item.isDot}"></label>
+    <button class="btn toggle-menu-btn py-2 display-none" (click)="onClickToggleButton()">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </button>
+    <div class="sidebar-content display-block">
+        <div class="mx-auto text-center" [ngStyle]="{'margin-top.rem' : 1, 'margin-bottom.rem' : 2, 'cursor' : 'pointer'}"
+            (click)="onClickClose()">
+            <img src="assets/img/project/dashboard/close.png" class="img-fluid sidebar-item-image" />
         </div>
-
+        <div class="sidebar-item mb-3" *ngFor="let item of routesData; let i = index;">
+            <div class=" d-flex flex-column justify-content-center align-items-center cursor-pointer"
+                (click)="onClickItem(item)">
+                <img [src]="item.isActive? item.activeImage: item.image" class="img-fluid sidebar-item-image" />
+                <label class="mt-1 text-center cursor-pointer"
+                    [ngClass]="{'text-dark' : !item.isActive, 'active-color' : item.isActive}"
+                    [ngStyle]="{'font-size.px' : 10, 'word-break' : 'break-word'}">{{item.title}}</label>
+                <label class="mt-1" [ngClass]="{'dot' : item.isDot}"></label>
+            </div>
+        </div>
     </div>
 
 </div>

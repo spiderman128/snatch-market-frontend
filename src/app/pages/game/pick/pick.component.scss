@@ -8,9 +8,43 @@
     position: absolute;
     right   : 1rem;
     bottom  : 1rem;
-
+    cursor: pointer;
+    
     img {
         width: 10rem;
+    }
+    .inner-item {
+        width        : 87%;
+        background   : white;
+        height       : 87%;
+        border-radius: 50%;
+        position     : absolute;
+        left         : 5px;
+        top          : 4px;
+    }
+    .expanded-fab {
+        position     : absolute;
+        width        : 5rem;
+        height       : 5rem;
+        box-shadow   : 1px 2px 1px #282828, white 2px 1px 0px inset;
+        border-radius: 50%;
+        color        : black;
+        background-color: black;
+    }
+
+    .lightning {
+        right: 2rem;
+        top  : -6rem;
+    }
+
+    .refresh {
+        right: 9.5rem;
+        top  : -3rem;
+    }
+
+    .turn {
+        right : 11rem;
+        bottom: 1rem;
     }
 }
 
@@ -441,8 +475,32 @@ img.front-image {
         width: 30vw;
     }
 
-    .coin-image-wrapper img {
-        width: 6rem;
+    .coin-image-wrapper {
+        img {
+            width: 6rem;
+        }
+
+        .expanded-fab {
+            width : 2.5rem;
+            height: 2.5rem;
+        }
+
+        
+
+        .lightning {
+            right: 1rem;
+            top  : -3.5rem;
+        }
+
+        .refresh {
+            right: 5.8rem;
+            top  : -1.7rem;
+        }
+
+        .turn {
+            right : 7rem;
+            bottom: 1rem;
+        }
     }
 
 }
@@ -587,8 +645,20 @@ img.front-image {
         width: 23vw;
     }
 
-    .coin-image-wrapper img {
-        width: 8rem;
+    .coin-image-wrapper {
+        img {
+            width: 8rem;
+        }
+
+        .refresh {
+            right: 7.5rem;
+            top  : -3.2rem;
+        }
+
+        .turn {
+            right : 9rem;
+            bottom: 1rem;
+        }
     }
 }
 
@@ -894,9 +964,9 @@ img.front-image {
 }
 
 .visible-ani {
-    visibility: visible;
-    opacity: 1;
-    transition: 2s opacity;
+    visibility        : visible;
+    opacity           : 1;
+    transition        : 2s opacity;
     -webkit-transition: 2s opacity;
     -moz-transition   : 2s opacity;
     -o-transition     : 2s opacity;
@@ -993,14 +1063,16 @@ img.front-image {
 
 
 .opacity-0 {
-    opacity          : 0 !important;
-    transition       : 2s opacity;
+    opacity           : 0 !important;
+    transition        : 2s opacity;
     -webkit-transition: 2s opacity;
     -moz-transition   : 2s opacity;
     -o-transition     : 2s opacity;
     -ms-transition    : 2s opacity;
+    pointer-events    : none;
 }
 
 .opacity-1 {
-    opacity: 1 !important;
+    opacity       : 1 !important;
+    pointer-events: inherit;
 }
