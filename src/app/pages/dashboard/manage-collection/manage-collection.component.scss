@@ -50,6 +50,11 @@
     background-color: #23C062;
     border-color: #269a54;
 }
+.form-check-input:focus {
+    background-color: #23C062;
+    border-color: #269a54;
+    box-shadow: none;
+}
 
 .table-wrapper {
     th:not(:last-child) {

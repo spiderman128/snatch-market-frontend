@@ -24,7 +24,7 @@
                     <a class="page-link waves-effect waves-effect"
                         (click)="selectPage(pagination.current)">{{pagination.current}}</a>
                 </li>
-                <li *ngIf="pagination.current == pagination.total - 2" class="page-item active">
+                <li *ngIf="pagination.current == pagination.total - 2 && pagination.total >= 10" class="page-item active">
                     <a class="page-link waves-effect waves-effect"
                         (click)="selectPage(pagination.current)">{{pagination.current}}</a>
                 </li>

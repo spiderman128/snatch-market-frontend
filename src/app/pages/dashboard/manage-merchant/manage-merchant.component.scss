@@ -10,6 +10,7 @@
 }
 
 .merchant-table {
+    font-size: 12px;
     tbody {
         tr {
             background-color: transparent;
@@ -29,6 +30,14 @@
         td:nth-child(5),
         td:nth-child(6) {
             word-break: break-word;
+        }
+        td:nth-child(n+1):nth-child(-n+4), td:nth-child(7){
+            font-weight: bold;
+            
+        }
+        td:nth-child(7){
+            text-decoration: underline;
+            cursor: pointer;
         }
     }
 

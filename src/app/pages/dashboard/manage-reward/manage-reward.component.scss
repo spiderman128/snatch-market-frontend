@@ -4,7 +4,9 @@
     background-color: white;
     color           : black;
 }
-
+.form-checked {
+    background-color: black;
+}
 .form-check-input:checked {
     background-color: #23C062;
     border-color: #269a54;

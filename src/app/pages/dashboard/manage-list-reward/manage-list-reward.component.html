@@ -1,7 +1,7 @@
 <div class="manage-reward-wrapper container-fluid d-flex flex-column">
     <div class="ps-3 mb-5">
         <div ngbDropdown class="d-inline-block">
-            <label class="fs-3" id="dropdownBasic1" ngbDropdownToggle>
+            <label class="fs-3" id="dropdownBasic1" ngbDropdownToggle [ngStyle]="{'font-family': 'app_font'}">
                 Unlisted Rewards
             </label>
             <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="rounded-4">
@@ -17,7 +17,7 @@
                 <div class="item-image mx-auto mb-auto">
                     <img src="assets/img/project/dashboard/home/reward_1.png" />
                 </div>
-                <div class="info px-3">
+                <div class="info px-4">
                     <p class="fs-5 mb-0 fw-500">Reward 1</p>
                     <label [ngStyle]="{'font-size.px' : 12}" class="text-muted">Date Won</label>
                 </div>
