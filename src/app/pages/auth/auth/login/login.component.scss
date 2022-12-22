@@ -3,15 +3,19 @@
 }
 input {
   box-shadow: 2px 3px 1px #282828, white 2px 1px 1px inset;
+  height: 100%;
 }
 input:focus {
   border-color: #ced4da!important;
   box-shadow: 2px 3px 1px #282828, white 2px 1px 1px inset;
 }
-img.addon-img {
+i.addon-img {
   position: absolute;
-  right: 20px;
-  top: 50%;
+  right: 32px;
+  top: 24px;
   transform: translateY(-50%);
   z-index: 10;
+  font-size: 20px;
+  color: #424242;
+  cursor: pointer;
 }

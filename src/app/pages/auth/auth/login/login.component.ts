@@ -13,43 +13,44 @@ import { Appstate } from 'src/app/shared/store/app.state';
 import { selectAppState } from 'src/app/shared/store/app.selector';
 
 import { ToastManager } from '@blocks/toast/toast.manager';
-import {  Subject,takeUntil } from 'rxjs';
+import { Subject, takeUntil } from 'rxjs';
 import { AppService } from '@services/app.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit, OnDestroy {
-  public formGroup !: FormGroup<{
-    email: FormControl<string>,
-    password: FormControl<string>,
+  public formGroup!: FormGroup<{
+    email: FormControl<string>;
+    password: FormControl<string>;
   }>;
 
   isLoading: boolean = false;
+  public isShowPassword: boolean = false;
+
   destroy$ = new Subject<void>();
+
   constructor(
-      private router: Router,
-      private store: Store,
-      private toastManager: ToastManager,
-      private appStore: Store<Appstate>,
-      private appService: AppService
+    private router: Router,
+    private store: Store,
+    private toastManager: ToastManager,
+    private appStore: Store<Appstate>,
+    private appService: AppService
   ) {
-    if(appService.getUserLoggedIn()) {
-      router.navigate(['/home'], {replaceUrl: true});
+    if (appService.getUserLoggedIn()) {
+      router.navigate(['/home'], { replaceUrl: true });
       return;
     }
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     this.initFormGroup();
-
   }
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
   }
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   // -------------------------------------------------------------------------------
   // ---- NOTE Init ----------------------------------------------------------------
@@ -67,14 +68,20 @@ export class LoginComponent implements OnInit, OnDestroy {
     //   }, { validators : [Validators.required], nonNullable : true })
     // });
     this.formGroup = new FormGroup({
-      email: new FormControl<string>({
-        value: '',
-        disabled: false
-      }, { validators: [Validators.required], nonNullable: true }),
-      password: new FormControl<string>({
-        value: '',
-        disabled: false
-      }, { validators: [Validators.required], nonNullable: true })
+      email: new FormControl<string>(
+        {
+          value: '',
+          disabled: false,
+        },
+        { validators: [Validators.required], nonNullable: true }
+      ),
+      password: new FormControl<string>(
+        {
+          value: '',
+          disabled: false,
+        },
+        { validators: [Validators.required], nonNullable: true }
+      ),
     });
   }
 
@@ -83,7 +90,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   // -------------------------------------------------------------------------------
   onClickSubmit(event: any) {
     event.preventDefault();
-    console.log("=======5");
+    console.log('=======5');
   }
   onLogin(event: any) {
     if (!this.isLoading) {
@@ -93,30 +100,33 @@ export class LoginComponent implements OnInit, OnDestroy {
         const password = this.formGroup.controls.password.getRawValue();
         const user = {
           user: email,
-          password: password
+          password: password,
         };
         this.store.dispatch(login({ user }));
 
         let apiStatus$ = this.appStore.pipe(select(selectAppState));
-        apiStatus$.pipe(takeUntil(this.destroy$)).subscribe(appState => {
+        apiStatus$.pipe(takeUntil(this.destroy$)).subscribe((appState) => {
           this.isLoading = false;
-          if (appState.apiStatus == "Success") {
+          if (appState.apiStatus == 'Success') {
             this.appStore.dispatch(
-              setAPIStatus({ apiStatus: { apiResponseMessage: '', apiStatus: '' } })
+              setAPIStatus({
+                apiStatus: { apiResponseMessage: '', apiStatus: '' },
+              })
             );
-            this.toastManager.quickShow("Successfully Logged In.", 'success');
+            this.toastManager.quickShow('Successfully Logged In.', 'success');
             this.router.navigate(['/home'], { replaceUrl: true });
             return;
-          } else if (appState.apiStatus == "Error") {
+          } else if (appState.apiStatus == 'Error') {
             this.toastManager.quickShow(appState.apiResponseMessage);
             this.appStore.dispatch(
-              setAPIStatus({ apiStatus: { apiResponseMessage: '', apiStatus: '' } })
+              setAPIStatus({
+                apiStatus: { apiResponseMessage: '', apiStatus: '' },
+              })
             );
             this.router.navigate(['/auth'], { replaceUrl: true });
             return;
           }
-
-        })
+        });
       } else {
         this.isLoading = false;
         this._validateForm(this.formGroup);
@@ -126,12 +136,11 @@ export class LoginComponent implements OnInit, OnDestroy {
   _validateForm(form: FormGroup): boolean {
     if (!form.valid) {
       for (let i in form.controls) {
-        form.controls[i].markAsTouched()
+        form.controls[i].markAsTouched();
       }
-      return false
-    }
-    else {
-      return true
+      return false;
+    } else {
+      return true;
     }
   }
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { faTimes, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-search-input',
@@ -7,16 +6,14 @@ import { faTimes, faSearch } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./search-input.component.scss'],
 })
 export class SearchInputComponent implements OnInit {
-  @Input() theme : 'light' | 'dark' = 'dark';
+  @Input() theme: 'light' | 'dark' = 'dark';
 
-  searchActive : boolean = false;
-  faTimes = faTimes
-  faSearch = faSearch
+  searchActive: boolean = false;
 
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.theme)
+    console.log(this.theme);
   }
 
   public toggleSearch(): void {
