@@ -1,7 +1,6 @@
-import { AfterViewInit, Component, ViewChild  } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, ViewChild  } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { GameRewardModalComponent } from '@modals/game-reward-modal/game-reward-modal.component';
-import { DragScrollComponent } from 'ngx-drag-scroll';
 // @ts-ignore
 import { TimelineMax, TweenMax } from 'gsap';
 
@@ -13,21 +12,30 @@ declare let Winwheel: any;
   templateUrl: './spin.component.html',
   styleUrls: ['./spin.component.scss']
 })
-export class SpinComponent implements AfterViewInit {
+export class SpinComponent implements AfterViewInit, OnDestroy {
   
-  @ViewChild('nav', { read: DragScrollComponent }) ds!: DragScrollComponent;
-
   theWheel: any;
   wheelSpinning = false;
   winningSegment: string = "";
   el_result_img: any;
   el_result_div: any;
 
+  slideConfig = { slidesToShow: 4, slidesToScroll:4, dots: false, infinite: false, adaptiveHeight: true, variableWidth: true, arrows: false, centerMode: false };
+
+  audio?: HTMLAudioElement;
   constructor(private modalService: NgbModal) {
+    
+  }
+  ngOnDestroy(): void {
+    this.audio!.src = '';
   }
   
   ngAfterViewInit(): void {
-    
+    this.audio = new Audio('/assets/audio/spin.mp3');
+    this.audio!.preload = 'auto';
+    this.audio!.autoplay = false;
+    this.audio!.loop = false;
+
     this.theWheel = new Winwheel({
       numSegments: 10,
       outerRadius: 620,
@@ -51,7 +59,7 @@ export class SpinComponent implements AfterViewInit {
       animation:
         {
           type: 'spinToStop',
-          duration: 5,
+          duration: 10,
           spins: 10,
           callbackFinished: this.alertPrize.bind(this)
         }
@@ -77,6 +85,7 @@ export class SpinComponent implements AfterViewInit {
     if (this.wheelSpinning === false) {
       this.theWheel.animation.spins = 15;
     }
+    this.audio!.play();
     this.theWheel.startAnimation(new TweenMax(new TimelineMax()));
     this.wheelSpinning = true;
   }

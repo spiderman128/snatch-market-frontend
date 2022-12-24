@@ -40,7 +40,6 @@
 
 .totalnumber-indicator {
     position : absolute;
-    padding  : 5px;
     left     : 0%;
     top      : 50%;
     transform: translateY(-50%);
@@ -155,4 +154,9 @@
 }
 .info {
     font-size: 14px;
+}
+
+
+.progress-bar {
+    transition: none!important;
 }

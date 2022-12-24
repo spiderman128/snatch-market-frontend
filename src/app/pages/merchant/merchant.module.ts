@@ -34,7 +34,7 @@ import { NgScrollbarModule, NG_SCROLLBAR_OPTIONS } from 'ngx-scrollbar';
     MerchantRoutingModule,
     NgScrollbarModule,
     StoreModule.forFeature('merchantstate', merchantReducer),
-    EffectsModule.forFeature([MerchantEffect])
+    EffectsModule.forFeature([MerchantEffect]),
   ]
 })
 export class MerchantModule { }

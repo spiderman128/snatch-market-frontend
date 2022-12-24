@@ -4,8 +4,7 @@ import { CommonModule } from '@angular/common';
 import { PickRoutingModule } from './pick-routing.module';
 import { PickComponent } from './pick.component';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { DragScrollModule } from 'ngx-drag-scroll';
-
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @NgModule({
   declarations: [PickComponent],
@@ -14,7 +13,7 @@ import { DragScrollModule } from 'ngx-drag-scroll';
     CommonModule,
     PickRoutingModule,
     SharedModule,
-    DragScrollModule
+    SlickCarouselModule
   ]
 })
 export class PickModule { }

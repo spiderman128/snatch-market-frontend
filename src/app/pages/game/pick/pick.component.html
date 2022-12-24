@@ -1,13 +1,11 @@
 <app-page-layout [headerTheme]="'light'">
     <div class="container-fluid pickcard-container p-0 m-0">
         <div class="scroll-wrapper pt-3 pb-5">
-            <drag-scroll #nav [scroll-x-wheel-enabled]="true">
-                <div class="container-fluid px-5">
-                    <div drag-scroll-item class="mx-2" *ngFor="let perItem of rewardItems;">
-                        <app-reward-item></app-reward-item>
-                    </div>
+            <ngx-slick-carousel class="carousel ms-3" #slickModal="slick-carousel" [config]="slideConfig">
+                <div ngxSlickItem class="slide mx-2" *ngFor="let perItem of rewardItems;">
+                    <app-reward-item></app-reward-item>
                 </div>
-            </drag-scroll>
+            </ngx-slick-carousel>
         </div>
         <div class="mx-auto card-content mb-3" id="card_content">
             <div class="before-content mx-auto" [ngClass]="{'hidden' : isStartPick, 'visible' : !isStartPick}"
@@ -71,30 +69,19 @@
                         </div>
                     </div>
                 </label>
-                <!-- <label class="pick-card fcard" (click)="onHandleSelectCard()">
-                    <img class="front-image" src="assets/img/project/game/pick/card_2.png" />
-                </label>
-                <label class="pick-card fcard" (click)="onHandleSelectCard()">
-                    <img class="front-image" src="assets/img/project/game/pick/card_1.png" />
-                </label>
-                <label class="pick-card fcard" (click)="onHandleSelectCard()">
-                    <img class="front-image" src="assets/img/project/game/pick/card_2.png" />
-                </label>
-                <label class="pick-card fcard" (click)="onHandleSelectCard()">
-                    <img class="front-image" src="assets/img/project/game/pick/card_1.png" />
-                </label> -->
             </div>
 
         </div>
-        <div class="d-grid mx-auto button-content" [ngClass]="{'hidden' : isStartPick}">
-            <image-button [text]="'pick a card'" [size]="'lg'" (onClick)="onHanldePickCard($event)"></image-button>
+        <div class="col-md-3 col-lg-2 col-sm-3 col-xs-3 col-5 mx-auto " [ngClass]="{'hidden' : isStartPick}">
+            <!-- <image-button [text]="'pick a card'" [size]="'lg'" (onClick)="onHanldePickCard($event)"></image-button> -->
+            <app-custom-button [text]="'pick a card'" (onClickEvent)="onHanldePickCard($event)"></app-custom-button>
         </div>
         <div class="reward-information text-dark text-center py-4 fw-bold" [ngClass]="{'hidden' : isStartPick}">
             You will be charged 100$.
         </div>
-        <div class="coin-image-wrapper" >
+        <div class="coin-image-wrapper">
             <div class="position-relative">
-                <img src="assets/img/project/game/snatch/coin.png" (click)="onResetPick()"/>
+                <img src="assets/img/project/game/snatch/coin.png" (click)="onResetPick()" />
                 <div class="expanded-fab lightning opacity-0" (click)="onClickLightning()">
                     <div class="inner-item d-flex justify-content-center align-items-center">Lighiting</div>
                 </div>

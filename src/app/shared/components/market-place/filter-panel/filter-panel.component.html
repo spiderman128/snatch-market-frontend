@@ -3,49 +3,49 @@
         <label class="title fw-900">Filter</label>
         <button type="button" class="btn-close" (click)="onClose()"></button>
     </div>
-    <div class="card-body d-flex flex-column justify-content-start px-5">
+    <div class="card-body d-flex flex-column justify-content-start px-3">
         <label>Group By:</label>
         <div class="filter-item" (click)="onHandleGroupBy('brand')">
-            <input class="form-check-input" type="checkbox" value="">
-            <label class="ms-2">
+            <input class="form-check-input" id="brandCheckBox" type="checkbox" value="">
+            <label class="ms-2 form-label mb-0" for="brandCheckBox">
                 Brand
             </label>
         </div>
         <div class="filter-item" (click)="onHandleGroupBy('collection')">
-            <input class="form-check-input" type="checkbox" value="">
-            <label class="ms-2">
+            <input class="form-check-input" id="collectionCheckbox" type="checkbox" value="">
+            <label class="ms-2 form-label mb-0" for="collectionCheckbox">
                 Collection
             </label>
         </div>
         <div class="filter-item" (click)="onHandleGroupBy('typeofrewards')">
-            <input class="form-check-input" type="checkbox" value="">
-            <label class="ms-2">
+            <input class="form-check-input" id="rewardCheckBox" type="checkbox" value="">
+            <label class="ms-2 mb-0 form-label" for="rewardCheckBox">
                 Type Of Rewards
             </label>
         </div>
 
         <label class="mt-3">Filter:</label>
         <div class="filter-item">
-            <input class="form-check-input" type="checkbox" value="">
-            <label class="ms-2">
+            <input class="form-check-input" id="priceCheckbox" type="checkbox" value="">
+            <label class="ms-2 form-label mb-0" for="priceCheckbox">
                 PRice
             </label>
         </div>
         <div class="filter-item">
-            <input class="form-check-input" type="checkbox" value="">
-            <label class="ms-2">
+            <input class="form-check-input" id="dateCheckbox" type="checkbox" value="">
+            <label class="ms-2 form-label mb-0" for="dateCheckbox">
                 Date (from) - Date(to)
             </label>
         </div>
         <div class="filter-item">
-            <input class="form-check-input" type="checkbox" value="">
-            <label class="ms-2">
+            <input class="form-check-input" id="userCheckbox" type="checkbox" value="">
+            <label class="ms-2 form-label mb-0" for="userCheckbox">
                 User Only
             </label>
         </div>
         <div class="filter-item">
-            <input class="form-check-input" type="checkbox" value="">
-            <label class="ms-2">
+            <input class="form-check-input" id="merchantCheckbox" type="checkbox" value="">
+            <label class="ms-2 form-label mb-0" for="merchantCheckbox">
                 Merchant Only
             </label>
         </div>

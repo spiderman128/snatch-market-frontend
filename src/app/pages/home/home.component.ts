@@ -1,9 +1,6 @@
 // Angular modules
 import { AfterViewInit, Component, ElementRef, ViewChild, OnInit, OnDestroy } from '@angular/core';
 
-
-import { DragScrollComponent } from "ngx-drag-scroll";
-
 import { NewRewardCollection } from '@interfaces/newrewardcollection';
 import { Router } from '@angular/router';
 
@@ -22,11 +19,82 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   public isLoading: boolean = true;
   timer: any;
 
-  @ViewChild('nav', { read: DragScrollComponent }) ds!: DragScrollComponent;
-
   newRewardCollection$ = this.store.pipe(select(selectNewRewardCollection));
   newRewardDropped$ = this.store.pipe(select(selectNewRewardDropped));
 
+  slideConfig = { slidesToShow: 1, slidesToScroll: 1, dots: false, infinite: false, adaptiveHeight: true, variableWidth: true, arrows: false, centerMode: false };
+
+  threeWaySlideConfig = {
+    dots: false,
+    infinite: false,
+    arrows: false,
+    speed: 300,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    variableWidth: true,
+    centerMode: false,
+    responsive: [
+      {
+        breakpoint: 1067,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: false,
+          dots: false,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
+
+  newRewardCollectionSlideConfig = {
+    dots: false,
+    infinite: false,
+    arrows: false,
+    speed: 300,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    variableWidth: true,
+    centerMode: true,
+    responsive: [
+      {
+        breakpoint: 1067,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: false,
+          dots: false,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  }
   constructor(private router: Router, private store: Store) { }
   ngOnDestroy(): void {
     clearInterval(this.timer);
@@ -34,7 +102,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
 
   ngAfterViewInit(): void {
-    
+
     this.onInitTopCarousel();
   }
 
@@ -42,7 +110,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   // ---- NOTE Init ----------------------------------------------------------------
   // -------------------------------------------------------------------------------
 
-  ngOnInit(){
+  ngOnInit() {
     this.isLoading = false;
     this.store.dispatch(InvokeNewRewardCollection());
     this.store.dispatch(InvokeNewRewardDropped());
@@ -72,18 +140,41 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     }, 4000);
     // document.querySelector('#slider input[checked="true"]')
   }
-  onHandleGoSpin(data : any) {
-    this.router.navigate(['/game/spin'], {replaceUrl : true});
+  onHandleGoSpin(data: any) {
+    this.router.navigate(['/game/spin'], { replaceUrl: true });
   }
 
-  onHandleGoSnatch(data : any) {
-    this.router.navigate(['/game/snatch'], {replaceUrl : true});
+  onHandleGoSnatch(data: any) {
+    this.router.navigate(['/game/snatch'], { replaceUrl: true });
   }
 
   onHanldeSignup(event: any) {
     this.router.navigate(['/auth/signup']);
   }
   onHandleGoPickcard(event: any) {
-    this.router.navigate(['/game/pick'], {replaceUrl : true});
+    this.router.navigate(['/game/pick'], { replaceUrl: true });
+  }
+
+  addSlide() {
+    // this.slides.push({ img: 'http://placehold.it/350x150/777777' });
+  }
+  removeSlide() {
+    // this.slides.length = this.slides.length - 1;
+  }
+  slickInit(e: any) {
+    console.log('slick initialized');
+  }
+  breakpoint(e: any) {
+    console.log('breakpoint');
+  }
+  afterChange(e: any) {
+    console.log('afterChange');
+  }
+  beforeChange(e: any) {
+    console.log('beforeChange');
+  }
+
+  onClickPlayNow(event: any) {
+    this.router.navigate(['/play/chooseCategory']);
   }
 }

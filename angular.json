@@ -31,13 +31,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/assets/scss/styles.scss"
+              "src/assets/scss/styles.scss",
+              "node_modules/slick-carousel/slick/slick.scss",
+              "node_modules/slick-carousel/slick/slick-theme.scss"
             ],
             "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
               "node_modules/gsap/src/minified/TimelineMax.min.js",
               "node_modules/gsap/src/minified/TweenMax.min.js",
               "src/assets/js/Winwheel.min.js",
-              "node_modules/apexcharts/dist/apexcharts.min.js"
+              "node_modules/apexcharts/dist/apexcharts.min.js",
+              "node_modules/slick-carousel/slick/slick.min.js"
             ]
           },
           "configurations": {

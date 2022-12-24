@@ -87,13 +87,9 @@ body {
 }
 
 .main-container>div {
-    min-height: calc(100vh - 168px);
+    min-height: calc(100vh - 177px);
 }
 
-// scroll 
-.drag-scroll-content {
-    overflow: hidden !important;
-}
 
 // font-weight
 .fw-900 {
@@ -125,15 +121,17 @@ body {
 
 // scratch card 
 .sc__wrapper {
-    width   : 50vw;
-    height  : 25vw;
+    width : 50vw;
+    height: 25vw;
 }
+
 #js--sc--container {
     // max-width: 300px;
     width   : 50vw;
     height  : 25vw;
     margin  : auto;
     position: relative;
+
     img {
         width     : 90%;
         height    : 90%;
@@ -181,15 +179,16 @@ body {
 
 @media (max-width: 400px) {
     #js--sc--container {
-        width   : 70vw;
-        height  : 40vw;
+        width : 70vw;
+        height: 40vw;
     }
 
     .sc__wrapper {
-        width   : 70vw;
-        height  : 40vw;
+        width : 70vw;
+        height: 40vw;
     }
 }
+
 // @media screen and (min-width: 1500px) {
 //     #js--sc--container {
 //         width : 720px !important;
@@ -278,15 +277,26 @@ body {
     font-family: app_font;
     src        : url('../fonts/Gotham-Font/Gotham-Black.otf');
 }
+
 @font-face {
     font-family: Robo_Regular;
     src        : url('../fonts/Robo/Roboto-Regular.ttf');
 }
+
 @font-face {
     font-family: Robo_Medium;
     src        : url('../fonts/Robo/Roboto-Medium.ttf');
 }
 
+@font-face {
+    font-family: Gotham_Light;
+    src        : url('../fonts/Gotham-Font/GothamLight.ttf');
+}
+
+@font-face {
+    font-family: Gotham_Book;
+    src        : url('../fonts/Gotham-Font/GothamBook.ttf');
+}
 // modal part
 .game-reward-modal {
     justify-content: center;
@@ -341,18 +351,71 @@ body {
 
 
 .btn-main-bg {
-background-color: #FF7200!important;
+    background-color: #FF7200 !important;
 }
 
 .brand-accordion-wrapper {
     .accordion-button::after {
-        color: orange!important;
-        content: "▼";
-        transform: none!important;
+        color     : orange !important;
+        content   : "▼";
+        transform : none !important;
         background: none;
     }
 }
+
 .custom-caret-select {
-    background-image: url("/assets/img/project/select-arrow.png")!important;
-    background-size: 24px;
+    background-image: url("/assets/img/project/select-arrow.png") !important;
+    background-size : 24px;
+}
+
+
+// home page slick panel
+.three-ways-wrapper {
+    @media screen and (min-width:1067px) {
+        .slick-track {
+            width: 100%!important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: none!important;
+        }
+    }
+}
+.new-reward-collection {
+    @media screen and (min-width:1067px) {
+        .slick-track {
+            width: 100%!important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: none!important;
+        }
+    }
+}
+.chooseBrand-wrapper {
+    @media screen and (min-width:1067px) {
+        .slick-track {
+            width: 100%!important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: none!important;
+        }
+    }
+}
+
+// Market Place Brand setting
+.brand-accordion-wrapper {
+    .accordion-button{
+        color: black!important;
+        font-family: Gotham_Light;
+    }
+}
+
+
+// play choose category setting
+.carousel-wrapper {
+    .slick-track:first-child {
+        margin-left: 50px;
+    }
 }

@@ -1,0 +1,69 @@
+.category-card-container {
+    position: relative;
+    z-index: 1;
+    padding: 50px 20px;
+    .card {
+        width           : 15rem;
+        height          : 15rem;
+        background-color: #000000;
+        position: relative;
+    }
+}
+
+.cate-image {
+    z-index: 10;
+    position: absolute;
+    width   : 15rem;
+    height  : 15rem;
+
+    img {
+        width     : 15rem;
+        height    : 15rem;
+        object-fit: scale-down;
+    }
+}
+
+.left {
+    left     : -70px;
+    top      : 0px;
+    transform: scale(1.2, 1.5);
+}
+.bottom {
+    right: -10px;
+    bottom: -70px;
+    transform: scale(0.8, 0.8);
+}
+.top {
+   top: -70px;
+   transform: translateX(-50%) scale(0.8, 0.8);
+   left: 50%;
+}
+.right {
+    right: -10px;
+    bottom: -25px;
+ }
+
+ .cate-title {
+    font-family: app_font;
+    font-size: 22px;
+ }
+ .top-left {
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+ }
+ .top-right {
+    display: flex;
+    justify-content: end;
+    align-items: flex-start;
+ }
+ .bottom-left {
+    display: flex;
+    justify-content: start;
+    align-items: flex-end;
+ }
+ .bottom-right {
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+ }

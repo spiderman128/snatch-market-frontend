@@ -1,0 +1,17 @@
+.choose-brand-card {
+    background-color: white;
+    .brand-image {
+        width           : 15rem;
+        height          : 15rem;
+        img {
+            width : 10rem;
+            height: 10rem;
+            object-fit: contain;
+        }
+    }
+    .draw-title {
+        font-family: Gotham_Light;
+        font-size: 12px;
+        color: black;
+    }
+}

@@ -36,8 +36,16 @@ const routes : Routes = [
     loadChildren : () => import('./pages/merchant/merchant.module').then(m => m.MerchantModule),
   },
   {
+    path         : 'play',
+    loadChildren : () => import('./pages/play/play.module').then(m => m.PlayModule),
+  },
+  {
     path : 'dashboard',
     loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule)
+  },
+  {
+    path: 'mega-reward',
+    loadChildren: () => import('./pages/mega-reward/mega-reward.module').then(m => m.MegaRewardModule)
   },
   { path : '',   redirectTo : '/home', pathMatch : 'full' },
   { path : '**', component : NotFoundComponent }

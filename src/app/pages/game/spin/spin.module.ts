@@ -4,8 +4,7 @@ import { CommonModule } from '@angular/common';
 import { SpinRoutingModule } from './spin-routing.module';
 import { SpinComponent } from './spin.component';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { DragScrollModule } from 'ngx-drag-scroll';
-
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @NgModule({
   declarations: [SpinComponent],
@@ -14,7 +13,7 @@ import { DragScrollModule } from 'ngx-drag-scroll';
     CommonModule,
     SpinRoutingModule,
     SharedModule,
-    DragScrollModule
+    SlickCarouselModule
   ]
 })
 export class SpinModule { }

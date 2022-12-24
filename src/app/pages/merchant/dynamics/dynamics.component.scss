@@ -79,7 +79,13 @@
     width: 2px;
     height: 2px;
 }
+.max-label {
+    margin-right: -15px;
+}
 
 .info {
     font-size: 14px;
+}
+.progress-bar {
+    transition: none!important;
 }

@@ -1,13 +1,11 @@
 <app-page-layout [headerTheme]="'light'">
     <div class="container-fluid snatch-container" (window:resize)="onResize($event)">
         <div class="scroll-wrapper pt-3 pb-5">
-            <drag-scroll #nav [scroll-x-wheel-enabled]="true">
-                <div class="container-fluid px-5">
-                    <div drag-scroll-item class="mx-2" *ngFor="let perItem of rewardItems;">
-                        <app-reward-item></app-reward-item>
-                    </div>
+            <ngx-slick-carousel class="carousel ms-3" #slickModal="slick-carousel" [config]="slideConfig">
+                <div ngxSlickItem class="slide mx-2" *ngFor="let perItem of rewardItems;">
+                    <app-reward-item></app-reward-item>
                 </div>
-            </drag-scroll>
+              </ngx-slick-carousel>
         </div>
         <div class="mx-auto g-5">
             <div class="sc__wrapper mx-auto" [ngClass]="{'pe-none' : !isStartScratch}"  [style.background]="'url(/assets/img/project/game/snatch/' + imageName + ')'">

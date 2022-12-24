@@ -50,6 +50,8 @@ import { DashboardLayoutComponent } from './components/layouts/dashboard-layout/
 import { SidebarLayoutComponent } from './components/layouts/sidebar-layout/sidebar-layout.component';
 import { ArrowButtonComponent } from './components/dashboard/arrow-button/arrow-button.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
+import { CategoryCardComponent } from './components/play/category-card/category-card.component';
+import { BrandCardComponent } from './components/play/brand-card/brand-card.component';
 
 
 
@@ -108,6 +110,8 @@ import { SearchInputComponent } from './components/search-input/search-input.com
       SidebarLayoutComponent,
       ArrowButtonComponent,
       SearchInputComponent,
+      CategoryCardComponent,
+      BrandCardComponent,
     ],
   exports:
     [
@@ -160,7 +164,9 @@ import { SearchInputComponent } from './components/search-input/search-input.com
       DashboardLayoutComponent,
       SidebarLayoutComponent,
       ArrowButtonComponent,
-      SearchInputComponent
+      SearchInputComponent,
+      CategoryCardComponent,
+      BrandCardComponent
     ],
   providers:
     [

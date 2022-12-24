@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DragScrollComponent } from 'ngx-drag-scroll';
 import { GameRewardModalComponent } from '@modals/game-reward-modal/game-reward-modal.component';
 // @ts-ignore
 import { ScratchCard, SCRATCH_TYPE } from 'scratchcard-js';
@@ -12,8 +11,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./snatch.component.scss']
 })
 export class SnatchComponent implements OnInit {
-
-  @ViewChild('nav', { read: DragScrollComponent }) ds!: DragScrollComponent;
 
   rewardItems = new Array(20);
   imageName = '1.png';
@@ -28,12 +25,13 @@ export class SnatchComponent implements OnInit {
     // htmlBackground:
     //   '<div class="cardamountcss"><div class="won-amnt">Try</div><div class="won-text">Again<br></div></div>',
 
-    clearZoneRadius: 30,
+    clearZoneRadius: 80,
     nPoints: 30,
     pointSize: 4,
     callback: () => {
       console.log('Now the window will reload !');
       this.isStartScratch = false;
+      this.audio!.src = '';
       const modalRef = this.modalService.open(GameRewardModalComponent, { centered: true, modalDialogClass: 'game-reward-modal' });
       modalRef.componentInstance.data = {
         "buttonText": "snatch again",
@@ -50,8 +48,14 @@ export class SnatchComponent implements OnInit {
     },
   };
 
+  slideConfig = { slidesToShow: 4, slidesToScroll:4, dots: false, infinite: false, adaptiveHeight: true, variableWidth: true, arrows: false, centerMode: false };
+  audio?: HTMLAudioElement;
   constructor(private modalService: NgbModal, private router: Router) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.audio = new Audio('/assets/audio/scratch.mp3');
+    this.audio!.preload = 'auto';
+    this.audio!.autoplay = false;
+    this.audio!.loop = false;
    }
 
   ngOnInit(): void {
@@ -84,11 +88,15 @@ export class SnatchComponent implements OnInit {
     // Init
     this.scratchObject.init()
       .then(() => {
+        
         this.scratchObject.htmlBackground = this.scratchObject.canvas.addEventListener('scratch.move', () => {
           let percent = this.scratchObject.getPercent().toFixed(2);
           console.log(percent);
+          this.audio?.play();
           if (percent >= 80) {
+            console.log("percent",percent)
             this.imageName = '1.png'
+            
           }
 
         });

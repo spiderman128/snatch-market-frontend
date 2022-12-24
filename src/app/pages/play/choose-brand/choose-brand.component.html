@@ -1,0 +1,23 @@
+<app-page-layout [headerTheme]="'light'">
+    <div class="chooseBrand-wrapper container-fluid  h-100 m-0 px-0 py-3">
+        <div class="px-5 d-flex align-items-end">
+            <div class="title me-auto">
+                Choose <br> Your Brand
+            </div>
+            <div class="arrow-button">
+                <app-arrow-button class="ms-2" [isRight]="true" (onHandle)="onClickNextCarousel($event)"></app-arrow-button>
+            </div>
+            
+        </div>
+        <div class="carousel-wrapper py-5 px-0 mb-3">
+            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+              <div ngxSlickItem class="slide me-3" *ngFor="let perBrandCard of sliderItems;">
+                <app-brand-card [data]="perBrandCard"></app-brand-card>
+              </div>
+            </ngx-slick-carousel>
+        </div>
+        <div class="next-button-wrapper mx-auto">
+            <app-custom-button [text]="'Next'" (onClickEvent)="onClickNext($event)"></app-custom-button>
+        </div>
+    </div>
+</app-page-layout>

@@ -1,0 +1,16 @@
+.chooseBrand-wrapper {
+    background-color: white;
+    min-height      : calc(100vh - 177px);
+    position        : relative;
+    overflow        : hidden;
+}
+.title {
+    font-family: app_font;
+    font-size: 48px;
+    line-height: 1.2;
+    color: black;
+}
+
+.next-button-wrapper {
+    width: 10rem;
+}

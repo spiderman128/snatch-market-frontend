@@ -1,16 +1,14 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
-import { DragScrollComponent } from 'ngx-drag-scroll';
 import { GameRewardModalComponent } from '@modals/game-reward-modal/game-reward-modal.component';
 @Component({
   selector: 'app-pick-card',
   templateUrl: './pick.component.html',
   styleUrls: ['./pick.component.scss']
 })
-export class PickComponent implements OnInit {
+export class PickComponent implements OnInit, OnDestroy{
 
-  @ViewChild('nav', { read: DragScrollComponent }) ds!: DragScrollComponent;
   @ViewChild('beforeContent', { static: true }) beforeContent?: ElementRef<HTMLDivElement>;
   @ViewChild('afterContent', { static: true }) afterContent?: ElementRef<HTMLDivElement>;
 
@@ -19,8 +17,19 @@ export class PickComponent implements OnInit {
   pickCards = new Array(5);
 
   isRefresh: boolean = false;
+
+  slideConfig = { slidesToShow: 4, slidesToScroll: 4, dots: false, infinite: false, adaptiveHeight: true, variableWidth: true, arrows: false, centerMode: false };
+
+  audio?: HTMLAudioElement;
   constructor(private modalService: NgbModal, private router: Router) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.audio = new Audio('/assets/audio/shuffling.mp3');
+    this.audio!.preload = 'auto';
+    this.audio!.autoplay = false;
+    this.audio!.loop = false;
+  }
+  ngOnDestroy(): void {
+    this.audio!.src = '';
   }
 
   ngOnInit(): void {
@@ -28,6 +37,14 @@ export class PickComponent implements OnInit {
 
   onHanldePickCard(data: any) {
     this.isStartPick = true;
+    const docWidth = document.body.getBoundingClientRect();
+    if (docWidth.width <= 575) {
+      const cardContentDom = document.querySelector('.card-content');
+      (cardContentDom! as HTMLDivElement).style.height = '153vw';
+    }
+
+    console.log('pick card start')
+    this.audio?.play();
     setTimeout(() => {
       this.onArrangeCardToMatchWidth();
     }, 3500);
@@ -37,13 +54,32 @@ export class PickComponent implements OnInit {
     const contentAfterDom = document.querySelector('#card_content');
     const fcardMaps = document.querySelectorAll('.fcard');
 
-    contentAfterDom!.setAttribute('style', 'padding-left : 2.5vw; padding-right: 2.5vw;');
+
 
     let secondLeftPos = "", fourthLeftPos = "", fifthLeftPos = "";
+    const docWidth = document.body.getBoundingClientRect();
+    if (docWidth.width <= 575) {
+      contentAfterDom!.setAttribute('style', 'padding-left : 9vw; padding-right: 9vw;');
+      const cardContentDom = document.querySelector('.card-content');
+      (cardContentDom! as HTMLDivElement).style.height = '153vw';
+
+    } else {
+      contentAfterDom!.setAttribute('style', 'padding-left : 2.5vw; padding-right: 2.5vw;');
+    }
+
+    let leftValue = '';
+    let topValue = '0vw';
+
     fcardMaps.forEach((element, index) => {
-      let leftValue = 19 * index + 'vw';
+      if (docWidth.width <= 575) {
+        leftValue = 41 * (index % 2) + 'vw';
+        topValue = 51 * (Math.floor(index / 2)) + 'vw';
+      } else {
+        leftValue = 19 * index + 'vw';
+      }
+
       // if (index == 0) leftValue = 'vw';
-      element.setAttribute('style', 'left:' + leftValue + ';');
+      element.setAttribute('style', 'left:' + leftValue + '; top:' + topValue + ";");
       if (index < 2) {
         element.classList.add('visible-ani');
       } else {
@@ -172,11 +208,20 @@ export class PickComponent implements OnInit {
     const fcards = document.querySelectorAll('.fcard');
     fcards.forEach(element => {
       element.classList.add('opacity-0');
+      element.classList.remove('pe-auto')
+      element.classList.add('pe-none')
     })
 
     parentDom.classList.add('opacity-1');
     parentDom.classList.add('selectedCard');
+    parentDom.classList.remove('pe-none')
+    parentDom.classList.add('pe-auto')
     setTimeout(() => {
+      const docWidth = document.body.getBoundingClientRect();
+      if (docWidth.width <= 575) {
+        const cardContentDom = document.querySelector('.card-content');
+        (cardContentDom! as HTMLDivElement).style.height = '';
+      }
       parentDom.setAttribute('style', 'opacity : 1; transition: all 1s;');
       this.isRefresh = true;
     }, 1500);
