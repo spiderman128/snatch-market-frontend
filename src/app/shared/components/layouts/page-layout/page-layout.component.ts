@@ -11,6 +11,7 @@ export class PageLayoutComponent implements OnInit
 {
   @Input() isLoading : boolean = false;
   @Input() headerTheme : 'light' | 'dark' = 'dark';
+  @Input() isMegaReward: boolean = false;
   constructor()
   {
 

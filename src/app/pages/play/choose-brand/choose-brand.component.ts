@@ -43,6 +43,9 @@ export class ChooseBrandComponent implements OnInit {
   onClickNext(event: any) {
     this.router.navigate(['/game/spin']);
   }
+  onClickPrevCarousel(event: any) {
+    this.slickModal!.slickPrev();
+  }
   onClickNextCarousel(event: any) {
     this.slickModal?.slickNext();
   }

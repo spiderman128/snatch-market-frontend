@@ -4,7 +4,8 @@
             <div class="title me-auto">
                 Choose <br> Your Category
             </div>
-            <div class="arrow-button">
+            <div class="arrow-button d-flex">
+                <app-arrow-button class="ms-2 me-3" [isLeft]="true" (onHandle)="onClickPrevCarousel($event)"></app-arrow-button>
                 <app-arrow-button class="ms-2" [isRight]="true" (onHandle)="onClickNextCarousel($event)"></app-arrow-button>
             </div>
             

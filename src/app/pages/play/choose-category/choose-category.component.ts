@@ -74,6 +74,9 @@ export class ChooseCategoryComponent implements OnInit {
   onClickNextCarousel(event: any) {
     this.slickModal!.slickNext();
   }
+  onClickPrevCarousel(event: any) {
+    this.slickModal!.slickPrev();
+  }
   onClickNext(event: any) {
     this.router.navigate(['/play/chooseBrand']);
   }

@@ -19,7 +19,7 @@ import { TokenStorageService } from '@services/token-storage.service';
 export class LayoutHeaderComponent implements OnInit
 {
   @Input() theme : 'light' | 'dark' = 'dark';
-
+  @Input() isMegaReward: boolean = false;
   public appName         : string  = environment.appName;
   public isMenuCollapsed : boolean = true;
 
