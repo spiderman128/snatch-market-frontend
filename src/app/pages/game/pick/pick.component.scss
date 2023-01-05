@@ -837,3 +837,9 @@ img.front-image {
     opacity       : 1 !important;
     pointer-events: inherit;
 }
+
+.game-card-action-icon {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}

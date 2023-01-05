@@ -44,6 +44,7 @@ export class SnatchComponent implements OnInit {
       // handle modal button click event
       modalRef.componentInstance.onButtonClick.subscribe((receivedData: any) => {
         console.log("modal button is clicked on spin wheel page");
+        this.router.navigate(['/game/snatch']);
       });
     },
   };
