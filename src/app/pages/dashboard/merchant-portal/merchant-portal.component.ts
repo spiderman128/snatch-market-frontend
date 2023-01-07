@@ -16,6 +16,7 @@ import {
   ApexFill,
   ApexTooltip
 } from "ng-apexcharts";
+import { SlickCarouselComponent } from 'ngx-slick-carousel';
 
 
 export type ChartOptions = {
@@ -43,6 +44,19 @@ export class MerchantPortalComponent implements OnInit {
   isUser: boolean = false;
 
   @ViewChild("chart") chart!: ChartComponent;
+  // slider
+  public slideConfig = {
+    slidesToShow: 1, 
+    slidesToScroll: 1, 
+    dots: false, 
+    infinite: false, 
+    adaptiveHeight: true, 
+    variableWidth: true, 
+    arrows: false, 
+    centerMode: false
+  };
+
+  @ViewChild('slickModal') slickModal?: SlickCarouselComponent;
   constructor(private store: Store) {
     this.chartOptions = {
       series: [

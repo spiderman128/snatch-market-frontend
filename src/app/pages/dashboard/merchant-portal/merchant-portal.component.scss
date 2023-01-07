@@ -1,6 +1,12 @@
 * {
   color: black;
 }
+.dashboard-wrapper {
+  background-color: white;
+  min-height      : calc(100vh - 177px);
+  position        : relative;
+  overflow        : hidden;
+}
 
 .top-card {
   background-color: #f2f2f2 !important;
@@ -52,15 +58,88 @@
   width: 100%;
   max-width: 230px;
   margin-bottom: 15px;
+  object-fit: cover;
 }
 
 .money-spent-card {
   height: 300px !important;
   background-color: #000000;
 }
-
+.component-redeem-reward {
+  .reward-detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+  }
+  .item-title {
+    font-size: 10px;
+    word-break: break-word;
+    text-align: center;
+  }
+  .item-name {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+  }
+}
 @media screen and (min-width: 992px) {
   .component-redeem-reward {
     order: 3;
+  }
+}
+@media (min-width: 643px) and (max-width: 768px) {
+  .pie-chart {
+    --w: 120px;
+  }
+  .component-redeem-reward {
+    .reward-detail {
+      .item-name {
+        font-size: 11px;
+      }
+    }
+    .item-image {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+@media (min-width: 607px) and  (max-width: 642px) {
+  .pie-chart {
+    --w: 100px;
+  }
+  .component-redeem-reward {
+    .reward-detail {
+      .item-name {
+        font-size: 10px;
+      }
+      
+    }
+    .item-title {
+      font-size: 7px;
+    }
+    .item-image {
+      width: 38px;
+      height: 38px;
+    }
+  }
+}
+@media (max-width: 606px) {
+  .pie-chart {
+    --w: 100px;
+  }
+  .component-redeem-reward {
+    .reward-detail {
+      .item-name {
+        font-size: 8px;
+      }
+    }
+    .item-title {
+      font-size: 5px;
+    }
+    .item-image {
+      width: 32px;
+      height: 32px;
+    }
   }
 }

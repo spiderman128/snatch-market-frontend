@@ -297,6 +297,7 @@ body {
     font-family: Gotham_Book;
     src        : url('../fonts/Gotham-Font/GothamBook.ttf');
 }
+
 // modal part
 .game-reward-modal {
     justify-content: center;
@@ -373,41 +374,52 @@ body {
 .three-ways-wrapper {
     @media screen and (min-width:1067px) {
         .slick-track {
-            width: 100%!important;
-            display: flex;
+            width          : 100% !important;
+            display        : flex;
             justify-content: center;
-            align-items: center;
-            transform: none!important;
-        }
-    }
-}
-.new-reward-collection {
-    @media screen and (min-width:1067px) {
-        .slick-track {
-            width: 100%!important;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transform: none!important;
-        }
-    }
-}
-.chooseBrand-wrapper {
-    @media screen and (min-width:1067px) {
-        .slick-track {
-            width: 100%!important;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transform: none!important;
+            align-items    : center;
+            transform      : none !important;
         }
     }
 }
 
+.new-reward-collection {
+    @media screen and (min-width:1067px) {
+        .slick-track {
+            width          : 100% !important;
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+            transform      : none !important;
+        }
+    }
+}
+
+.chooseBrand-wrapper {
+    @media screen and (min-width:1067px) {
+        .slick-track {
+            width          : 100% !important;
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+            transform      : none !important;
+        }
+    }
+}
+
+// .mportal-slider-wrapper {
+//     .slick-track {
+//         width          : 100% !important;
+//         display        : flex;
+//         justify-content: center;
+//         align-items    : center;
+//         transform      : none !important;
+//     }
+// }
 // Market Place Brand setting
 .brand-accordion-wrapper {
-    .accordion-button{
-        color: black!important;
+    .accordion-button {
+        color      : black !important;
         font-family: Gotham_Light;
     }
 }

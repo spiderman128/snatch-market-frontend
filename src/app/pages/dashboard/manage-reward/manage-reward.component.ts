@@ -12,7 +12,7 @@ export class ManageRewardComponent implements OnInit {
 
   sidebarItems: SidebarItem[] = [];
 
-  itemsCount = 50;
+  itemsCount = 20;
   itemsPage = 1;
   itemsPerPage = 4;
 

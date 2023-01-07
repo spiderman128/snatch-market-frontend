@@ -49,9 +49,18 @@
     width: 70px;
     height: 70px;
 }
-
+.rewards-card-image-wrapper {
+    height: 15rem;
+    width: 15rem;
+    .collection-img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+    } 
+}
 .collection-image-wrapper {
-    height: 360px;
+    height: 100%;
     width: 100%;
     .collection-img {
         height: 100%;

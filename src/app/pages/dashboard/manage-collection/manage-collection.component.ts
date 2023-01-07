@@ -12,7 +12,7 @@ export class ManageCollectionComponent implements OnInit {
 
   sidebarItems: SidebarItem[] = [];
 
-  itemsCount = 50;
+  itemsCount = 25;
   itemsPage = 1;
   itemsPerPage = 4;
 

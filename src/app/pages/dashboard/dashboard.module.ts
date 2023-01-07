@@ -24,6 +24,8 @@ import { ManageRewardComponent } from './manage-reward/manage-reward.component';
 import { ManageListRewardComponent } from './manage-list-reward/manage-list-reward.component';
 import { ManageRedeemRewardComponent } from './manage-redeem-reward/manage-redeem-reward.component';
 import { ManageRedeemNowComponent } from './manage-redeem-now/manage-redeem-now.component';
+
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -51,6 +53,7 @@ import { ManageRedeemNowComponent } from './manage-redeem-now/manage-redeem-now.
     NgApexchartsModule,
     StoreModule.forFeature('dashboardstate', dashboardReducer),
     NgScrollbarModule,
+    SlickCarouselModule
     // EffectsModule.forFeature([])
   ]
 })
