@@ -8,8 +8,11 @@
     background-color: white;
     color           : black;
 }
-
+.merchant-table-wrapper {
+    overflow-x: auto;
+}
 .merchant-table {
+    min-width: 1100px;
     tbody {
         tr {
             background-color: transparent;

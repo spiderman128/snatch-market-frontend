@@ -15,7 +15,7 @@ export class ManageMerchantComponent implements OnInit {
 
   sidebarItems: SidebarItem[] = [];
 
-  itemsCount = 300;
+  itemsCount = 20;
   itemsPage = 1;
   itemsPerPage = 4;
 
