@@ -8,8 +8,53 @@
                     <app-arrow-button class="ms-2" [isRight]="true"></app-arrow-button>
                 </div>
             </div>
-            <div class="row row-cols-1 row-cols-md-3 mb-3 g-5">
-                <div class="col mb-3">
+            <div class="mportal-slider-wrapper py-2 px-0 mb-3">
+                <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                    <div ngxSlickItem class="px-2 slide">
+                        <div class="card top-pending-card border-0 rounded-5 d-flex flex-column justify-content-center">
+                            <div class="p-2 collection-img-wrapper mx-auto mb-auto">
+                                <img src="assets/img/project/dashboard/home/reward_1.png" class="collection-img" />
+                            </div>
+                            <div
+                                class="collection-title d-flex flex-column justify-content-center align-items-start flex-fill px-4">
+                                <label class="mb-0"
+                                    [ngStyle]="{'font-family': 'app_font', 'font-size': '16px'}">Merchant 1</label>
+                                <label class="text-muted my-3" [ngStyle]="{'font-size.px' : 10}">Lanuch Date: </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div ngxSlickItem class="px-2 slide">
+                        <div class="card top-pending-card border-0 rounded-5 d-flex flex-column justify-content-center">
+                            <div class="p-2 collection-img-wrapper mx-auto mb-auto">
+                                <img src="assets/img/project/dashboard/home/reward_2.png" class="collection-img" />
+                            </div>
+                            <div
+                                class="collection-title d-flex flex-column justify-content-center align-items-start flex-fill px-4">
+                                <label class="mb-0"
+                                    [ngStyle]="{'font-family': 'app_font', 'font-size': '16px'}">Merchant 2</label>
+                                <label class="text-muted my-3" [ngStyle]="{'font-size.px' : 10}">Lanuch Date: </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div ngxSlickItem class="px-2 slide">
+                        <div class="card top-pending-card border-0 rounded-5 d-flex flex-column justify-content-center">
+                            <div class="p-2 collection-img-wrapper mx-auto mb-auto">
+                                <img src="assets/img/project/dashboard/home/reward_3.png" class="collection-img" />
+                            </div>
+                            <div
+                                class="collection-title d-flex flex-column justify-content-center align-items-start flex-fill px-4">
+                                <label class="mb-0"
+                                    [ngStyle]="{'font-family': 'app_font', 'font-size': '16px'}">Merchant 3</label>
+                                <label class="text-muted text-start my-3" [ngStyle]="{'font-size.px' : 10}">Lanuch Date:
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </ngx-slick-carousel>
+            </div>
+            <!-- <div class="col mb-3">
                     <div class="card top-pending-card border-0 rounded-5 d-flex flex-column justify-content-center">
                         <div class="p-2 collection-img-wrapper mx-auto mb-auto">
                             <img src="assets/img/project/dashboard/home/reward_1.png" class="collection-img" />
@@ -44,8 +89,7 @@
                             <label class="text-muted text-start my-3" [ngStyle]="{'font-size.px' : 10}">Lanuch Date: </label>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div> -->
             <div class="row">
                 <label class="fs-3 me-auto mb-3" [ngStyle]="{'font-family': 'app_font'}">Transaction Analysis</label>
                 <div class="col-md-12 col-sm-12 mb-3">
@@ -67,7 +111,8 @@
                 <div class="col">
                     <div class="card border-0 rounded-5 ">
                         <div class="card-body py-3">
-                            <p class="mb-0" [ngStyle]="{'color' : '#233B58', 'font-family' : 'Robo_Medium'}">Active Users %</p>
+                            <p class="mb-0" [ngStyle]="{'color' : '#233B58', 'font-family' : 'Robo_Medium'}">Active
+                                Users %</p>
                             <p class="fs-2 mb-0" [ngStyle]="{'font-family': 'app_font'}">45%</p>
                         </div>
                     </div>
@@ -75,7 +120,8 @@
                 <div class="col">
                     <div class="card border-0 rounded-5">
                         <div class="card-body py-3">
-                            <p class="mb-0" [ngStyle]="{'color' : '#233B58', 'font-family' : 'Robo_Medium'}">Active Users %</p>
+                            <p class="mb-0" [ngStyle]="{'color' : '#233B58', 'font-family' : 'Robo_Medium'}">Active
+                                Users %</p>
                             <p class="fs-2 mb-0" [ngStyle]="{'font-family': 'app_font'}">45%</p>
                         </div>
                     </div>
