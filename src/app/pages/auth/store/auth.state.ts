@@ -3,4 +3,5 @@ export interface AuthState {
     merchantStepIndex: number;
     user: any;
     result: any;
+    userSignupData: any;
 }

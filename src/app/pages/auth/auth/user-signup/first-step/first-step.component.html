@@ -1,19 +1,35 @@
-<div [ngStyle]="{'width.rem' : 25}" class="d-flex mx-auto">
-    <div class="me-auto mb-3 input-group position-relative" [ngStyle]="{'width.rem' : 10, 'height.rem' : 3}">
-        <input type="text" class="form-control rounded-pill" placeholder="First Name">
+<form [formGroup]="formGroup">
+    <div [ngStyle]="{'width.rem' : 25}" class="d-flex mx-auto">
+        <div class="me-auto mb-3 input-group position-relative" [ngStyle]="{'width.rem' : 10, 'height.rem' : 3}">
+            <input type="text" formControlName="firstName" class="form-control rounded-pill" placeholder="First Name"
+                [ngClass]="{ 'is-invalid' : formGroup.controls.firstName.errors && formGroup.controls.firstName.touched }">
+        </div>
+        <div class="mb-3 input-group position-relative" [ngStyle]="{'width.rem' : 13, 'height.rem' : 3}">
+            <input type="text" formControlName="lastName" class="form-control rounded-pill" placeholder="Last Name"
+                [ngClass]="{ 'is-invalid' : formGroup.controls.lastName.errors && formGroup.controls.lastName.touched }">
+        </div>
     </div>
-    <div class="mb-3 input-group position-relative" [ngStyle]="{'width.rem' : 13, 'height.rem' : 3}">
-        <input type="text" class="form-control rounded-pill" placeholder="Last Name">
+    <div class="mx-auto mb-3 input-group position-relative" [ngStyle]="{'width.rem' : 25, 'height.rem' : 3}">
+        <input type="email" formControlName="email" class="form-control rounded-pill" placeholder="Email Address"
+            [ngClass]="{ 'is-invalid' : formGroup.controls.email.errors && formGroup.controls.email.touched }">
     </div>
-</div>
-<div class="mx-auto mb-3 input-group position-relative" [ngStyle]="{'width.rem' : 25, 'height.rem' : 3}">
-    <input type="email" class="form-control rounded-pill" placeholder="Email Address">
-</div>
-<div class="mx-auto mb-4 input-group position-relative" [ngStyle]="{'width.rem' : 25, 'height.rem' : 3}">
-    <input type="password" class="form-control rounded-pill" placeholder="Password">
-    <img class="addon-img" src="assets/img/project/password_addon.png" height="18" />
-</div>
-<div class="mx-auto mb-4" [ngStyle]="{'width.rem' : 10, 'margin-top.rem': 3}">
-    <app-custom-button [text]="'Next'" (onClickEvent)="onClickNext($event)">
-    </app-custom-button>
-</div>
+    <div class="mx-auto mb-4 input-group position-relative" [ngStyle]="{'width.rem' : 25, 'height.rem' : 3}">
+        <input [type]="isShowPassword ? 'text' : 'password'" formControlName="password" class="form-control rounded-pill" placeholder="Password"
+            [ngClass]="{ 'is-invalid' : formGroup.controls.password.errors && formGroup.controls.password.touched }">
+        <i class="fa fa-eye addon-img" (click)="isShowPassword = !isShowPassword" *ngIf="isShowPassword"></i>
+        <i class="fa fa-eye-slash addon-img" (click)="isShowPassword = !isShowPassword" *ngIf="!isShowPassword"></i>
+    </div>
+    <div class=" d-flex flex-row justify-content-center align-items-center">
+        <div *ngIf="selectedStepIndex != 0" class="ms-auto mb-4 mx-1"
+            [ngStyle]="{'width.rem' : 10, 'margin-top.rem': 3}">
+            <app-custom-button [text]="'Previous'" [isBackgroundTransparent]="true"
+                (onClickEvent)="onClickPrev($event)">
+            </app-custom-button>
+        </div>
+        <div class="mb-4" [ngClass]="{ 'me-auto mx-1': selectedStepIndex != 0, 'mx-auto': selectedStepIndex == 0}"
+            [ngStyle]="{'width.rem' : 10, 'margin-top.rem': 3}">
+            <app-custom-button [text]="'Next'" (onClickEvent)="onClickNext($event)">
+            </app-custom-button>
+        </div>
+    </div>
+</form>

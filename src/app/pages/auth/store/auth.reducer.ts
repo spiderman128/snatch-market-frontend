@@ -10,6 +10,8 @@ export const initState:AuthState = {
     merchantStepIndex: 0,
     result: undefined,
     user: tokenStorageService.getUser(),
+    userSignupData: {}
+
 }
 export const authReducer = createReducer(
     initState,
@@ -28,4 +30,8 @@ export const authReducer = createReducer(
     }),
     on(authActions.login, (state, {user}) => ({...state, user: user})),
     on(authActions.loginSuccess, (state, result) => ({...state, user: result.userInfo, result})),
+    // signup reducer
+    on(authActions.signupUser, (state, {user}) => ({...state, userSignupData: user})),
+    on(authActions.signupSuccess, (state, result) => ({...state, userSignupData: {}, result})),
+    on(authActions.setUserSignupData, (state, {user}) => ({...state, userSignupData: user}))
 );

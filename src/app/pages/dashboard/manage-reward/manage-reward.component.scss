@@ -13,6 +13,10 @@
 }
 
 .table-wrapper {
+    overflow-x: auto;
+    .table {
+        min-width: 1100px;
+    }
     th:not(:last-child) {
         background-image   : url('/assets/img/project/dashboard/th_border.png');
         background-repeat  : no-repeat;

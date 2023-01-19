@@ -6,8 +6,8 @@ import { AuthWizardItem } from 'src/app/shared/components/auth/auth-wizard-item'
 import { FirstStepComponent } from './first-step/first-step.component';
 
 import { select, Store} from '@ngrx/store';
-import { setUserSignupStepIndex } from '../../store/auth.action';
-import { selectUserSingupStepIndex } from '../../store/auth.select';
+import { setUserSignupData } from '../../store/auth.action';
+import { selectUserSingupStepIndex, userSignupData } from '../../store/auth.select';
 import { SecondStepComponent } from './second-step/second-step.component';
 import { ThirdStepComponent } from './third-step/third-step.component';
 
@@ -29,11 +29,27 @@ export class UserSignupComponent implements OnInit {
   
   selectedStepIndex: number = 0;
   selectedStepIndex$ = this.store.pipe(select(selectUserSingupStepIndex));
+  userSignupData: any = {
+    'Username':'',
+    'FirstName': '',
+    'LastName': '',
+    'Email': '',
+    'Password': '',
+    'country': '',
+    'code': '',
+    'number':'',
+    'identification':null,
+    'currency': '',
+    'payment': '',
+    'Mobile': ''
+  };
+  userSignupData$ = this.store.pipe(select(userSignupData));
   constructor(private router: Router, private store: Store) {
   }
 
   ngOnInit(): void {
     this.selectedStepIndex$.subscribe(data => this.selectedStepIndex = data);
+    this.userSignupData$.subscribe(data => this.userSignupData = data);
     this.wizardItems = this.onGetWizardItems();
     this.onLoadComponent();
   }
@@ -50,7 +66,8 @@ export class UserSignupComponent implements OnInit {
 
     (<WizardComponent>componentRef.instance).data = activeWizardItem.data;
     (<WizardComponent>componentRef.instance).onNext.subscribe(data => {
-      console.log("=============");
+      console.log("=============", data);
+      this.store.dispatch(setUserSignupData({user: data}));
       this.ngOnInit();
     });
 
@@ -59,15 +76,15 @@ export class UserSignupComponent implements OnInit {
     return [
       new AuthWizardItem(
         FirstStepComponent,
-        {}
+        this.userSignupData
       ),
       new AuthWizardItem(
         SecondStepComponent,
-        {}
+        this.userSignupData
       ),
       new AuthWizardItem(
         ThirdStepComponent,
-        {}
+        this.userSignupData
       )
     ];
   }

@@ -106,6 +106,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
         let apiStatus$ = this.appStore.pipe(select(selectAppState));
         apiStatus$.pipe(takeUntil(this.destroy$)).subscribe((appState) => {
+          console.log('app status', appState);
           this.isLoading = false;
           if (appState.apiStatus == 'Success') {
             this.appStore.dispatch(

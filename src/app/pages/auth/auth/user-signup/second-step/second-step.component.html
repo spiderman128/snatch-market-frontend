@@ -1,35 +1,52 @@
-<div class="mx-auto mb-3 input-group position-relative" [ngStyle]="{'width.rem' : 25, 'height.rem' : 3}">
-    <select class="form-control rounded-pill">
-        <option>Country</option>
-        <option>Country</option>
-        <option>Country</option>
-        <option>Country</option>
-        <option>Country</option>
-        <option>Country</option>
-    </select>
-</div>
-<div [ngStyle]="{'width.rem' : 25}" class="d-flex mx-auto">
-    <div class="me-auto mb-3 input-group position-relative" [ngStyle]="{'width.rem' : 8, 'height.rem' : 3}">
-        <input type="text" class="form-control rounded-pill" placeholder="Code">
+<form [formGroup]="formGroup">
+    <div class="mx-auto mb-3 input-group position-relative" [ngStyle]="{'width.rem' : 25, 'height.rem' : 3}">
+        <select formControlName="country" class="form-control rounded-pill"
+        [ngClass]="{ 'is-invalid' : formGroup.controls.country.errors && formGroup.controls.country.touched }">
+            <option>Country</option>
+            <option value="country 1">Country 1</option>
+            <option value="country 2">Country 2</option>
+            <option value="country 3">Country 3</option>
+            <option value="country 4">Country 4</option>
+            <option value="country 5">Country 5</option>
+        </select>
     </div>
-    <div class="mb-3 ms-2 input-group position-relative flex-fill" [ngStyle]="{'height.rem' : 3}">
-        <input type="text" class="form-control rounded-pill" placeholder="Phone Number">
+    <div [ngStyle]="{'width.rem' : 25}" class="d-flex mx-auto">
+        <div class="me-auto mb-3 input-group position-relative" [ngStyle]="{'width.rem' : 8, 'height.rem' : 3}">
+            <input formControlName="code" type="text" class="form-control rounded-pill" placeholder="Code"
+            [ngClass]="{ 'is-invalid' : formGroup.controls.code.errors && formGroup.controls.code.touched }">
+        </div>
+        <div class="mb-3 ms-2 input-group position-relative flex-fill" [ngStyle]="{'height.rem' : 3}">
+            <input type="text" formControlName="number" class="form-control rounded-pill" placeholder="Phone Number"
+            [ngClass]="{ 'is-invalid' : formGroup.controls.number.errors && formGroup.controls.number.touched }">
+        </div>
     </div>
-</div>
-<div class="mx-auto text-start mb-1" [ngStyle]="{'width.rem' : 25}">
-    <label>Select Identification</label>
-</div>
+    <div class="mx-auto text-start mb-1" [ngStyle]="{'width.rem' : 25}">
+        <label>Select Identification</label>
+    </div>
 
-<div [ngStyle]="{'width.rem' : 25}" class="d-flex mx-auto">
-    
-    <div class="me-auto mb-3 input-group position-relative d-flex flex-row align-items-center" [ngStyle]="{'width.rem' : 10, 'height.rem' : 3}">
-        <label class="form-control rounded-pill my-auto" [ngStyle]="{'height.rem' : 3, 'line-height' : 2}">Passport</label>
+    <div [ngStyle]="{'width.rem' : 25}" class="d-flex mx-auto">
+
+        <div class="me-auto mb-3 input-group position-relative d-flex flex-row align-items-center"
+            [ngStyle]="{'width.rem' : 10, 'height.rem' : 3}">
+            <label class="form-control rounded-pill my-auto"
+                [ngStyle]="{'height.rem' : 3, 'line-height' : 2}">Passport</label>
+        </div>
+        <div class="mb-3 input-group position-relative" [ngStyle]="{'width.rem' : 14, 'height.rem' : 3}">
+            <label class="form-control rounded-pill my-auto"
+                [ngStyle]="{'height.rem' : 3, 'line-height' : 2}">ID</label>
+        </div>
     </div>
-    <div class="mb-3 input-group position-relative" [ngStyle]="{'width.rem' : 14, 'height.rem' : 3}">
-        <label class="form-control rounded-pill my-auto" [ngStyle]="{'height.rem' : 3, 'line-height' : 2}">ID</label>
+    <div class=" d-flex flex-row justify-content-center align-items-center">
+        <div *ngIf="selectedStepIndex != 0" class="ms-auto mb-4 mx-1"
+            [ngStyle]="{'width.rem' : 10, 'margin-top.rem': 3}">
+            <app-custom-button [text]="'Previous'" [isBackgroundTransparent]="true"
+                (onClickEvent)="onClickPrev($event)">
+            </app-custom-button>
+        </div>
+        <div class="mb-4" [ngClass]="{ 'me-auto mx-1': selectedStepIndex != 0, 'mx-auto': selectedStepIndex == 0}"
+            [ngStyle]="{'width.rem' : 10, 'margin-top.rem': 3}">
+            <app-custom-button [text]="'Next'" (onClickEvent)="onClickNext($event)">
+            </app-custom-button>
+        </div>
     </div>
-</div>
-<div class="mx-auto mb-4" [ngStyle]="{'width.rem' : 10, 'margin-top.rem': 3}">
-    <app-custom-button [text]="'Next'" (onClickEvent)="onClickNext($event)">
-    </app-custom-button>
-</div>
+</form>

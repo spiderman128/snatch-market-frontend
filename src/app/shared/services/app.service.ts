@@ -23,7 +23,7 @@ export class AppService {
 
   getUserLoggedIn() {
     const token = this.tokenStorage.getToken();
-    console.log(token != null);
+    // console.log("token", token, token != null);
     if (token != null) {
       return true;
     } else {
@@ -39,18 +39,18 @@ export class AppService {
       map((response: any) => response),
       catchError(err => {
         console.log(err)
-        return of([]);
+        return of(err);
       })
     );
   }
   signupUser(user: any) {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     const options = { headers };
-    return this.http.post(this.baseUrl + 'Accounts/signup', { user }, options).pipe(
-      map(response => response),
+    return this.http.post(this.baseUrl + 'Accounts/CreateUserAccount', { user }, options).pipe(
+      map((response: any) => response),
       catchError(error => {
-        console.log(error);
-        return of([]);
+        console.log("error", error);
+        return of(error);
       })
     );
   }

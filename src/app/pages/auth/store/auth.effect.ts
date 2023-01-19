@@ -27,6 +27,7 @@ export class AuthEffect {
                 );
                 return this.appService.login(action.user).pipe(
                     map(response => {
+                        console.log("login response", response);
                         if (response.statusDescription == "Success") {
                             this.tokenStorageService.saveToken(response.data.access_token);
                             this.tokenStorageService.saveUser(response.data.userInfo);
@@ -56,6 +57,58 @@ export class AuthEffect {
                             })
                         );
                         return of(authActions.loginFailure());
+                    })
+                );
+            })
+        );
+    });
+
+    //user signup
+    userSignup$ = createEffect(() => {
+        return this.actions$.pipe(
+            ofType(authActions.signupUser),
+            exhaustMap(action => {
+                this.appStore.dispatch(
+                    setAPIStatus({ apiStatus: { apiResponseMessage: '', apiStatus: '' } })
+                );
+
+                return this.appService.signupUser(action.user).pipe(
+                    map(response => {
+                        console.log("signup response", response);
+                        // if (response.statusDescription == "Success") {
+                        //     this.tokenStorageService.saveToken(response.data.access_token);
+                        //     this.tokenStorageService.saveUser(response.data.userInfo);
+                        //     this.appStore.dispatch(
+                        //         setAPIStatus({
+                        //             apiStatus: { apiResponseMessage: '', apiStatus: "Success" },
+                        //         })
+                        //     );
+                        //     return authActions.signupSuccess(response);
+                        // } else {
+                        //     this.tokenStorageService.saveToken(null!);
+                        //     this.tokenStorageService.saveUser(null);
+                        //     this.appStore.dispatch(
+                        //         setAPIStatus({
+                        //             apiStatus: { apiResponseMessage: response.message, apiStatus: "Error" },
+                        //         })
+                        //     );
+                        //     return authActions.signupFailure();
+                        // }
+                        this.appStore.dispatch(
+                            setAPIStatus({
+                                apiStatus: { apiResponseMessage: '', apiStatus: "Success" },
+                            })
+                        );
+                        return authActions.signupSuccess(response);
+                    }),
+                    catchError(err => {
+                        console.log('error on reducer', err);
+                        this.appStore.dispatch(
+                            setAPIStatus({
+                                apiStatus: { apiResponseMessage: "Unkonwn Error", apiStatus: "Error" },
+                            })
+                        );
+                        return of(authActions.signupFailure());
                     })
                 );
             })

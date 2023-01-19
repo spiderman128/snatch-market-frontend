@@ -14,9 +14,9 @@ export class TokenStorageService {
     window.localStorage.clear();
   }
 
-  public saveToken(token : string) : void {
+  public saveToken(token : string | null) : void {
     window.localStorage.removeItem(TOKEN_KEY);
-    window.localStorage.setItem(TOKEN_KEY, token);
+    if (token != null) window.localStorage.setItem(TOKEN_KEY, token!);
   }
 
   public getToken() : string | null {
@@ -24,7 +24,7 @@ export class TokenStorageService {
   }
   public saveUser(user: any): void {
     window.localStorage.removeItem(USER_KEY);
-    window.localStorage.setItem(USER_KEY, JSON.stringify(user));
+    if (user != null) window.localStorage.setItem(USER_KEY, JSON.stringify(user));
   }
   public getUser(): any {
     const user = window.localStorage.getItem(USER_KEY);

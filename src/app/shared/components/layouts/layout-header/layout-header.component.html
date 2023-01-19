@@ -51,9 +51,9 @@
             <img src="./assets/img/project/navbar/user-dark.png" width="24" *ngIf="theme=='light'" [alt]="appName + ' Logo'" class="img-fluid"/>
           </a>
           <ul class="dropdown-menu dropdown-menu-end custom-dropdownmenu-content" ngbDropdownMenu aria-labelledby="navbarDropdown">
-            <li  *ngIf="!isLoggedIn"><a class="dropdown-item" [routerLink]="['/auth/login']">Log in as a merchant</a></li>
-            <li><a class="dropdown-item" [routerLink]="['/auth/user-signup']">Sign up as a user</a></li>
-            <li><a class="dropdown-item" [routerLink]="['/auth/merchant']">Sign up as a merchant</a></li>
+            <li *ngIf="!isLoggedIn"><a class="dropdown-item" [routerLink]="['/auth/login']">Log in as a merchant</a></li>
+            <li *ngIf="!isLoggedIn"><a class="dropdown-item" [routerLink]="['/auth/user-signup']">Sign up as a user</a></li>
+            <li *ngIf="!isLoggedIn"><a class="dropdown-item" [routerLink]="['/auth/merchant']">Sign up as a merchant</a></li>
             <li *ngIf="isLoggedIn"><button class="dropdown-item" (click)="onClickLogout()" >Log out</button></li>
           </ul>
         </li>

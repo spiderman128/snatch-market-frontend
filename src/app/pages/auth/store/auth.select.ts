@@ -7,3 +7,6 @@ export const selectUserSingupStepIndex = createSelector(selectAuthState, state =
 export const selectMerchantSignupStepIndex = createSelector(selectAuthState, state => state.merchantStepIndex);
 
 export const selectLoggedInUser = createSelector(selectAuthState, state => ({user: state.user}));
+
+// user signup data
+export const userSignupData = createSelector(selectAuthState, state => state.userSignupData)

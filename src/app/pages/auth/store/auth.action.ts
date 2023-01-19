@@ -9,6 +9,7 @@ export const setMerchantSignupStepIndex = createAction(
     props<{stepIndex: number}>()
 )
 
+// login action
 export const login = createAction(
     "[Log in] Login Action",
     props<{user: any}>()
@@ -20,14 +21,19 @@ export const loginSuccess = createAction(
 )
 export const loginFailure = createAction(
     "[Login page] Login Failure"
-    
 )
-export const signupUser = createAction(
-    "[Sign up] Sign up Action",
-    props<{user: any}>
-)
+
+// signup merchant action
 export const signupMerchant = createAction(
     "[Sign up As a merchant] Sign up merchant action",
+    props<{user: any}>()
+)
+
+
+// user signup action
+
+export const signupUser = createAction(
+    "[Sign up] Sign up Action",
     props<{user: any}>()
 )
 export const signupSuccess = createAction(
@@ -35,6 +41,10 @@ export const signupSuccess = createAction(
     props<any>()
 );
 export const signupFailure = createAction(
-    "[Sign up] Sign up Failure",
-    props<any>()
+    "[Sign up] Sign up Failure"
+)
+
+export const setUserSignupData = createAction(
+    "[Sign up] Set Signup Data",
+    props<{user: any}>()
 )
