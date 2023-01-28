@@ -33,6 +33,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
 import { appReducer } from './shared/store/app.reducer';
+import { AppEffect } from './shared/store/app.effects';
 
 // import reducer
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -69,7 +70,7 @@ import { SecureInnerPageGuard } from '@services/secure-inner-page.guard';
     FontAwesomeModule,
 
     StoreModule.forRoot({appState: appReducer}),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([AppEffect]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
   ],
   declarations: [

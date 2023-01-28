@@ -38,7 +38,7 @@
       "@models/*": ["src/app/shared/models/*"],
       "@interfaces/*": ["src/app/shared/interfaces/*"],
       "@services/*": ["src/app/shared/services/*"],
-      "@env/*": ["src/environments/*"],
+      "@env/*": ["src/environments/*"]
     }
   },
   "angularCompilerOptions": {

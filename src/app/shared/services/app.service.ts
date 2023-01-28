@@ -33,7 +33,7 @@ export class AppService {
   }
 
   login(user: any) {
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json'});
     const options = { headers };
     return this.http.post(this.baseUrl + 'Accounts/Login', user, options).pipe(
       map((response: any) => response),
@@ -44,9 +44,22 @@ export class AppService {
     );
   }
   signupUser(user: any) {
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json', "Access-Control-Allow-Origin": '*' });
     const options = { headers };
     return this.http.post(this.baseUrl + 'Accounts/CreateUserAccount', { user }, options).pipe(
+      map((response: any) => response),
+      catchError(error => {
+        console.log("error", error);
+        return of(error);
+      })
+    );
+  }
+
+  // Get Balance 
+  getBalance() {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const options = { headers,  withCredentials : true};
+    return this.http.post(this.baseUrl + 'Accounts/GetBalance', {}, options).pipe(
       map((response: any) => response),
       catchError(error => {
         console.log("error", error);

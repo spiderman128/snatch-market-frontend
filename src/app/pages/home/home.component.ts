@@ -7,6 +7,11 @@ import { Router } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { InvokeNewRewardCollection, InvokeNewRewardDropped } from './store/home.actions';
 import { selectNewRewardCollection, selectNewRewardDropped } from './store/home.selectors';
+import * as appActions from 'src/app/shared/store/app.action';
+import { selectAppState, userBalance } from '../../shared/store/app.selector';
+import { Appstate } from 'src/app/shared/store/app.state';
+import { AppService } from '@services/app.service';
+import { Subject, takeUntil } from 'rxjs';
 
 
 @Component({
@@ -21,6 +26,12 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   newRewardCollection$ = this.store.pipe(select(selectNewRewardCollection));
   newRewardDropped$ = this.store.pipe(select(selectNewRewardDropped));
+  // user balance
+  userBalance$ = this.appStore.pipe(select(userBalance));
+  userBalance: number = 0;
+
+  // destory subject
+  destory$ = new Subject<void>();
 
   slideConfig = { slidesToShow: 1, slidesToScroll: 1, dots: false, infinite: false, adaptiveHeight: true, variableWidth: true, arrows: false, centerMode: false };
 
@@ -95,15 +106,15 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       }
     ]
   }
-  constructor(private router: Router, private store: Store) { }
+  constructor(private router: Router, private store: Store, private appStore: Store<Appstate>, private appService: AppService) { }
   ngOnDestroy(): void {
     clearInterval(this.timer);
   }
 
 
   ngAfterViewInit(): void {
-
     this.onInitTopCarousel();
+    this.userBalance$.subscribe(data => this.userBalance = data);
   }
 
   // -------------------------------------------------------------------------------
@@ -114,6 +125,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.isLoading = false;
     this.store.dispatch(InvokeNewRewardCollection());
     this.store.dispatch(InvokeNewRewardDropped());
+    if (this.appService.getUserLoggedIn()) {
+      this.appStore.dispatch(appActions.getUserBalance());
+    }
+
   }
 
   onInitTopCarousel() {

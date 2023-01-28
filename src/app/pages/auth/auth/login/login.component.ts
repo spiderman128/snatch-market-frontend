@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { login } from '../../store/auth.action';
 
-import { setAPIStatus } from 'src/app/shared/store/app.action';
+import { setAPIStatus} from 'src/app/shared/store/app.action';
 import { Appstate } from 'src/app/shared/store/app.state';
 import { selectAppState } from 'src/app/shared/store/app.selector';
 
